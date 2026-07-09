@@ -1,0 +1,40 @@
+title: Mantrika Games
+tagline: Timeless Strategy. Beautifully Crafted.
+description: >-
+  Play timeless traditional board games with beautiful design, intelligent AI, and seamless multiplayer.
+url: "https://mantrikagames.com"
+baseurl: ""
+
+# Author Details
+author:
+  name: Mantrika Games
+  email: contact@mantrikagames.com
+  twitter: mantrikagames
+  instagram: mantrikagames
+
+# Markdown Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Sass Configuration
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclusions
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - README.md

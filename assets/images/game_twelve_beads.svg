@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="10" fill="#4E342E" stroke="#C89B3C" stroke-width="2"/>
+  
+  <g stroke="#C89B3C" stroke-width="2" fill="none">
+    <!-- Outer Square -->
+    <rect x="100" y="100" width="200" height="200"/>
+    
+    <!-- Diagonal cross -->
+    <line x1="100" y1="100" x2="300" y2="300"/>
+    <line x1="300" y1="100" x2="100" y2="300"/>
+    
+    <!-- Central alignments -->
+    <line x1="200" y1="100" x2="200" y2="300"/>
+    <line x1="100" y1="200" x2="300" y2="200"/>
+    
+    <!-- Outer Diamond paths -->
+    <line x1="200" y1="100" x2="300" y2="200"/>
+    <line x1="300" y1="200" x2="200" y2="300"/>
+    <line x1="200" y1="300" x2="100" y2="200"/>
+    <line x1="100" y1="200" x2="200" y2="100"/>
+  </g>
+  
+  <!-- Intersection Nodes -->
+  <g fill="#FAF8F3" stroke="#C89B3C" stroke-width="2">
+    <circle cx="100" cy="100" r="5"/>
+    <circle cx="200" cy="100" r="5"/>
+    <circle cx="300" cy="100" r="5"/>
+    
+    <circle cx="100" cy="200" r="5"/>
+    <circle cx="200" cy="200" r="5"/>
+    <circle cx="300" cy="200" r="5"/>
+    
+    <circle cx="100" cy="300" r="5"/>
+    <circle cx="200" cy="300" r="5"/>
+    <circle cx="300" cy="300" r="5"/>
+    
+    <!-- Diamond corners -->
+    <circle cx="200" cy="150" r="4"/>
+    <circle cx="150" cy="200" r="4"/>
+    <circle cx="250" cy="200" r="4"/>
+    <circle cx="200" cy="250" r="4"/>
+  </g>
+</svg>

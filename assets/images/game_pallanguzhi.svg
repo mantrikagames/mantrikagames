@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <rect width="400" height="250" rx="10" fill="#4E342E" stroke="#C89B3C" stroke-width="2"/>
+  <rect x="10" y="10" width="380" height="230" rx="8" fill="none" stroke="#C89B3C" stroke-width="0.5" stroke-dasharray="3 3"/>
+  <!-- Two rows of 7 pits -->
+  <g fill="#1F2937" stroke="#C89B3C" stroke-width="1.5">
+    <!-- Row 1 -->
+    <circle cx="50" cy="80" r="22"/>
+    <circle cx="100" cy="80" r="22"/>
+    <circle cx="150" cy="80" r="22"/>
+    <circle cx="200" cy="80" r="22"/>
+    <circle cx="250" cy="80" r="22"/>
+    <circle cx="300" cy="80" r="22"/>
+    <circle cx="350" cy="80" r="22"/>
+    
+    <!-- Row 2 -->
+    <circle cx="50" cy="170" r="22"/>
+    <circle cx="100" cy="170" r="22"/>
+    <circle cx="150" cy="170" r="22"/>
+    <circle cx="200" cy="170" r="22"/>
+    <circle cx="250" cy="170" r="22"/>
+    <circle cx="300" cy="170" r="22"/>
+    <circle cx="350" cy="170" r="22"/>
+  </g>
+</svg>

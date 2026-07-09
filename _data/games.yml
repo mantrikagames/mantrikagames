@@ -1,0 +1,24 @@
+- name: Pallanguzhi
+  country: India
+  description: A traditional Mancala-style game played to capture cowrie shells or seeds. Requires strategic arithmetic and tactical blocking.
+  difficulty: Medium
+  slug: pallanguzhi
+  image: /assets/images/game_pallanguzhi.png
+- name: Nine Men's Morris
+  country: Global
+  description: An ancient strategy game where players form rows of three pieces to remove their opponent's pieces. Simple to learn, deep to master.
+  difficulty: Medium
+  slug: nine-mens-morris
+  image: /assets/images/game_morris.png
+- name: Bagh Bakri
+  country: Nepal & India
+  description: A two-player hunt game where tigers hunt goats, while goats attempt to surround and trap the tigers. A classic asymmetric challenge.
+  difficulty: Hard
+  slug: bagh-bakri
+  image: /assets/images/game_bagh_bakri.png
+- name: Twelve Beads
+  country: Bangladesh & India
+  description: Also known as Baro Guti, this is a strategic subtraction alignment game where players jump and capture opposing beads.
+  difficulty: Easy
+  slug: twelve-beads
+  image: /assets/images/game_twelve_beads.png

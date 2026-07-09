@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  -webkit-user-drag: none;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cosmic-bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background var(--transition-speed) var(--transition-ease),
+              color var(--transition-speed) var(--transition-ease);
+}
+
+// Typography
+h1, h2, h3, h4 {
+  font-family: $font-heading;
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.75rem;
+  
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 4rem;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 5rem;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 3.5rem;
+  position: relative;
+  
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 2.25rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 1.05rem;
+  }
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity var(--transition-speed) var(--transition-ease);
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Minimalist Editorial Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-ease);
+  text-align: center;
+  border: 1px solid transparent;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0.9rem 2.25rem;
+  }
+
+  &.btn-primary {
+    background: var(--accent-gradient);
+    color: #0F0D0C !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(200, 155, 60, 0.2);
+    font-weight: 600;
+    
+    &:hover {
+      background: var(--text-primary);
+      color: var(--bg-primary) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    color: var(--text-primary) !important;
+    border-color: var(--border-strong);
+    
+    &:hover {
+      background: var(--text-primary);
+      color: var(--bg-primary) !important;
+      border-color: var(--text-primary);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Layout Container
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+section {
+  padding: 6rem 0;
+  position: relative;
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: 8.5rem 0;
+  }
+}
+
+// Focus outline
+*:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+// Scroll Reveals
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--transition-ease), transform 0.8s var(--transition-ease);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.8s var(--transition-ease), transform 0.8s var(--transition-ease);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.8s var(--transition-ease), transform 0.8s var(--transition-ease);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.8s var(--transition-ease), transform 0.8s var(--transition-ease);
+}
+
+.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+// Cascading delays
+@for $i from 1 through 10 {
+  .delay-#{$i * 100} {
+    transition-delay: #{$i * 0.08}s !important;
+  }
+}
+
+#cursor-trail-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+}

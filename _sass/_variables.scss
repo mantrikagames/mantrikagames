@@ -1,0 +1,81 @@
+// Typography
+$font-heading: 'Cinzel', Georgia, serif;
+$font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Responsive Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-large: 1200px;
+
+// Theme Design Tokens
+:root {
+  // Light Mode Palette (Warm Editorial Paper & Walnut Wood)
+  --bg-primary: #FAF8F3;         // Warm Ivory paper
+  --bg-secondary: #FDFCF9;       // Slightly lighter ivory
+  --bg-card: #FFFFFF;
+  --text-primary: #1F2937;       // Charcoal
+  --text-secondary: #6B7280;     // Slate Gray
+  --text-muted: #9CA3AF;
+  
+  --primary: #4E342E;            // Deep Walnut Brown
+  --primary-rgb: 78, 52, 46;
+  --accent: #C89B3C;             // Antique Gold
+  --accent-rgb: 200, 155, 60;
+  --accent-light: #F6EEDC;       // Soft gold wash
+  --accent-gradient: linear-gradient(135deg, #DFB76C 0%, #C89B3C 50%, #9E7528 100%);
+  
+  // Editorial Divider System
+  --border-color: rgba(78, 52, 46, 0.08);
+  --border-gold: rgba(200, 155, 60, 0.25);
+  --border-strong: rgba(78, 52, 46, 0.2);
+  
+  // Navigation & Floating Layers
+  --glass-bg: rgba(250, 248, 243, 0.85);
+  --glass-border: rgba(78, 52, 46, 0.05);
+  --glass-blur: blur(16px);
+  
+  // Background Graphic Grid
+  --cosmic-bg: radial-gradient(circle at 50% 30%, rgba(200, 155, 60, 0.05) 0%, rgba(250, 248, 243, 0) 70%), #FAF8F3;
+  
+  // Shadows (Minimal & Subtle)
+  --shadow-sm: 0 1px 3px rgba(78, 52, 46, 0.03);
+  --shadow-md: 0 8px 24px rgba(78, 52, 46, 0.04);
+  --shadow-lg: 0 16px 40px rgba(78, 52, 46, 0.06);
+  --shadow-glow: 0 0 15px rgba(200, 155, 60, 0.08);
+
+  // Transitions
+  --transition-speed: 0.4s;
+  --transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  // Dark Mode Palette (Ebony & Antique Gold)
+  --bg-primary: #0F0D0C;         // Charcoal Ebony Black
+  --bg-secondary: #171513;       // Dark Walnut
+  --bg-card: #1C1A18;
+  --text-primary: #FAF8F3;       // Warm Ivory text
+  --text-secondary: #A39B95;     // Muted Warm Gray
+  --text-muted: #6B635D;
+  
+  --primary: #FAF8F3;
+  --primary-rgb: 250, 248, 245;
+  --accent: #D4AF37;             // Metallic Antique Gold
+  --accent-rgb: 212, 175, 55;
+  --accent-light: #201D1A;
+  --accent-gradient: linear-gradient(135deg, #FFE79A 0%, #D4AF37 50%, #A37E1C 100%);
+  
+  --border-color: rgba(250, 248, 243, 0.06);
+  --border-gold: rgba(212, 175, 55, 0.2);
+  --border-strong: rgba(250, 248, 243, 0.15);
+  
+  --glass-bg: rgba(15, 13, 12, 0.85);
+  --glass-border: rgba(212, 175, 55, 0.06);
+  
+  --cosmic-bg: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.04) 0%, rgba(15, 13, 12, 0) 70%), #0F0D0C;
+  
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.1);
+}

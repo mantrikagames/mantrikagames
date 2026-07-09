@@ -1,0 +1,7 @@
+// Custom overrides specifically for dark-mode components (if any)
+[data-theme="dark"] {
+  // Ensure background overlays look rich on deep obsidian
+  .gallery-overlay {
+    background: linear-gradient(to top, rgba(10, 8, 7, 0.95) 0%, rgba(10, 8, 7, 0.4) 60%, transparent 100%);
+  }
+}

@@ -1,0 +1,7 @@
+---
+# Robots.txt with front matter for absolute url resolution
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

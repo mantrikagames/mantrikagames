@@ -1,0 +1,13 @@
+---
+# Only main.scss needs front matter to trigger Jekyll Sass processing
+---
+
+@import "variables";
+@import "base";
+@import "navbar";
+@import "hero";
+@import "games";
+@import "gallery";
+@import "contact";
+@import "newsletter-footer";
+@import "dark-mode";

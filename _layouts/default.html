@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  {% include head.html %}
+  <body>
+    {% include nav.html %}
+    
+    <main id="main-content" aria-label="Content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+    {% include cookie-consent.html %}
+
+    <!-- Global Interactive Cursor Trail Canvas -->
+    <canvas id="cursor-trail-canvas"></canvas>
+    
+    <!-- Application Scripts -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/hero-3d.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/cursor-trail.js' | relative_url }}"></script>
+  </body>
+</html>

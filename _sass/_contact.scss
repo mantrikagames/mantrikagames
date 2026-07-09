@@ -1,0 +1,112 @@
+.contact-section {
+  background-color: var(--bg-secondary);
+  padding: 8rem 0;
+}
+
+.contact-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.contact-lead {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+// Minimal divider line list layout
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin: 0 auto;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-speed) var(--transition-ease);
+  background: transparent;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: var(--bg-primary);
+
+    .contact-label {
+      color: var(--accent);
+    }
+    
+    .contact-value {
+      color: var(--text-primary);
+    }
+
+    .contact-arrow {
+      transform: translateX(4px);
+      opacity: 1;
+    }
+  }
+}
+
+.contact-info-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-label {
+  font-family: $font-heading;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin-bottom: 0;
+  transition: color var(--transition-speed) var(--transition-ease);
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color var(--transition-speed) var(--transition-ease);
+  margin-left: auto;
+}
+
+.contact-arrow {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.7;
+  margin-left: 1rem;
+  transition: all var(--transition-speed) var(--transition-ease);
+}

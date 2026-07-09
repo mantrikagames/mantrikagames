@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="10" fill="#4E342E" stroke="#C89B3C" stroke-width="2"/>
+  
+  <!-- Outer, Middle, and Inner Squares -->
+  <g fill="none" stroke="#C89B3C" stroke-width="2">
+    <rect x="50" y="50" width="300" height="300"/>
+    <rect x="100" y="100" width="200" height="200"/>
+    <rect x="150" y="150" width="100" height="100"/>
+    
+    <!-- Connection Lines -->
+    <line x1="200" y1="50" x2="200" y2="150"/>
+    <line x1="200" y1="250" x2="200" y2="350"/>
+    <line x1="50" y1="200" x2="150" y2="200"/>
+    <line x1="250" y1="200" x2="350" y2="200"/>
+  </g>
+  
+  <!-- Intersection Nodes (Dots) -->
+  <g fill="#FAF8F3" stroke="#C89B3C" stroke-width="2">
+    <!-- Outer -->
+    <circle cx="50" cy="50" r="5"/>
+    <circle cx="200" cy="50" r="5"/>
+    <circle cx="350" cy="50" r="5"/>
+    <circle cx="50" cy="200" r="5"/>
+    <circle cx="350" cy="200" r="5"/>
+    <circle cx="50" cy="350" r="5"/>
+    <circle cx="200" cy="350" r="5"/>
+    <circle cx="350" cy="350" r="5"/>
+    
+    <!-- Middle -->
+    <circle cx="100" cy="100" r="5"/>
+    <circle cx="200" cy="100" r="5"/>
+    <circle cx="300" cy="100" r="5"/>
+    <circle cx="100" cy="200" r="5"/>
+    <circle cx="300" cy="200" r="5"/>
+    <circle cx="100" cy="300" r="5"/>
+    <circle cx="200" cy="300" r="5"/>
+    <circle cx="300" cy="300" r="5"/>
+    
+    <!-- Inner -->
+    <circle cx="150" cy="150" r="5"/>
+    <circle cx="200" cy="150" r="5"/>
+    <circle cx="250" cy="150" r="5"/>
+    <circle cx="150" cy="200" r="5"/>
+    <circle cx="250" cy="200" r="5"/>
+    <circle cx="150" cy="250" r="5"/>
+    <circle cx="200" cy="250" r="5"/>
+    <circle cx="250" cy="250" r="5"/>
+  </g>
+</svg>

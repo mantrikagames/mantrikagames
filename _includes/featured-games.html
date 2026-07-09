@@ -1,0 +1,36 @@
+<section id="games" class="games-section">
+  <div class="container">
+    <h2 class="reveal-up">Featured Games</h2>
+    
+    <div class="games-list">
+      {% for game in site.data.games %}
+        <article class="game-row reveal-up delay-{{ forloop.index | times: 100 }}">
+          <!-- Game Image -->
+          <div class="game-image-col">
+            <img src="{{ game.image | relative_url }}" alt="{{ game.name }} Board Game" loading="lazy">
+          </div>
+          
+          <!-- Game Details -->
+          <div class="game-info-col">
+            <span class="game-number">0{{ forloop.index }}</span>
+            <div class="game-meta">
+              <span class="game-country">{{ game.country }}</span>
+              <span class="game-meta-divider"></span>
+              <span class="game-difficulty">{{ game.difficulty }}</span>
+            </div>
+            
+            <h3 class="game-name">{{ game.name }}</h3>
+            <p class="game-desc">{{ game.description }}</p>
+            
+            <button class="game-play-btn" aria-label="Play {{ game.name }}">
+              Play Now
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

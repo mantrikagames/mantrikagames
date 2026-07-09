@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="woodGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#8D6E63"/>
+      <stop offset="60%" stop-color="#4E342E"/>
+      <stop offset="100%" stop-color="#2D1B18"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="90" fill="url(#woodGrad)" stroke="#C89B3C" stroke-width="4"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#C89B3C" stroke-width="1" stroke-opacity="0.6"/>
+  <circle cx="100" cy="100" r="50" fill="none" stroke="#C89B3C" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="10" fill="#C89B3C"/>
+</svg>
