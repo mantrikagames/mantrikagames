@@ -1,50 +1,69 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <rect width="400" height="400" rx="10" fill="#4E342E" stroke="#C89B3C" stroke-width="2"/>
   
-  <!-- 5x5 Grid Lines -->
   <g stroke="#C89B3C" stroke-width="2" fill="none">
-    <!-- Horizontal -->
-    <line x1="80" y1="80" x2="320" y2="80"/>
-    <line x1="80" y1="140" x2="320" y2="140"/>
-    <line x1="80" y1="200" x2="320" y2="200"/>
-    <line x1="80" y1="260" x2="320" y2="260"/>
-    <line x1="80" y1="320" x2="320" y2="320"/>
+    <!-- Horizontal rows -->
+    <line x1="120" y1="120" x2="280" y2="120"/> <!-- Row B -->
+    <line x1="40" y1="200" x2="360" y2="200"/>   <!-- Row C -->
+    <line x1="80" y1="280" x2="320" y2="280"/>   <!-- Row D -->
+    <line x1="40" y1="360" x2="360" y2="360"/>   <!-- Row E -->
     
-    <!-- Vertical -->
-    <line x1="80" y1="80" x2="80" y2="320"/>
-    <line x1="140" y1="80" x2="140" y2="320"/>
-    <line x1="200" y1="80" x2="200" y2="320"/>
-    <line x1="260" y1="80" x2="260" y2="320"/>
-    <line x1="320" y1="80" x2="320" y2="320"/>
+    <!-- Spokes from Apex A (200, 40) -->
+    <!-- Spoke 1: A -> B1 -> C1 -> D1 -> E1 -->
+    <path d="M200,40 L120,120 L100,200 L80,280 L40,360"/>
     
-    <!-- Diagonals -->
-    <line x1="80" y1="80" x2="320" y2="320"/>
-    <line x1="320" y1="80" x2="80" y2="320"/>
+    <!-- Spoke 2: A -> B2 -> C2 -> D2 -> E2 -->
+    <path d="M200,40 L160,120 L152,200 L140,280 L120,360"/>
     
-    <!-- Inner Diamond Diagonals -->
-    <line x1="200" y1="80" x2="320" y2="200"/>
-    <line x1="320" y1="200" x2="200" y2="320"/>
-    <line x1="200" y1="320" x2="80" y2="200"/>
-    <line x1="80" y1="200" x2="200" y2="80"/>
+    <!-- Spoke 3: A -> B3 -> C3 -> D3 -> E3 (vertical center) -->
+    <path d="M200,40 L200,120 L200,200 L200,280 L200,360"/>
+    
+    <!-- Spoke 4: A -> B4 -> C4 -> D4 -> E4 -->
+    <path d="M200,40 L240,120 L248,200 L260,280 L280,360"/>
+    
+    <!-- Spoke 5: A -> B5 -> C5 -> D5 -> E5 -->
+    <path d="M200,40 L280,120 L300,200 L320,280 L360,360"/>
+    
+    <!-- Wing connections -->
+    <line x1="40" y1="200" x2="120" y2="120"/>  <!-- C0 -> B1 -->
+    <line x1="40" y1="200" x2="80" y2="280"/>   <!-- C0 -> D1 -->
+    <line x1="360" y1="200" x2="280" y2="120"/> <!-- C6 -> B5 -->
+    <line x1="360" y1="200" x2="320" y2="280"/>  <!-- C6 -> D5 -->
   </g>
   
-  <!-- Tigers and Goats Nodes -->
+  <!-- Nodes (Intersection Points) -->
   <g fill="#FAF8F3" stroke="#C89B3C" stroke-width="2">
-    <circle cx="80" cy="80" r="5"/>
-    <circle cx="200" cy="80" r="5"/>
-    <circle cx="320" cy="80" r="5"/>
-    <circle cx="140" cy="140" r="5"/>
-    <circle cx="260" cy="140" r="5"/>
-    <circle cx="80" cy="200" r="5"/>
+    <!-- Apex A -->
+    <circle cx="200" cy="40" r="5"/>
+    
+    <!-- Row B -->
+    <circle cx="120" cy="120" r="5"/>
+    <circle cx="160" cy="120" r="5"/>
+    <circle cx="200" cy="120" r="5"/>
+    <circle cx="240" cy="120" r="5"/>
+    <circle cx="280" cy="120" r="5"/>
+    
+    <!-- Row C -->
+    <circle cx="40" cy="200" r="5"/>
+    <circle cx="100" cy="200" r="5"/>
+    <circle cx="152" cy="200" r="5"/>
     <circle cx="200" cy="200" r="5"/>
-    <circle cx="320" cy="200" r="5"/>
-    <circle cx="140" cy="260" r="5"/>
-    <circle cx="260" cy="260" r="5"/>
-    <circle cx="80" cy="320" r="5"/>
-    <circle cx="200" cy="320" r="5"/>
-    <circle cx="320" cy="320" r="5"/>
+    <circle cx="248" cy="200" r="5"/>
+    <circle cx="300" cy="200" r="5"/>
+    <circle cx="360" cy="200" r="5"/>
+    
+    <!-- Row D -->
+    <circle cx="80" cy="280" r="5"/>
+    <circle cx="140" cy="280" r="5"/>
+    <circle cx="200" cy="280" r="5"/>
+    <circle cx="260" cy="280" r="5"/>
+    <circle cx="320" cy="280" r="5"/>
+    
+    <!-- Row E -->
+    <circle cx="40" cy="360" r="5"/>
+    <circle cx="120" cy="360" r="5"/>
+    <circle cx="200" cy="360" r="5"/>
+    <circle cx="280" cy="360" r="5"/>
+    <circle cx="360" cy="360" r="5"/>
   </g>
-  
-  <!-- Active Tiger Token -->
-  <circle cx="200" cy="200" r="12" fill="#C89B3C" stroke="#FAF8F3" stroke-width="1.5"/>
 </svg>

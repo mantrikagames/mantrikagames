@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="10" fill="#4E342E" stroke="#C89B3C" stroke-width="2"/>
+  
+  <!-- Outer board decorative bezel dash -->
+  <rect x="10" y="10" width="380" height="380" rx="8" fill="none" stroke="#C89B3C" stroke-width="0.5" stroke-dasharray="3 3"/>
+  
+  <!-- Cell backgrounds: Terracotta red for castles, Navy for home, Cream for normal -->
+  <g stroke="#C89B3C" stroke-width="1.5">
+    <!-- Fill colors for all 25 cells -->
+    <!-- Row 0 -->
+    <rect x="50" y="50" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="110" y="50" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="170" y="50" width="60" height="60" fill="#8B261D"/> <!-- Castle -->
+    <rect x="230" y="50" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="290" y="50" width="60" height="60" fill="#F3EFEB"/>
+    
+    <!-- Row 1 -->
+    <rect x="50" y="110" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="110" y="110" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="170" y="110" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="230" y="110" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="290" y="110" width="60" height="60" fill="#F3EFEB"/>
+    
+    <!-- Row 2 -->
+    <rect x="50" y="170" width="60" height="60" fill="#8B261D"/> <!-- Castle -->
+    <rect x="110" y="170" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="170" y="170" width="60" height="60" fill="#1B2A32"/> <!-- Home -->
+    <rect x="230" y="170" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="290" y="170" width="60" height="60" fill="#8B261D"/> <!-- Castle -->
+    
+    <!-- Row 3 -->
+    <rect x="50" y="230" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="110" y="230" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="170" y="230" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="230" y="230" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="290" y="230" width="60" height="60" fill="#F3EFEB"/>
+    
+    <!-- Row 4 -->
+    <rect x="50" y="290" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="110" y="290" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="170" y="290" width="60" height="60" fill="#8B261D"/> <!-- Castle -->
+    <rect x="230" y="290" width="60" height="60" fill="#F3EFEB"/>
+    <rect x="290" y="290" width="60" height="60" fill="#F3EFEB"/>
+  </g>
+  
+  <!-- Diagonal crosses for Castles and Home -->
+  <g stroke="#C89B3C" stroke-width="2">
+    <!-- Castle (0, 2) -->
+    <line x1="170" y1="50" x2="230" y2="110"/>
+    <line x1="230" y1="50" x2="170" y2="110"/>
+    
+    <!-- Castle (2, 0) -->
+    <line x1="50" y1="170" x2="110" y2="230"/>
+    <line x1="110" y1="170" x2="50" y2="230"/>
+    
+    <!-- Home (2, 2) -->
+    <line x1="170" y1="170" x2="230" y2="230"/>
+    <line x1="230" y1="170" x2="170" y2="230"/>
+    
+    <!-- Castle (2, 4) -->
+    <line x1="290" y1="170" x2="350" y2="230"/>
+    <line x1="350" y1="170" x2="290" y2="230"/>
+    
+    <!-- Castle (4, 2) -->
+    <line x1="170" y1="290" x2="230" y2="350"/>
+    <line x1="230" y1="290" x2="170" y2="350"/>
+  </g>
+  
+  <!-- Diagonal markings for normal cells in faint brown/gold -->
+  <g stroke="#C89B3C" stroke-width="0.5" stroke-opacity="0.5">
+    <!-- Row 0 -->
+    <line x1="50" y1="50" x2="110" y2="110"/><line x1="110" y1="50" x2="50" y2="110"/>
+    <line x1="110" y1="50" x2="170" y2="110"/><line x1="170" y1="50" x2="110" y2="110"/>
+    <line x1="230" y1="50" x2="290" y2="110"/><line x1="290" y1="50" x2="230" y2="110"/>
+    <line x1="290" y1="50" x2="350" y2="110"/><line x1="350" y1="50" x2="290" y2="110"/>
+    
+    <!-- Row 1 -->
+    <line x1="50" y1="110" x2="110" y2="170"/><line x1="110" y1="110" x2="50" y2="170"/>
+    <line x1="110" y1="110" x2="170" y2="170"/><line x1="170" y1="110" x2="110" y2="170"/>
+    <line x1="170" y1="110" x2="230" y2="170"/><line x1="230" y1="110" x2="170" y2="170"/>
+    <line x1="230" y1="110" x2="290" y2="170"/><line x1="290" y1="110" x2="230" y2="170"/>
+    <line x1="290" y1="110" x2="350" y2="170"/><line x1="350" y1="110" x2="290" y2="170"/>
+    
+    <!-- Row 2 -->
+    <line x1="110" y1="170" x2="170" y2="230"/><line x1="170" y1="170" x2="110" y2="230"/>
+    <line x1="230" y1="170" x2="290" y2="230"/><line x1="290" y1="170" x2="230" y2="230"/>
+    
+    <!-- Row 3 -->
+    <line x1="50" y1="230" x2="110" y2="290"/><line x1="110" y1="230" x2="50" y2="290"/>
+    <line x1="110" y1="230" x2="170" y2="290"/><line x1="170" y1="230" x2="110" y2="290"/>
+    <line x1="170" y1="230" x2="230" y2="290"/><line x1="230" y1="230" x2="170" y2="290"/>
+    <line x1="230" y1="230" x2="290" y2="290"/><line x1="290" y1="230" x2="230" y2="290"/>
+    <line x1="290" y1="230" x2="350" y2="290"/><line x1="350" y1="230" x2="290" y2="290"/>
+    
+    <!-- Row 4 -->
+    <line x1="50" y1="290" x2="110" y2="350"/><line x1="110" y1="290" x2="50" y2="350"/>
+    <line x1="110" y1="290" x2="170" y2="350"/><line x1="170" y1="290" x2="110" y2="350"/>
+    <line x1="230" y1="290" x2="290" y2="350"/><line x1="290" y1="290" x2="230" y2="350"/>
+    <line x1="290" y1="290" x2="350" y2="350"/><line x1="350" y1="290" x2="290" y2="350"/>
+  </g>
+</svg>

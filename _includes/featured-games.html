@@ -22,15 +22,43 @@
             <h3 class="game-name">{{ game.name }}</h3>
             <p class="game-desc">{{ game.description }}</p>
             
-            <button class="game-play-btn" aria-label="Play {{ game.name }}">
-              Play Now
-              <svg viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <button class="game-history-btn" aria-label="Read history of {{ game.name }}" 
+                    data-name="{{ game.name }}" 
+                    data-description="{{ game.description | escape }}" 
+                    data-history="{{ game.history | escape }}" 
+                    data-image="{{ game.image | relative_url }}">
+              Read History
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               </svg>
             </button>
           </div>
         </article>
       {% endfor %}
+    </div>
+    
+    <!-- Beautiful, Interactive Heritage History Modal -->
+    <div id="history-modal" class="history-modal" role="dialog" aria-hidden="true" aria-label="Game History Details">
+      <div class="modal-overlay"></div>
+      <div class="modal-wrapper">
+        <button class="modal-close-btn" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+        <div class="modal-content-grid">
+          <div class="modal-image-panel">
+            <img id="modal-game-img" src="" alt="Game board layout">
+          </div>
+          <div class="modal-info-panel">
+            <h3 id="modal-game-title"></h3>
+            <p id="modal-game-desc" class="modal-game-subtitle"></p>
+            <div class="modal-divider"></div>
+            <h4 class="modal-section-heading">Cultural Heritage & History</h4>
+            <p id="modal-game-history" class="modal-history-text"></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

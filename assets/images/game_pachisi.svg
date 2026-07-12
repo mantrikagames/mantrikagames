@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="10" fill="#4E342E" stroke="#C89B3C" stroke-width="2"/>
+  <rect x="10" y="10" width="380" height="380" rx="8" fill="none" stroke="#C89B3C" stroke-width="0.5" stroke-dasharray="3 3"/>
+  
+  <!-- Cross Outline Background (Dark Navy) -->
+  <path d="M160,160 L240,160 L240,40 L160,40 L160,160 L40,160 L40,240 L160,240 L160,360 L240,360 L240,240 L360,240 L360,160 Z" fill="#131728" stroke="#C89B3C" stroke-width="2"/>
+
+  <!-- Center Charkoni (Lotus Mandala area) -->
+  <rect x="160" y="160" width="80" height="80" fill="#1B2A32" stroke="#C89B3C" stroke-width="1.5"/>
+  <circle cx="200" cy="200" r="30" fill="none" stroke="#C89B3C" stroke-width="1" stroke-dasharray="2 2"/>
+  <!-- Decorative central flower -->
+  <circle cx="200" cy="200" r="8" fill="#C89B3C"/>
+  <path d="M200,170 Q190,185 200,192 Q210,185 200,170 Z M200,230 Q190,215 200,208 Q210,215 200,230 Z M170,200 Q185,190 192,200 Q185,210 170,200 Z M230,200 Q215,190 208,200 Q215,210 230,200 Z" fill="#C89B3C" fill-opacity="0.8"/>
+
+  <!-- North Arm Cells (8 rows, 3 columns) -->
+  <!-- Left column x: 160..187, Middle x: 187..213, Right x: 213..240 -->
+  <!-- y goes from 40 (outermost) to 160 (innermost) in 8 steps of 15px -->
+  <g fill="#F3EFEB" stroke="#C89B3C" stroke-width="0.75" stroke-opacity="0.8">
+    <!-- Grid elements -->
+    <!-- Row 1 (y: 40-55) -->
+    <rect x="160" y="40" width="27" height="15"/>
+    <rect x="187" y="40" width="26" height="15"/>
+    <rect x="213" y="40" width="27" height="15"/>
+    <!-- Row 2 (y: 55-70) -->
+    <rect x="160" y="55" width="27" height="15"/>
+    <rect x="187" y="55" width="26" height="15"/>
+    <rect x="213" y="55" width="27" height="15"/>
+    <!-- Row 3 (y: 70-85) -->
+    <rect x="160" y="70" width="27" height="15"/>
+    <rect x="187" y="70" width="26" height="15"/>
+    <rect x="213" y="70" width="27" height="15"/>
+    <!-- Row 4 (y: 85-100) -->
+    <rect x="160" y="85" width="27" height="15" fill="#8B261D"/> <!-- Castle N_L_4 -->
+    <rect x="187" y="85" width="26" height="15"/>
+    <rect x="213" y="85" width="27" height="15" fill="#8B261D"/> <!-- Castle N_R_4 -->
+    <!-- Row 5 (y: 100-115) -->
+    <rect x="160" y="100" width="27" height="15"/>
+    <rect x="187" y="100" width="26" height="15" fill="#1B2A32"/> <!-- Home path -->
+    <rect x="213" y="100" width="27" height="15"/>
+    <!-- Row 6 (y: 115-130) -->
+    <rect x="160" y="115" width="27" height="15"/>
+    <rect x="187" y="115" width="26" height="15" fill="#1B2A32"/>
+    <rect x="213" y="115" width="27" height="15"/>
+    <!-- Row 7 (y: 130-145) -->
+    <rect x="160" y="130" width="27" height="15"/>
+    <rect x="187" y="130" width="26" height="15" fill="#1B2A32"/>
+    <rect x="213" y="130" width="27" height="15"/>
+    <!-- Row 8 (y: 145-160) -->
+    <rect x="160" y="145" width="27" height="15"/>
+    <rect x="187" y="145" width="26" height="15" fill="#8B261D"/> <!-- Castle N_M_8 -->
+    <rect x="213" y="145" width="27" height="15"/>
+  </g>
+
+  <!-- South Arm Cells (y goes from 240 to 360 in 8 steps of 15px) -->
+  <g fill="#F3EFEB" stroke="#C89B3C" stroke-width="0.75" stroke-opacity="0.8">
+    <!-- Row 8 (y: 240-255) -->
+    <rect x="160" y="240" width="27" height="15"/>
+    <rect x="187" y="240" width="26" height="15" fill="#8B261D"/> <!-- Castle S_M_8 -->
+    <rect x="213" y="240" width="27" height="15"/>
+    <!-- Row 7 (y: 255-270) -->
+    <rect x="160" y="255" width="27" height="15"/>
+    <rect x="187" y="255" width="26" height="15" fill="#1B2A32"/>
+    <rect x="213" y="255" width="27" height="15"/>
+    <!-- Row 6 (y: 270-285) -->
+    <rect x="160" y="270" width="27" height="15"/>
+    <rect x="187" y="270" width="26" height="15" fill="#1B2A32"/>
+    <rect x="213" y="270" width="27" height="15"/>
+    <!-- Row 5 (y: 285-300) -->
+    <rect x="160" y="285" width="27" height="15"/>
+    <rect x="187" y="285" width="26" height="15" fill="#1B2A32"/>
+    <rect x="213" y="285" width="27" height="15"/>
+    <!-- Row 4 (y: 300-315) -->
+    <rect x="160" y="300" width="27" height="15" fill="#8B261D"/> <!-- Castle S_L_4 -->
+    <rect x="187" y="300" width="26" height="15"/>
+    <rect x="213" y="300" width="27" height="15" fill="#8B261D"/> <!-- Castle S_R_4 -->
+    <!-- Row 3 (y: 315-330) -->
+    <rect x="160" y="315" width="27" height="15"/>
+    <rect x="187" y="315" width="26" height="15"/>
+    <rect x="213" y="315" width="27" height="15"/>
+    <!-- Row 2 (y: 330-345) -->
+    <rect x="160" y="330" width="27" height="15"/>
+    <rect x="187" y="330" width="26" height="15"/>
+    <rect x="213" y="330" width="27" height="15"/>
+    <!-- Row 1 (y: 345-360) -->
+    <rect x="160" y="345" width="27" height="15"/>
+    <rect x="187" y="345" width="26" height="15"/>
+    <rect x="213" y="345" width="27" height="15"/>
+  </g>
+
+  <!-- West Arm Cells (x goes from 40 to 160 in 8 steps of 15px) -->
+  <!-- Rows y: 160..187, 187..213, 213..240 -->
+  <g fill="#F3EFEB" stroke="#C89B3C" stroke-width="0.75" stroke-opacity="0.8">
+    <!-- Col 1 (x: 40-55) -->
+    <rect x="40" y="160" width="15" height="27"/>
+    <rect x="40" y="187" width="15" height="26"/>
+    <rect x="40" y="213" width="15" height="27"/>
+    <!-- Col 2 (x: 55-70) -->
+    <rect x="55" y="160" width="15" height="27"/>
+    <rect x="55" y="187" width="15" height="26"/>
+    <rect x="55" y="213" width="15" height="27"/>
+    <!-- Col 3 (x: 70-85) -->
+    <rect x="70" y="160" width="15" height="27"/>
+    <rect x="70" y="187" width="15" height="26"/>
+    <rect x="70" y="213" width="15" height="27"/>
+    <!-- Col 4 (x: 85-100) -->
+    <rect x="85" y="160" width="15" height="27" fill="#8B261D"/> <!-- Castle W_R_4 -->
+    <rect x="85" y="187" width="15" height="26"/>
+    <rect x="85" y="213" width="15" height="27" fill="#8B261D"/> <!-- Castle W_L_4 -->
+    <!-- Col 5 (x: 100-115) -->
+    <rect x="100" y="160" width="15" height="27"/>
+    <rect x="100" y="187" width="15" height="26" fill="#1B2A32"/>
+    <rect x="100" y="213" width="15" height="27"/>
+    <!-- Col 6 (x: 115-130) -->
+    <rect x="115" y="160" width="15" height="27"/>
+    <rect x="115" y="187" width="15" height="26" fill="#1B2A32"/>
+    <rect x="115" y="213" width="15" height="27"/>
+    <!-- Col 7 (x: 130-145) -->
+    <rect x="130" y="160" width="15" height="27"/>
+    <rect x="130" y="187" width="15" height="26" fill="#1B2A32"/>
+    <rect x="130" y="213" width="15" height="27"/>
+    <!-- Col 8 (x: 145-160) -->
+    <rect x="145" y="160" width="15" height="27"/>
+    <rect x="145" y="187" width="15" height="26" fill="#8B261D"/> <!-- Castle W_M_8 -->
+    <rect x="145" y="213" width="15" height="27"/>
+  </g>
+
+  <!-- East Arm Cells (x goes from 240 to 360 in 8 steps of 15px) -->
+  <g fill="#F3EFEB" stroke="#C89B3C" stroke-width="0.75" stroke-opacity="0.8">
+    <!-- Col 8 (x: 240-255) -->
+    <rect x="240" y="160" width="15" height="27"/>
+    <rect x="240" y="187" width="15" height="26" fill="#8B261D"/> <!-- Castle E_M_8 -->
+    <rect x="240" y="213" width="15" height="27"/>
+    <!-- Col 7 (x: 255-270) -->
+    <rect x="255" y="160" width="15" height="27"/>
+    <rect x="255" y="187" width="15" height="26" fill="#1B2A32"/>
+    <rect x="255" y="213" width="15" height="27"/>
+    <!-- Col 6 (x: 270-285) -->
+    <rect x="270" y="160" width="15" height="27"/>
+    <rect x="270" y="187" width="15" height="26" fill="#1B2A32"/>
+    <rect x="270" y="213" width="15" height="27"/>
+    <!-- Col 5 (x: 285-300) -->
+    <rect x="285" y="160" width="15" height="27"/>
+    <rect x="285" y="187" width="15" height="26" fill="#1B2A32"/>
+    <rect x="285" y="213" width="15" height="27"/>
+    <!-- Col 4 (x: 300-315) -->
+    <rect x="300" y="160" width="15" height="27" fill="#8B261D"/> <!-- Castle E_L_4 -->
+    <rect x="300" y="187" width="15" height="26"/>
+    <rect x="300" y="213" width="15" height="27" fill="#8B261D"/> <!-- Castle E_R_4 -->
+    <!-- Col 3 (x: 315-330) -->
+    <rect x="315" y="160" width="15" height="27"/>
+    <rect x="315" y="187" width="15" height="26"/>
+    <rect x="315" y="213" width="15" height="27"/>
+    <!-- Col 2 (x: 330-345) -->
+    <rect x="330" y="160" width="15" height="27"/>
+    <rect x="330" y="187" width="15" height="26"/>
+    <rect x="330" y="213" width="15" height="27"/>
+    <!-- Col 1 (x: 345-360) -->
+    <rect x="345" y="160" width="15" height="27"/>
+    <rect x="345" y="187" width="15" height="26"/>
+    <rect x="345" y="213" width="15" height="27"/>
+  </g>
+
+  <!-- Cross marks (X) on all Castle cells for traditional aesthetic -->
+  <g stroke="#FAF8F3" stroke-width="1.2">
+    <!-- North Castles -->
+    <line x1="160" y1="85" x2="187" y2="100"/><line x1="187" y1="85" x2="160" y2="100"/>
+    <line x1="213" y1="85" x2="240" y2="100"/><line x1="240" y1="85" x2="213" y2="100"/>
+    <line x1="187" y1="145" x2="213" y2="160"/><line x1="213" y1="145" x2="187" y2="160"/>
+    
+    <!-- South Castles -->
+    <line x1="187" y1="240" x2="213" y2="255"/><line x1="213" y1="240" x2="187" y2="255"/>
+    <line x1="160" y1="300" x2="187" y2="315"/><line x1="187" y1="300" x2="160" y2="315"/>
+    <line x1="213" y1="300" x2="240" y2="315"/><line x1="240" y1="300" x2="213" y2="315"/>
+    
+    <!-- West Castles -->
+    <line x1="85" y1="160" x2="100" y2="187"/><line x1="100" y1="160" x2="85" y2="187"/>
+    <line x1="85" y1="213" x2="100" y2="240"/><line x1="100" y1="213" x2="85" y2="240"/>
+    <line x1="145" y1="187" x2="160" y2="213"/><line x1="160" y1="187" x2="145" y2="213"/>
+    
+    <!-- East Castles -->
+    <line x1="240" y1="187" x2="255" y2="213"/><line x1="255" y1="187" x2="240" y2="213"/>
+    <line x1="300" y1="160" x2="315" y2="187"/><line x1="315" y1="160" x2="300" y2="187"/>
+    <line x1="300" y1="213" x2="315" y2="240"/><line x1="315" y1="213" x2="300" y2="240"/>
+  </g>
+</svg>

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initCookieConsent();
   initMobileMenu();
+  initHistoryModals();
 });
 
 /**
@@ -134,4 +135,56 @@ function initCookieConsent() {
   if (declineBtn) {
     declineBtn.addEventListener('click', () => hideBanner('declined'));
   }
+}
+
+/**
+ * 6. Game Heritage History Modal Controller
+ */
+function initHistoryModals() {
+  const modal = document.getElementById('history-modal');
+  const modalTitle = document.getElementById('modal-game-title');
+  const modalDesc = document.getElementById('modal-game-desc');
+  const modalHistory = document.getElementById('modal-game-history');
+  const modalImg = document.getElementById('modal-game-img');
+  const closeBtn = modal ? modal.querySelector('.modal-close-btn') : null;
+  const overlay = modal ? modal.querySelector('.modal-overlay') : null;
+  const buttons = document.querySelectorAll('.game-history-btn');
+
+  if (!modal || !closeBtn || !overlay) return;
+
+  const openModal = (btn) => {
+    const name = btn.getAttribute('data-name');
+    const desc = btn.getAttribute('data-description');
+    const history = btn.getAttribute('data-history');
+    const img = btn.getAttribute('data-image');
+
+    modalTitle.textContent = name;
+    modalDesc.textContent = desc;
+    modalHistory.textContent = history;
+    modalImg.src = img;
+    modalImg.alt = `${name} Board Layout`;
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn));
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
 }
