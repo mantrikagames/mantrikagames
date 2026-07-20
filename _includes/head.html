@@ -1,5 +1,6 @@
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://cloud.umami.is; img-src 'self' data:; object-src 'none';">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#4E342E">
   <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
@@ -20,11 +21,8 @@
   {% feed_meta %}
 
   <!-- Theme loader script -->
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      const preferredTheme = savedTheme ? savedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', preferredTheme);
-    })();
-  </script>
+  <script src="{{ '/assets/js/theme-loader.js' | relative_url }}"></script>
+
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="90efba4d-4fac-40f7-8157-0993a3c06b46"></script>
 </head>
