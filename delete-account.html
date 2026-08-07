@@ -1,0 +1,138 @@
+---
+layout: default
+title: Account & Data Deletion | Mantrika Games
+description: Request account and data deletion for Mantrika Games mobile applications.
+permalink: /delete-account/
+---
+
+<style>
+  .deletion-section {
+    padding: 10rem 0 6rem;
+    background-color: var(--bg-primary);
+  }
+  .deletion-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .deletion-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .deletion-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .deletion-subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .deletion-body h2 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .deletion-body p, .deletion-body ul, .deletion-body ol {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+  }
+  .deletion-body ul, .deletion-body ol {
+    padding-left: 1.5rem;
+  }
+  .deletion-body li {
+    margin-bottom: 0.5rem;
+  }
+  .deletion-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .deletion-btn {
+    display: inline-block;
+    background: #D9A84A;
+    color: #0A0F1F;
+    font-weight: bold;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+  .deletion-btn:hover {
+    background: #FFE3A0;
+    color: #0A0F1F;
+  }
+  .app-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #FFE3A0;
+    margin: 0.2rem;
+  }
+</style>
+
+<section class="deletion-section">
+  <div class="container">
+    <div class="deletion-content reveal-up">
+      <header class="deletion-header">
+        <h1 class="deletion-title">Account & Data Deletion Request</h1>
+        <p class="deletion-subtitle">Manage your privacy and request complete deletion of your profile data across Mantrika Games applications.</p>
+      </header>
+      
+      <div class="deletion-body">
+        <h2>Supported Applications</h2>
+        <p>This data deletion policy applies to all official Mantrika Games titles:</p>
+        <div>
+          <span class="app-tag">Board of Mills</span>
+          <span class="app-tag">Gomoku World</span>
+          <span class="app-tag">RealmForge</span>
+          <span class="app-tag">Reversi World</span>
+        </div>
+
+        <h2>What Data Will Be Deleted?</h2>
+        <p>Upon submitting an account deletion request, the following data associated with your user ID will be permanently removed from our databases within 30 days:</p>
+        <ul>
+          <li><strong>Authentication Credentials:</strong> Your registered email address, authentication tokens, and user profile ID.</li>
+          <li><strong>Player Profile:</strong> Display name, selected avatar choices, and account registration timestamp.</li>
+          <li><strong>Gameplay Statistics & Leaderboards:</strong> Strategic rating points, win/loss history, total games played, and active leaderboard standings.</li>
+          <li><strong>In-App Wallet Data:</strong> Coin balances and item unlock logs.</li>
+        </ul>
+
+        <h2>How to Request Account Deletion</h2>
+        <ol>
+          <li>Send an email to <strong>mantrikagames@gmail.com</strong> from the email address linked to your account.</li>
+          <li>Set the subject line to: <code>Account Deletion Request - [App Name]</code></li>
+          <li>Include your <strong>Display Name</strong> and/or <strong>User ID</strong> (found in the app settings) in the body of the email.</li>
+        </ol>
+
+        <div class="deletion-box">
+          <h3 style="color: #FFE3A0; margin-bottom: 0.5rem;">Submit Request via Email</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1rem;">Click below to open a pre-filled deletion request in your default email client:</p>
+          <a href="mailto:mantrikagames@gmail.com?subject=Account%20Deletion%20Request&body=Hello%20Mantrika%20Games%20Team,%0A%0AI%20would%20like%20to%20request%20the%20permanent%20deletion%20of%20my%20account%20and%20all%20associated%20data.%0A%0AApp%20Name:%20%0ADisplay%20Name:%20%0AUser%20ID%20(optional):%20%0A%0AThank%20you." class="deletion-btn">Request Data Deletion</a>
+        </div>
+
+        <h2>Retention Period & Confirmation</h2>
+        <p>Account deletion requests are processed manually within <strong>30 days</strong>. Once your data has been permanently deleted from Firebase Authentication and Cloud Firestore, you will receive a confirmation email.</p>
+      </div>
+    </div>
+  </div>
+</section>
