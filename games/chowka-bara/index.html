@@ -1,0 +1,441 @@
+---
+layout: game
+title: Chowka Bara 3D — Play Traditional Indian Board Game Online
+description: Play Chowka Bara (Katte Mane / Ashta Chamma) in realistic handcrafted 3D directly in your browser. Single-player vs Intelligent AI or local multiplayer with 4 cowrie shells dice physics.
+permalink: /games/chowka-bara/
+---
+
+<div class="game-view-wrapper">
+  <!-- Game Hero & Title Area -->
+  <section class="game-header-section">
+    <div class="container">
+      <nav class="game-breadcrumbs" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="{{ '/games/' | relative_url }}">Games</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Chowka Bara</span>
+      </nav>
+
+      <div class="game-header-content reveal-up">
+        <div class="game-badge-group">
+          <span class="badge-pill badge-primary">★ Handcrafted 3D Game</span>
+          <span class="badge-pill badge-secondary">Ancient India</span>
+          <span class="badge-pill badge-outline">2–4 Players</span>
+          <span class="badge-pill badge-outline">15–30 Mins</span>
+        </div>
+
+        <h1 class="game-hero-title">Chowka Bara</h1>
+        <p class="game-hero-subtitle">
+          Also known as <strong>Katte Mane</strong> (Karnataka), <strong>Ashta Chamma</strong> (Andhra / Telangana), <strong>Daayam</strong> (Tamil Nadu), and <strong>Pakidakali</strong> (Kerala).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Game Container Section -->
+  <section class="game-stage-section">
+    <div class="container">
+      <div class="game-stage-card reveal-up">
+        <!-- Game Top Utility Bar -->
+        <div class="game-stage-toolbar">
+          <div class="toolbar-left">
+            <span class="game-status-indicator">
+              <span class="live-dot"></span> 3D Board Ready
+            </span>
+          </div>
+          <div class="toolbar-right">
+            <button id="toggle-sound-btn" class="tool-btn" aria-label="Toggle Audio" title="Toggle Sound (M)">
+              <svg id="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+              <svg id="sound-icon-off" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+              </svg>
+              <span class="tool-btn-label">Sound</span>
+            </button>
+
+            <button id="reset-cam-btn" class="tool-btn" aria-label="Reset Camera View" title="Reset 3D Camera">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span class="tool-btn-label">Reset View</span>
+            </button>
+
+            <button id="fullscreen-btn" class="tool-btn" aria-label="Toggle Fullscreen" title="Fullscreen (F)">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+              </svg>
+              <span class="tool-btn-label">Fullscreen</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3D Canvas / Game Viewport Area -->
+        <div id="game-viewport-container" class="game-viewport-container">
+          <canvas id="chowka-bara-canvas" class="game-3d-canvas" tabindex="0"></canvas>
+          
+          <!-- Custom Loading Overlay -->
+          <div id="game-loading-overlay" class="game-loading-overlay">
+            <div class="loading-ornament-spinner">
+              <div class="mandala-ring"></div>
+              <div class="mandala-core">♟</div>
+            </div>
+            <h3 class="loading-title">Mantrika Games</h3>
+            <p id="loading-status-text" class="loading-status">Carving 5x5 Sheesham Board...</p>
+            <div class="loading-progress-track">
+              <div id="loading-progress-fill" class="loading-progress-fill"></div>
+            </div>
+            <span id="loading-percentage" class="loading-percentage">0%</span>
+          </div>
+
+          <!-- In-Game 2D Floating HUD Overlay -->
+          <div id="game-hud-overlay" class="game-hud-overlay" style="display: none;">
+            <!-- Top Turn & Info Header -->
+            <div class="hud-top-bar">
+              <div class="turn-badge-card" id="turn-badge-card">
+                <div class="player-color-indicator" id="current-player-color-dot"></div>
+                <div class="turn-text-group">
+                  <span class="turn-label">Current Turn</span>
+                  <span class="player-name" id="current-player-name">Player 1 (South)</span>
+                </div>
+              </div>
+
+              <div class="game-mode-tag" id="game-mode-display">Single Player vs AI</div>
+            </div>
+
+            <!-- Bottom Action Deck -->
+            <div class="hud-bottom-bar">
+              <!-- Cowrie Shells Dice Container -->
+              <div class="dice-roll-panel">
+                <div class="cowries-mini-display" id="cowries-mini-display">
+                  <span class="cowrie-shell-icon" id="cowrie-1">🐚</span>
+                  <span class="cowrie-shell-icon" id="cowrie-2">🐚</span>
+                  <span class="cowrie-shell-icon" id="cowrie-3">🐚</span>
+                  <span class="cowrie-shell-icon" id="cowrie-4">🐚</span>
+                </div>
+
+                <div class="roll-result-badge" id="roll-result-badge">
+                  <span class="roll-number" id="roll-number-val">-</span>
+                  <span class="roll-title" id="roll-title-val">Roll Cowries</span>
+                </div>
+
+                <button id="roll-dice-btn" class="btn btn-primary roll-dice-btn">
+                  <span>Cast Cowries</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 8h.01M8 8h.01M8 16h.01M16 16h.01M12 12h.01"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Message / Instruction Banner -->
+              <div class="hud-message-banner" id="hud-message-banner">
+                Click "Cast Cowries" to roll 4 shells.
+              </div>
+            </div>
+
+            <!-- In-Game Victory Modal -->
+            <div id="game-victory-modal" class="game-victory-modal" style="display: none;">
+              <div class="victory-card">
+                <div class="victory-crown">👑</div>
+                <h2 id="victory-player-title">Victory!</h2>
+                <p id="victory-subtitle">All 4 pawns safely reached the Central Ghar!</p>
+                <div class="victory-actions">
+                  <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+                  <button id="exit-to-menu-btn" class="btn btn-outline">Game Menu</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game Setup Menu Modal (Before starting or on Restart) -->
+            <div id="game-setup-modal" class="game-setup-modal">
+              <div class="setup-card">
+                <span class="setup-kicker">Traditional Indian Strategy</span>
+                <h2 class="setup-title">Chowka Bara 3D</h2>
+                <p class="setup-desc">Select your preferred game mode and challenge the AI or play locally with friends.</p>
+                
+                <div class="setup-options-group">
+                  <label class="setup-label">Game Mode</label>
+                  <div class="mode-select-grid">
+                    <button type="button" class="mode-btn active" data-mode="ai">
+                      <span class="mode-icon">🤖</span>
+                      <span class="mode-name">Single Player vs AI</span>
+                      <span class="mode-sub">Play against intelligent bot</span>
+                    </button>
+                    <button type="button" class="mode-btn" data-mode="local">
+                      <span class="mode-icon">👥</span>
+                      <span class="mode-name">Local Pass & Play</span>
+                      <span class="mode-sub">2 to 4 Players on 1 screen</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="setup-options-group" id="ai-difficulty-group">
+                  <label class="setup-label">AI Difficulty</label>
+                  <div class="difficulty-select-grid">
+                    <button type="button" class="diff-btn" data-diff="easy">Easy</button>
+                    <button type="button" class="diff-btn active" data-diff="medium">Medium</button>
+                    <button type="button" class="diff-btn" data-diff="hard">Master (Expectimax)</button>
+                  </div>
+                </div>
+
+                <div class="setup-options-group">
+                  <label class="setup-label">Number of Players</label>
+                  <div class="players-select-grid">
+                    <button type="button" class="players-count-btn active" data-players="2">2 Players (South vs North)</button>
+                    <button type="button" class="players-count-btn" data-players="4">4 Players (Full Mandala)</button>
+                  </div>
+                </div>
+
+                <button id="start-game-btn" class="btn btn-primary btn-lg w-100 start-game-cta">
+                  <span>Enter the Board</span>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Guide Footer -->
+        <div class="game-stage-footer">
+          <div class="control-tip">
+            <span class="tip-icon">🖱️</span>
+            <span><strong>Desktop:</strong> Left-click & drag to orbit 3D camera. Scroll to zoom. Click highlighted pawns to move.</span>
+          </div>
+          <div class="control-tip">
+            <span class="tip-icon">📱</span>
+            <span><strong>Mobile / Touch:</strong> One-finger drag to rotate board. Pinch to zoom in/out. Tap pawns to move.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heritage & Historical Context Section -->
+  <section id="heritage" class="game-heritage-section">
+    <div class="container">
+      <div class="heritage-grid">
+        <div class="heritage-text-col reveal-up">
+          <span class="section-kicker">Cultural Heritage</span>
+          <h2 class="section-heading">Ancient Origins & Cultural Significance</h2>
+          <p class="lead-text">
+            Chowka Bara is one of the oldest and most sophisticated race-strategy games of ancient India, surviving through thousands of years of oral traditions, temple carvings, and family courtyards.
+          </p>
+          <p>
+            Mentioned in classical Sanskrit lore and regional folklore, Chowka Bara has been played in royal pavilions from the Chalukya and Vijayanagara empires to everyday households across South and Central India. The central goal, known as the <em>Ghar</em> (Home) or <em>Mane</em>, represents the attainment of spiritual completion, where all four pawns journey through the worldly perimeter (outer circle) before earning entry into the inner sanctum.
+          </p>
+          
+          <div class="heritage-callout">
+            <h4>The Sacred Cutting Rule (Katte)</h4>
+            <p>
+              In traditional Indian philosophy and game architecture, a player cannot enter the inner path until they have captured (cut) at least one opponent piece. This critical threshold transforms a pure race of chance into an intense battle of tactical positioning, risk calculation, and defensive safe-zone maneuvers.
+            </p>
+          </div>
+        </div>
+
+        <div class="heritage-sidebar-col reveal-up delay-100">
+          <div class="heritage-card">
+            <h3>Regional Names & Variations</h3>
+            <ul class="regional-list">
+              <li>
+                <span class="region-title">Karnataka</span>
+                <span class="region-name">Chowka Bara, Katte Mane, Gatta Mane</span>
+              </li>
+              <li>
+                <span class="region-title">Andhra Pradesh & Telangana</span>
+                <span class="region-name">Ashta Chamma, Ashta Chemma</span>
+              </li>
+              <li>
+                <span class="region-title">Tamil Nadu</span>
+                <span class="region-name">Daayam, Thaayam, Kattam</span>
+              </li>
+              <li>
+                <span class="region-title">Kerala</span>
+                <span class="region-name">Pakidakali, Kavidi Kali</span>
+              </li>
+              <li>
+                <span class="region-title">Maharashtra & North India</span>
+                <span class="region-name">Chauka Bara, Chomal Ishto, Kaangi</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Illustrated Rulebook Section -->
+  <section id="rules" class="game-rules-section">
+    <div class="container">
+      <div class="section-header-center reveal-up">
+        <span class="section-kicker">Rulebook & Mechanics</span>
+        <h2 class="section-heading">How to Play Chowka Bara</h2>
+        <p class="section-subtext">The complete traditional rules, movement mechanics, and cowrie shell values.</p>
+      </div>
+
+      <!-- Cowrie Shells Values Grid -->
+      <div class="cowrie-values-wrapper reveal-up">
+        <h3 class="rules-block-title">1. The 4 Cowrie Shells (Kavade) Scoring</h3>
+        <p class="rules-block-desc">
+          Instead of standard numbered dice, traditional Chowka Bara is played with 4 split cowrie shells. When cast onto the wooden board, the shells land with either their smooth dorsal back face or their open slit mouth facing up.
+        </p>
+
+        <div class="cowrie-cards-grid">
+          <div class="cowrie-card">
+            <div class="cowrie-visual">
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell closed">🟤</span>
+              <span class="c-shell closed">🟤</span>
+              <span class="c-shell closed">🟤</span>
+            </div>
+            <div class="cowrie-score">1 Point</div>
+            <div class="cowrie-detail">1 Mouth Up, 3 Closed</div>
+            <div class="cowrie-rule">Normal turn: Move 1 square</div>
+          </div>
+
+          <div class="cowrie-card">
+            <div class="cowrie-visual">
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell closed">🟤</span>
+              <span class="c-shell closed">🟤</span>
+            </div>
+            <div class="cowrie-score">2 Points</div>
+            <div class="cowrie-detail">2 Mouths Up, 2 Closed</div>
+            <div class="cowrie-rule">Normal turn: Move 2 squares</div>
+          </div>
+
+          <div class="cowrie-card">
+            <div class="cowrie-visual">
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell closed">🟤</span>
+            </div>
+            <div class="cowrie-score">3 Points</div>
+            <div class="cowrie-detail">3 Mouths Up, 1 Closed</div>
+            <div class="cowrie-rule">Normal turn: Move 3 squares</div>
+          </div>
+
+          <div class="cowrie-card bonus-card">
+            <div class="bonus-badge">Bonus Roll!</div>
+            <div class="cowrie-visual">
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell open">🐚</span>
+              <span class="c-shell open">🐚</span>
+            </div>
+            <div class="cowrie-score">4 Points (Chowka)</div>
+            <div class="cowrie-detail">All 4 Mouths Up</div>
+            <div class="cowrie-rule">Move 4 squares + <strong>EXTRA ROLL!</strong></div>
+          </div>
+
+          <div class="cowrie-card bonus-card">
+            <div class="bonus-badge">Bonus Roll!</div>
+            <div class="cowrie-visual">
+              <span class="c-shell closed">🟤</span>
+              <span class="c-shell closed">🟤</span>
+              <span class="c-shell closed">🟤</span>
+              <span class="c-shell closed">🟤</span>
+            </div>
+            <div class="cowrie-score">8 Points (Ashta / Bara)</div>
+            <div class="cowrie-detail">All 4 Closed</div>
+            <div class="cowrie-rule">Move 8 squares + <strong>EXTRA ROLL!</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Movement Rules Breakdown -->
+      <div class="rules-steps-grid reveal-up delay-100">
+        <div class="rule-step-card">
+          <div class="step-num">01</div>
+          <h3>Board Setup & Starting Base</h3>
+          <p>
+            The game is played on a 5x5 grid (25 squares). The 4 middle squares on each outer edge are marked with an 'X' (known as <em>Kattas</em> or Castles). Each player places their 4 pawns on their home Katta to start.
+          </p>
+        </div>
+
+        <div class="rule-step-card">
+          <div class="step-num">02</div>
+          <h3>Outer Perimeter Movement</h3>
+          <p>
+            Pawns move in an <strong>anti-clockwise</strong> direction along the 16 outer perimeter squares, traveling all the way around the board back towards the square adjacent to their starting Katta.
+          </p>
+        </div>
+
+        <div class="rule-step-card">
+          <div class="step-num">03</div>
+          <h3>Safe Squares (Kattas) vs Captures</h3>
+          <p>
+            Squares marked with 'X' are safe zones where friendly and opposing pawns can coexist without fear. On all plain squares, landing on an opponent pawn captures ("cuts") it and sends it back to its starting base, while rewarding you with an <strong>extra roll</strong>!
+          </p>
+        </div>
+
+        <div class="rule-step-card">
+          <div class="step-num">04</div>
+          <h3>Unlocking the Inner Path</h3>
+          <p>
+            To enter the inner 8-square loop, a player <strong>must have captured at least one opponent pawn</strong> during the game. Without a capture, pawns must loop the outer perimeter continuously until a cut is achieved.
+          </p>
+        </div>
+
+        <div class="rule-step-card">
+          <div class="step-num">05</div>
+          <h3>Inner Track & Clockwise Spiral</h3>
+          <p>
+            Once unlocked, pawns enter the inner ring from the square preceding their home Katta and travel in a <strong>clockwise</strong> direction towards the central home.
+          </p>
+        </div>
+
+        <div class="rule-step-card">
+          <div class="step-num">06</div>
+          <h3>Reaching the Central Ghar (Winning)</h3>
+          <p>
+            Pawns enter the central square (Ghar) by an exact roll. The first player to safely bring all 4 of their pawns into the central Ghar wins the game!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Pro-Tips Section -->
+  <section class="game-strategy-section">
+    <div class="container">
+      <div class="strategy-card reveal-up">
+        <span class="section-kicker">Grandmaster Tactics</span>
+        <h2 class="section-heading">Winning Strategy & Tactical Advice</h2>
+        
+        <div class="strategy-grid">
+          <div class="strategy-item">
+            <h4>1. Secure an Early Cut</h4>
+            <p>Your pawns are trapped on the outer loop until you make your first capture. Use Ashta (8) or Chowka (4) rolls to hunt vulnerable opponent pawns resting on plain squares.</p>
+          </div>
+          <div class="strategy-item">
+            <h4>2. Katta Hopping & Safety Zones</h4>
+            <p>Never leave an isolated pawn within 1–3 squares of an opponent without safe cover. Use the corner and cross Kattas to shelter your pawns while waiting for favorable dice.</p>
+          </div>
+          <div class="strategy-item">
+            <h4>3. Coordinated Advance</h4>
+            <p>Advancing all 4 pawns in a phased formation creates overlapping capture threats and prevents opponent pawns from easily passing your defensive lines.</p>
+          </div>
+          <div class="strategy-item">
+            <h4>4. Exploiting Bonus Rolls</h4>
+            <p>When you roll a 4, 8, or execute a capture, evaluate whether to sprint ahead or use the bonus roll to position a second pawn for another strike.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Load Three.js and WebGL 3D Chowka Bara Engine -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="{{ '/assets/js/chowka-bara-3d.js' | relative_url }}"></script>

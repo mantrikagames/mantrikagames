@@ -1,0 +1,102 @@
+---
+layout: game
+title: Twelve Beads 3D — Play Traditional Baro Guti Strategy Game Online
+description: Play Twelve Beads (Baro Guti) in realistic handcrafted 3D. 2 armies of 12 beads clash across an intersecting diamond grid with intelligent AI directly in your browser.
+permalink: /games/twelve-beads/
+---
+
+<div class="game-view-wrapper">
+  <section class="game-header-section">
+    <div class="container">
+      <nav class="game-breadcrumbs" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="{{ '/games/' | relative_url }}">Games</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Twelve Beads</span>
+      </nav>
+
+      <div class="game-header-content reveal-up">
+        <div class="game-badge-group">
+          <span class="badge-pill badge-primary">★ Handcrafted 3D Game</span>
+          <span class="badge-pill badge-secondary">Bengal, India & Bangladesh</span>
+          <span class="badge-pill badge-outline">2 Players</span>
+          <span class="badge-pill badge-outline">10–20 Mins</span>
+        </div>
+
+        <h1 class="game-hero-title">Twelve Beads</h1>
+        <p class="game-hero-subtitle">
+          Also known as <strong>Baro Guti</strong>. Two armies of 12 beads advance and execute leap captures across an intersecting tactical diamond grid.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="game-stage-section">
+    <div class="container">
+      <div class="game-stage-card reveal-up">
+        <div class="game-stage-toolbar">
+          <div class="toolbar-left">
+            <span class="game-status-indicator"><span class="live-dot"></span> 3D Board Ready</span>
+          </div>
+        </div>
+
+        <div id="game-viewport-container" class="game-viewport-container">
+          <canvas id="twelve-beads-canvas" class="game-3d-canvas" tabindex="0"></canvas>
+          
+          <div id="game-loading-overlay" class="game-loading-overlay">
+            <div class="loading-ornament-spinner">
+              <div class="mandala-ring"></div>
+              <div class="mandala-core">🔴</div>
+            </div>
+            <h3 class="loading-title">Mantrika Games</h3>
+            <p class="loading-status">Carving Terracotta Grid & 24 Polished Beads...</p>
+            <div class="loading-progress-track"><div id="loading-progress-fill" class="loading-progress-fill"></div></div>
+            <span id="loading-percentage" class="loading-percentage">0%</span>
+          </div>
+
+          <div id="game-hud-overlay" class="game-hud-overlay" style="display: none;">
+            <div class="hud-top-bar">
+              <div class="turn-badge-card">
+                <div class="turn-text-group">
+                  <span class="turn-label">Armies Remaining</span>
+                  <span class="player-name" id="current-player-name">Red Army: 12 | Gold Army: 12</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hud-bottom-bar">
+              <div class="hud-message-banner" id="hud-message-banner">Select a Red bead to move or leap.</div>
+            </div>
+
+            <div id="game-setup-modal" class="game-setup-modal">
+              <div class="setup-card">
+                <span class="setup-kicker">Traditional War Alignment</span>
+                <h2 class="setup-title">Twelve Beads 3D</h2>
+                <div class="setup-options-group">
+                  <label class="setup-label">Game Mode</label>
+                  <div class="mode-select-grid">
+                    <button type="button" class="mode-btn active" data-mode="ai">Single Player vs AI</button>
+                    <button type="button" class="mode-btn" data-mode="local">Local Pass & Play</button>
+                  </div>
+                </div>
+                <div class="setup-options-group" id="ai-difficulty-group">
+                  <label class="setup-label">AI Difficulty</label>
+                  <div class="difficulty-select-grid">
+                    <button type="button" class="diff-btn" data-diff="easy">Easy</button>
+                    <button type="button" class="diff-btn active" data-diff="medium">Medium</button>
+                    <button type="button" class="diff-btn" data-diff="hard">Master</button>
+                  </div>
+                </div>
+                <button id="start-game-btn" class="btn btn-primary btn-lg w-100 start-game-cta">Deploy Armies</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="{{ '/assets/js/twelve-beads-3d.js' | relative_url }}"></script>

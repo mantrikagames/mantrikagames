@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  {% include head.html %}
+  <body class="game-page-body">
+    {% include nav.html %}
+    
+    <main id="main-content" class="game-main-content" aria-label="Game Content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+    {% include cookie-consent.html %}
+    
+    <!-- Application Scripts -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>

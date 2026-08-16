@@ -138,14 +138,17 @@ function initCookieConsent() {
 }
 
 /**
- * 6. Game Heritage History Modal Controller
+ * 6. Game Heritage History & Rules Modal Controller
  */
 function initHistoryModals() {
   const modal = document.getElementById('history-modal');
   const modalTitle = document.getElementById('modal-game-title');
   const modalDesc = document.getElementById('modal-game-desc');
   const modalHistory = document.getElementById('modal-game-history');
+  const modalRules = document.getElementById('modal-game-rules');
   const modalImg = document.getElementById('modal-game-img');
+  const modalPlayCtaBox = document.getElementById('modal-play-cta-box');
+  const modalPlayLink = document.getElementById('modal-play-link');
   const closeBtn = modal ? modal.querySelector('.modal-close-btn') : null;
   const overlay = modal ? modal.querySelector('.modal-overlay') : null;
   const buttons = document.querySelectorAll('.game-history-btn');
@@ -156,13 +159,29 @@ function initHistoryModals() {
     const name = btn.getAttribute('data-name');
     const desc = btn.getAttribute('data-description');
     const history = btn.getAttribute('data-history');
+    const rules = btn.getAttribute('data-rules');
     const img = btn.getAttribute('data-image');
+    const status = btn.getAttribute('data-status');
+    const playUrl = btn.getAttribute('data-playurl');
 
-    modalTitle.textContent = name;
-    modalDesc.textContent = desc;
-    modalHistory.textContent = history;
-    modalImg.src = img;
-    modalImg.alt = `${name} Board Layout`;
+    if (modalTitle) modalTitle.textContent = name;
+    if (modalDesc) modalDesc.textContent = desc;
+    if (modalHistory) modalHistory.textContent = history;
+    if (modalRules) modalRules.textContent = rules || 'Traditional rules passed through oral and regional tournament traditions.';
+    if (modalImg) {
+      modalImg.src = img;
+      modalImg.alt = `${name} Board Layout`;
+    }
+
+    if (modalPlayCtaBox && modalPlayLink) {
+      if (status === 'playable' && playUrl) {
+        modalPlayLink.href = playUrl;
+        modalPlayLink.textContent = `Play ${name} in 3D`;
+        modalPlayCtaBox.style.display = 'block';
+      } else {
+        modalPlayCtaBox.style.display = 'none';
+      }
+    }
 
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');

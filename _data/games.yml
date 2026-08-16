@@ -1,56 +1,151 @@
-- name: Pallanguzhi
-  country: India
-  description: A traditional Mancala-style game played to capture cowrie shells or seeds. Requires strategic arithmetic and tactical blocking.
-  difficulty: Medium
-  slug: pallanguzhi
-  image: /assets/images/game_pallanguzhi.svg
-  history: Originating in Tamil Nadu, South India, Pallanguzhi is a traditional mancala-style game mentioned in ancient Tamil literature. Historically played by women and children using cowrie shells or tamarind seeds in a wooden board of 14 pits, it was used to teach strategic planning, mental arithmetic, and sharing.
-- name: Nine Men's Morris
-  country: Global
-  description: An ancient strategy game where players form rows of three pieces to remove their opponent's pieces. Simple to learn, deep to master.
-  difficulty: Medium
-  slug: nine-mens-morris
-  image: /assets/images/game_morris.svg
-  history: Known as the "Board of Mills" or Merels, Nine Men's Morris is one of the oldest strategy games in the world, with boards found carved into the temple of Kurna in Egypt (1400 BCE) and widely played across the Roman Empire and Medieval Europe. It was even mentioned by Shakespeare in A Midsummer Night's Dream.
-- name: Bagh Bakri
-  country: Nepal & India
-  description: A two-player hunt game where tigers hunt goats, while goats attempt to surround and trap the tigers. A classic asymmetric challenge.
-  difficulty: Hard
-  slug: bagh-bakri
-  image: /assets/images/game_bagh_bakri.svg
-  history: A classic asymmetric hunt game widely played in Nepal and Northern India (often known as Bagh Chal). Tigers hunt goats while goats attempt to fence in the tigers. It represents the eternal struggle between predator and prey, requiring teamwork and sacrifice from the goat player to outwit the tigers.
-- name: Twelve Beads
-  country: Bangladesh & India
-  description: Also known as Baro Guti, this is a strategic subtraction alignment game where players jump and capture opposing beads.
-  difficulty: Easy
-  slug: twelve-beads
-  image: /assets/images/game_twelve_beads.svg
-  history: Also known as Baro Guti, this is a strategic war-alignment game popular in rural Bengal and Bangladesh. Historically played in courtyards on boards scratched into the dirt with clay beads, it belongs to the Alquerque family of games and served as a precursor to modern checkers.
-- name: Pretwa
-  country: Bihar, India
-  description: A traditional strategy game from Bihar, India played on a circular board. Players slide pieces along radial lines and concentric arcs, leaping over opponent pieces to capture them.
-  difficulty: Medium
-  slug: pretwa
-  image: /assets/images/game_pretwa.svg
-  history: An extremely rare, abstract strategy game native to the Bihar region of India. Unlike globally documented games, Pretwa has survived almost exclusively through oral community traditions and village play. Its circular board represents astronomical orbits or crop rings, where players jump to capture pieces.
-- name: Pachisi
-  country: Ancient India
-  description: The historic race game of India played on a cross-shaped board. Players cast cowrie shells to navigate four pieces home, using safe zones and capturing opponents.
-  difficulty: Medium
-  slug: pachisi
-  image: /assets/images/game_pachisi.svg
-  history: Regarded as the "National Game of India", Pachisi dates back to at least the 4th century CE. It was so revered that the Mughal Emperor Akbar played it in Fatehpur Sikri using court dancers as live pieces on a giant stone courtyard board. It is the direct ancestor of modern Ludo but with far deeper tactical depth.
 - name: Chowka Bara
-  country: India
-  description: A classic race game played on a grid using split tamarind seeds as dice. Players capture opponent pieces and navigate their pieces to the center home square.
+  country: India (Karnataka, Maharashtra, Tamil Nadu)
+  regional_names: Katte Mane, Ashta Chamma, Daayam, Pakidakali, Chauka Bara
+  description: A classic race-strategy game played on a 5x5 grid using 4 cowrie shells. Players navigate concentric loops, capture opponent pawns to unlock the inner sanctum, and race to the central Ghar.
   difficulty: Easy
   slug: chowka-bara
+  status: playable
+  category: Race
+  category_tag: race
+  players: 2–4 Players
+  player_count_tag: 2-4
+  duration: 15–30 mins
+  featured: false
+  play_url: /games/chowka-bara/
   image: /assets/images/game_chowka_bara.svg
-  history: Also known as Chai Chudi or Katte Mane, this is one of the oldest board games in India, dating back to the epic Mahabharata. Historically played with split tamarind seeds or cowrie shells, players race pieces through concentric rings, capturing opponents along the way.
+  image_png: /assets/images/game_chowka_bara.png
+  rules_summary: 5x5 grid with safe Kattas. Roll 4 cowrie shells (values 1, 2, 3, 4, 8). Capture opponent pawns to unlock the inner track and reach the central Ghar.
+  history: Also known as Katte Mane in Kannada, Ashta Chamma in Telugu, and Daayam in Tamil, Chowka Bara is one of the most revered traditional board games of the Indian subcontinent, dating back to antiquity and referenced in ancient epic folklore. Historically played on cloth or carved wooden boards with split tamarind seeds or cowrie shells, it teaches probabilistic risk assessment, territorial defense, and tactical encirclement.
+
+- name: Pachisi
+  country: Ancient India
+  regional_names: Chaupad, Twenty-Five, Sokkattan
+  description: The historic race game of India played on a cross-shaped board. Players cast 6 cowrie shells to navigate four pieces home, using safe zones and capturing opponents.
+  difficulty: Medium
+  slug: pachisi
+  status: playable
+  category: Race
+  category_tag: race
+  players: 2–4 Players
+  player_count_tag: 2-4
+  duration: 20–45 mins
+  featured: false
+  play_url: /games/pachisi/
+  image: /assets/images/game_pachisi.svg
+  image_png: /assets/images/game_pachisi.png
+  rules_summary: Cross-shaped board with 4 arms. 6 cowrie shells cast for values (10, 25 [Grace], 2, 3, 4, 5, 6). Navigate pawns around the board perimeter into the central Charkoni.
+  history: Regarded as the "National Game of India", Pachisi dates back to at least the 4th century CE. It was so revered that the Mughal Emperor Akbar played it in Fatehpur Sikri using court dancers as live pieces on a giant stone courtyard board. It is the direct ancestor of modern Ludo but with far deeper tactical depth.
+
 - name: Chaupar
   country: Ancient India
-  description: A strategic royal race game played on a cross-shaped board with long rectangular dice. Featuring no safe zones, players can form tactical blockades to protect their pieces.
+  regional_names: Chausar, Chaupad
+  description: A strategic royal race game played on a cross-shaped cloth board with 3 long rectangular cubic wooden dice. Featuring no safe zones, players form pairs (Joori) to build impenetrable blockades.
   difficulty: Hard
   slug: chaupar
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2–4 Players
+  player_count_tag: 2-4
+  duration: 30–60 mins
+  featured: false
+  play_url: /games/chaupar/
   image: /assets/images/game_chaupar.svg
-  history: A royal race game that has been played in the royal courts of India for centuries. Unlike Pachisi, Chaupar features no safe castles on the board and relies heavily on strategic grouping of pieces (Joori) to block opponent paths, requiring absolute tactical precision.
+  image_png: /assets/images/game_chaupar.png
+  rules_summary: 3 long cubic dice (Pasa). Pawns move in pairs (Joori) for protection since there are no safe castles on the board.
+  history: A royal race game played in the royal courts of India for centuries. Unlike Pachisi, Chaupar features no safe castles on the board and relies heavily on strategic grouping of pieces (Joori) to block opponent paths, requiring absolute tactical precision.
+
+- name: Bagh Bakri
+  country: Nepal & Northern India
+  regional_names: Bagh Chal, Adu Huli, Puli Joodam
+  description: An asymmetric strategy game where 4 ferocious tigers hunt 20 goats, while the goats coordinate to surround and immobilize the tigers across a 5x5 intersecting grid.
+  difficulty: Hard
+  slug: bagh-bakri
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 15–30 mins
+  featured: false
+  play_url: /games/bagh-bakri/
+  image: /assets/images/game_bagh_bakri.svg
+  image_png: /assets/images/game_bagh_bakri.png
+  rules_summary: 5x5 grid with diagonal intersections. Tigers jump over goats along grid lines to capture; goats place and slide to fence in all 4 tigers.
+  history: A classic asymmetric hunt game widely played in Nepal and Northern India (often known as Bagh Chal). Tigers hunt goats while goats attempt to fence in the tigers. It represents the eternal struggle between predator and prey, requiring teamwork and sacrifice from the goat player to outwit the tigers.
+
+- name: Pallanguzhi
+  country: South India & Sri Lanka
+  regional_names: Ali Guli Mane, Vamana Guntalu, Kuzhipara
+  description: A traditional Mancala-style game played to capture cowrie shells or tamarind seeds across 14 carved pits. Requires strategic arithmetic and tactical sowing.
+  difficulty: Medium
+  slug: pallanguzhi
+  status: playable
+  category: Mancala
+  category_tag: mancala
+  players: 2 Players
+  player_count_tag: 2
+  duration: 15–25 mins
+  featured: false
+  play_url: /games/pallanguzhi/
+  image: /assets/images/game_pallanguzhi.svg
+  image_png: /assets/images/game_pallanguzhi.png
+  rules_summary: 14 wooden cups (2 rows of 7). Players take seeds from a pit and sow clockwise, capturing accumulated cups and Pasu stores upon reaching empty pits.
+  history: Originating in Tamil Nadu and Karnataka, Pallanguzhi is a traditional mancala-style game mentioned in ancient Sangam literature. Historically played by women and children using cowrie shells or tamarind seeds in a carved wooden board of 14 pits, it was used to teach strategic planning, mental arithmetic, and sharing.
+
+- name: Nine Men's Morris
+  country: Global & India (Navakankari)
+  regional_names: Navakankari, Merels, Mill
+  description: An ancient strategy game where players place and slide pieces along 3 concentric squares to form mills of three, capturing opponent pieces.
+  difficulty: Medium
+  slug: nine-mens-morris
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 15–30 mins
+  featured: true
+  play_url: /games/nine-mens-morris/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  rules_summary: 3 nested squares with 24 intersection points. Form rows of 3 (Mills) to remove an opponent piece. Flying phase when reduced to 3 pieces.
+  history: Known as Navakankari in ancient India and Merels in Europe, Nine Men's Morris is one of the oldest strategy games in human history, with boards carved into the temple of Kurna in Egypt (1400 BCE), Ajanta/Ellora caves in India, and widely played across the Roman Empire and Medieval Europe.
+
+- name: Twelve Beads
+  country: Bengal, India & Bangladesh
+  regional_names: Baro Guti, 12 Guti
+  description: Also known as Baro Guti, this is a strategic war alignment game where players jump and capture opposing beads across an intersecting diamond grid.
+  difficulty: Easy
+  slug: twelve-beads
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 10–20 mins
+  featured: false
+  play_url: /games/twelve-beads/
+  image: /assets/images/game_twelve_beads.svg
+  image_png: /assets/images/game_twelve_beads.png
+  rules_summary: Two opposing armies of 12 beads. Move 1 step along connecting lines or leap over an adjacent enemy bead into a vacant spot to capture.
+  history: Popular in rural Bengal, Bangladesh, and eastern India, Baro Guti belongs to the Alquerque family of games. Historically played in courtyards on boards etched into stone or clay with polished river stones, it is a masterclass in tactical flank maneuvers and piece sacrifices.
+
+- name: Pretwa
+  country: Bihar, India
+  regional_names: Circular Alquerque
+  description: A rare traditional strategy game from Bihar played on a circular mandala board. Players slide pieces along radial lines and concentric arcs, leaping to capture.
+  difficulty: Medium
+  slug: pretwa
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 15–25 mins
+  featured: false
+  play_url: /games/pretwa/
+  image: /assets/images/game_pretwa.svg
+  image_png: /assets/images/game_pretwa.png
+  rules_summary: 3 concentric circles intersected by 3 diameters (19 intersections). 9 pieces each. Slide to adjacent empty node or jump over an enemy to capture.
+  history: An abstract strategy game native to the Bihar region of India. Unlike globally documented games, Pretwa has survived through oral community traditions and village play. Its circular board represents astronomical orbits or mandala crop rings.

@@ -7,8 +7,8 @@
 
     <!-- Desktop Navigation Links -->
     <nav class="nav-links" aria-label="Main Navigation">
-      <a href="{{ '/' | relative_url }}#hero">Home</a>
-      <a href="{{ '/' | relative_url }}#games">Games</a>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/games/' | relative_url }}" class="nav-link-highlight">Games</a>
       <a href="{{ '/' | relative_url }}#about">About</a>
       <a href="{{ '/' | relative_url }}#contact">Contact</a>
     </nav>
@@ -19,7 +19,7 @@
       <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme">
         <!-- Sun Icon (for dark theme) -->
         <svg class="sun-icon" viewBox="0 0 24 24">
-          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.38-.39 1.02 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zm-12.37 12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41z"/>
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.38-.39 1.02 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zm-12.37 12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41z"/>
         </svg>
         <!-- Moon Icon (for light theme) -->
         <svg class="moon-icon" viewBox="0 0 24 24">
@@ -27,7 +27,7 @@
         </svg>
       </button>
 
-      <a href="#contact" class="btn btn-primary nav-cta-btn">Download App</a>
+      <a href="{{ '/games/chowka-bara/' | relative_url }}" class="btn btn-primary nav-cta-btn">Play Chowka Bara</a>
 
       <!-- Mobile toggle menu -->
       <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -41,10 +41,11 @@
 <!-- Mobile Navigation Drawer -->
 <div class="mobile-nav-drawer" id="mobile-nav-drawer">
   <ul class="mobile-nav-links">
-    <li><a href="{{ '/' | relative_url }}#hero">Home</a></li>
-    <li><a href="{{ '/' | relative_url }}#games">Games</a></li>
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    <li><a href="{{ '/games/' | relative_url }}">All Games</a></li>
+    <li><a href="{{ '/games/chowka-bara/' | relative_url }}">Play Chowka Bara 3D</a></li>
     <li><a href="{{ '/' | relative_url }}#about">About</a></li>
     <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
-    <li style="margin-top: 1rem;"><a href="{{ '/' | relative_url }}#contact" class="btn btn-primary w-100">Download App</a></li>
+    <li style="margin-top: 1rem;"><a href="{{ '/games/chowka-bara/' | relative_url }}" class="btn btn-primary w-100">Play Now</a></li>
   </ul>
 </div>

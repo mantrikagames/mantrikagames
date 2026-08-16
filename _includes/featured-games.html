@@ -1,6 +1,12 @@
 <section id="games" class="games-section">
   <div class="container">
-    <h2 class="reveal-up">Featured Games</h2>
+    <div class="section-header-row reveal-up">
+      <div>
+        <span class="section-kicker">Heritage & Strategy</span>
+        <h2>Featured Games</h2>
+      </div>
+      <a href="{{ '/games/' | relative_url }}" class="btn btn-outline view-all-games-btn">View All Games &rarr;</a>
+    </div>
     
     <div class="games-list">
       {% for game in site.data.games %}
@@ -8,6 +14,9 @@
           <!-- Game Image -->
           <div class="game-image-col">
             <img src="{{ game.image | relative_url }}" alt="{{ game.name }} Board Game" loading="lazy">
+            {% if game.status == "playable" %}
+              <span class="game-badge-playable">Playable in 3D</span>
+            {% endif %}
           </div>
           
           <!-- Game Details -->
@@ -16,29 +25,48 @@
             <div class="game-meta">
               <span class="game-country">{{ game.country }}</span>
               <span class="game-meta-divider"></span>
+              <span class="game-category">{{ game.category }}</span>
+              <span class="game-meta-divider"></span>
               <span class="game-difficulty">{{ game.difficulty }}</span>
             </div>
             
             <h3 class="game-name">{{ game.name }}</h3>
+            {% if game.regional_names %}
+              <p class="game-regional-names">Also known as: <em>{{ game.regional_names }}</em></p>
+            {% endif %}
             <p class="game-desc">{{ game.description }}</p>
             
-            <button class="game-history-btn" aria-label="Read history of {{ game.name }}" 
-                    data-name="{{ game.name }}" 
-                    data-description="{{ game.description | escape }}" 
-                    data-history="{{ game.history | escape }}" 
-                    data-image="{{ game.image | relative_url }}">
-              Read History
-              <svg viewBox="0 0 24 24" width="16" height="16">
-                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              </svg>
-            </button>
+            <div class="game-actions-row">
+              {% if game.status == "playable" %}
+                <a href="{{ game.play_url | relative_url }}" class="btn btn-primary game-play-btn" aria-label="Play {{ game.name }} in 3D">
+                  <span>Play 3D Now</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </a>
+              {% endif %}
+
+              <button class="game-history-btn {% if game.status == 'playable' %}btn-secondary-history{% endif %}" aria-label="Read history of {{ game.name }}" 
+                      data-name="{{ game.name }}" 
+                      data-description="{{ game.description | escape }}" 
+                      data-history="{{ game.history | escape }}" 
+                      data-rules="{{ game.rules_summary | escape }}"
+                      data-image="{{ game.image | relative_url }}"
+                      data-status="{{ game.status }}"
+                      data-playurl="{{ game.play_url | relative_url }}">
+                <span>Heritage & Rules</span>
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                  <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </article>
       {% endfor %}
     </div>
     
-    <!-- Beautiful, Interactive Heritage History Modal -->
-    <div id="history-modal" class="history-modal" role="dialog" aria-hidden="true" aria-label="Game History Details">
+    <!-- Heritage History & Rules Modal -->
+    <div id="history-modal" class="history-modal" role="dialog" aria-hidden="true" aria-label="Game Heritage & Rules Details">
       <div class="modal-overlay"></div>
       <div class="modal-wrapper">
         <button class="modal-close-btn" aria-label="Close modal">
@@ -49,13 +77,20 @@
         <div class="modal-content-grid">
           <div class="modal-image-panel">
             <img id="modal-game-img" src="" alt="Game board layout">
+            <div id="modal-play-cta-box" class="modal-play-cta-box" style="display: none;">
+              <a id="modal-play-link" href="#" class="btn btn-primary w-100">Play in 3D Browser</a>
+            </div>
           </div>
           <div class="modal-info-panel">
             <h3 id="modal-game-title"></h3>
             <p id="modal-game-desc" class="modal-game-subtitle"></p>
             <div class="modal-divider"></div>
-            <h4 class="modal-section-heading">Cultural Heritage & History</h4>
+            
+            <h4 class="modal-section-heading">Cultural Heritage & Origins</h4>
             <p id="modal-game-history" class="modal-history-text"></p>
+            
+            <h4 class="modal-section-heading" style="margin-top: 1.5rem;">Core Traditional Rules</h4>
+            <p id="modal-game-rules" class="modal-rules-text"></p>
           </div>
         </div>
       </div>

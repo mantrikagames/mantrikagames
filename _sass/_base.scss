@@ -93,52 +93,61 @@ a {
   }
 }
 
-// Minimalist Editorial Buttons
+// Minimalist & High-Contrast Editorial Buttons
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   padding: 0.8rem 2rem;
-  border-radius: 4px;
+  border-radius: 8px;
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all var(--transition-speed) var(--transition-ease);
+  transition: all 0.25s var(--transition-ease);
   text-align: center;
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
+  outline: none;
 
   @media (min-width: $breakpoint-tablet) {
     padding: 0.9rem 2.25rem;
   }
 
   &.btn-primary {
-    background: var(--accent-gradient);
+    background: linear-gradient(135deg, #FFE79A 0%, #D4AF37 50%, #9E7528 100%);
     color: #0F0D0C !important;
-    border: none;
-    box-shadow: 0 4px 15px rgba(200, 155, 60, 0.2);
-    font-weight: 600;
+    border: 1px solid rgba(255, 231, 154, 0.6);
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
     
     &:hover {
-      background: var(--text-primary);
-      color: var(--bg-primary) !important;
+      background: linear-gradient(135deg, #FFF3C4 0%, #E6C252 50%, #B58A32 100%);
+      color: #000000 !important;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.55);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
     }
   }
 
+  &.btn-outline,
   &.btn-secondary {
-    background: transparent;
-    color: var(--text-primary) !important;
-    border-color: var(--border-strong);
+    background: rgba(200, 155, 60, 0.08);
+    color: var(--accent) !important;
+    border: 1.5px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     
     &:hover {
-      background: var(--text-primary);
-      color: var(--bg-primary) !important;
-      border-color: var(--text-primary);
-      transform: translateY(-1px);
+      background: var(--accent);
+      color: #0F0D0C !important;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
     }
   }
 }

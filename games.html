@@ -1,0 +1,291 @@
+---
+layout: default
+title: Games Catalogue — Traditional Board Games of South Asia
+description: Discover and play handcrafted 3D Indian and South Asian traditional board games directly in your browser.
+permalink: /games/
+---
+
+<div class="catalogue-page">
+  <!-- Catalogue Hero Header -->
+  <section class="catalogue-hero">
+    <div class="container">
+      <div class="catalogue-hero-content reveal-up">
+        <span class="section-kicker">Heritage Strategy Reimagined</span>
+        <h1 class="catalogue-title">Traditional Board Games</h1>
+        <p class="catalogue-subtitle">
+          Rediscover centuries of mathematical brilliance, asymmetric combat, and royal entertainment—faithfully recreated with handcrafted 3D realism and intelligent AI.
+        </p>
+      </div>
+
+      <!-- Featured Spotlight: Nine Men's Morris -->
+      {% assign morris = site.data.games | where: "slug", "nine-mens-morris" | first %}
+      {% if morris %}
+      <div class="spotlight-banner reveal-up delay-100">
+        <div class="spotlight-badge">★ Featured 3D Experience</div>
+        <div class="spotlight-grid">
+          <div class="spotlight-image-col">
+            <img src="{{ morris.image | relative_url }}" alt="Nine Men's Morris 3D Board Game" loading="eager">
+          </div>
+          <div class="spotlight-info-col">
+            <div class="spotlight-meta">
+              <span class="spotlight-country">{{ morris.country }}</span>
+              <span class="spotlight-dot"></span>
+              <span class="spotlight-category">{{ morris.category }}</span>
+              <span class="spotlight-dot"></span>
+              <span class="spotlight-players">{{ morris.players }}</span>
+            </div>
+            <h2 class="spotlight-title">{{ morris.name }}</h2>
+            <p class="spotlight-regional">Regional Names: <em>{{ morris.regional_names }}</em></p>
+            <p class="spotlight-desc">{{ morris.description }}</p>
+            
+            <div class="spotlight-features">
+              <div class="feature-tag"><span>✦</span> Handcrafted 3D Realism</div>
+              <div class="feature-tag"><span>✦</span> 3 Concentric Squares & 16 Mills</div>
+              <div class="feature-tag"><span>✦</span> Smart AI (Easy/Med/Hard)</div>
+              <div class="feature-tag"><span>✦</span> 2 Player Strategic Combat</div>
+            </div>
+
+            <div class="spotlight-actions">
+              <a href="{{ morris.play_url | relative_url }}" class="btn btn-primary btn-lg spotlight-play-btn">
+                <span>Play Nine Men's Morris in 3D</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </a>
+              <a href="{{ '/games/nine-mens-morris/#rules' | relative_url }}" class="btn btn-outline">
+                How to Play & Rules
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Filter & Search Section -->
+  <section class="catalogue-filter-section">
+    <div class="container">
+      <div class="filter-controls-wrapper reveal-up">
+        <!-- Search Input -->
+        <div class="search-input-box">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="game-search-input" placeholder="Search by game name, origin, or category..." aria-label="Search traditional games">
+          <button id="clear-search-btn" class="clear-search-btn" aria-label="Clear search" style="display: none;">&times;</button>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="filter-tags-list" role="tablist" aria-label="Filter games by category">
+          <button class="filter-btn active" data-filter="all">All Games ({{ site.data.games.size }})</button>
+          <button class="filter-btn" data-filter="playable">Playable in 3D ({{ site.data.games.size }})</button>
+          <button class="filter-btn" data-filter="race">Race & Path</button>
+          <button class="filter-btn" data-filter="strategy">Strategic War & Hunt</button>
+          <button class="filter-btn" data-filter="mancala">Mancala Family</button>
+          <button class="filter-btn" data-filter="2-player">2 Players</button>
+          <button class="filter-btn" data-filter="4-player">2–4 Players</button>
+        </div>
+      </div>
+
+      <!-- Catalogue Games Grid -->
+      <div class="catalogue-grid" id="catalogue-games-grid">
+        {% for game in site.data.games %}
+          <div class="catalogue-card reveal-up" 
+               data-name="{{ game.name | downcase }}" 
+               data-regional="{{ game.regional_names | downcase }}"
+               data-country="{{ game.country | downcase }}" 
+               data-category="{{ game.category_tag }}"
+               data-players="{{ game.player_count_tag }}"
+               data-status="{{ game.status }}">
+            
+            <!-- Card Image -->
+            <div class="card-media">
+              <img src="{{ game.image | relative_url }}" alt="{{ game.name }}" loading="lazy">
+              {% if game.status == "playable" %}
+                <span class="card-badge badge-playable">Playable Now in 3D</span>
+              {% else %}
+                <span class="card-badge badge-upcoming">In Development</span>
+              {% endif %}
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-country">{{ game.country }}</span>
+                <span class="card-dot"></span>
+                <span class="card-category">{{ game.category }}</span>
+              </div>
+
+              <h3 class="card-title">{{ game.name }}</h3>
+              
+              {% if game.regional_names %}
+                <div class="card-regional">
+                  <span class="regional-label">Regional:</span> {{ game.regional_names }}
+                </div>
+              {% endif %}
+
+              <p class="card-desc">{{ game.description }}</p>
+
+              <div class="card-stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">Players</span>
+                  <span class="stat-value">{{ game.players }}</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Duration</span>
+                  <span class="stat-value">{{ game.duration }}</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Difficulty</span>
+                  <span class="stat-value stat-difficulty-{{ game.difficulty | downcase }}">{{ game.difficulty }}</span>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                {% if game.status == "playable" %}
+                  <a href="{{ game.play_url | relative_url }}" class="btn btn-primary w-100 card-play-btn">
+                    <span>Play 3D in Browser</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </a>
+                {% else %}
+                  <button class="btn btn-outline w-100 game-history-btn"
+                          data-name="{{ game.name }}" 
+                          data-description="{{ game.description | escape }}" 
+                          data-history="{{ game.history | escape }}" 
+                          data-rules="{{ game.rules_summary | escape }}"
+                          data-image="{{ game.image | relative_url }}"
+                          data-status="{{ game.status }}"
+                          data-playurl="{{ game.play_url | relative_url }}">
+                    Heritage & Rules
+                  </button>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- No Results State -->
+      <div id="no-results-box" class="no-results-box" style="display: none;">
+        <div class="no-results-icon">♟</div>
+        <h3>No traditional games found</h3>
+        <p>Try searching for a different name, region, or clear the active filter.</p>
+        <button id="reset-filter-btn" class="btn btn-outline">Show All Games</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Dynamic Filter & Search Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('game-search-input');
+  const clearBtn = document.getElementById('clear-search-btn');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.catalogue-card');
+  const noResults = document.getElementById('no-results-box');
+  const resetBtn = document.getElementById('reset-filter-btn');
+
+  let activeFilter = 'all';
+  let searchQuery = '';
+
+  function filterGames() {
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const name = card.getAttribute('data-name') || '';
+      const regional = card.getAttribute('data-regional') || '';
+      const country = card.getAttribute('data-country') || '';
+      const category = card.getAttribute('data-category') || '';
+      const players = card.getAttribute('data-players') || '';
+      const status = card.getAttribute('data-status') || '';
+
+      // Match category/filter
+      let matchesFilter = false;
+      if (activeFilter === 'all') {
+        matchesFilter = true;
+      } else if (activeFilter === 'playable') {
+        matchesFilter = (status === 'playable');
+      } else if (activeFilter === 'race') {
+        matchesFilter = (category === 'race');
+      } else if (activeFilter === 'strategy') {
+        matchesFilter = (category === 'strategy');
+      } else if (activeFilter === 'mancala') {
+        matchesFilter = (category === 'mancala');
+      } else if (activeFilter === '2-player') {
+        matchesFilter = (players === '2' || players === '2-4');
+      } else if (activeFilter === '4-player') {
+        matchesFilter = (players === '2-4');
+      }
+
+      // Match search text
+      let matchesSearch = true;
+      if (searchQuery.trim() !== '') {
+        const q = searchQuery.toLowerCase().trim();
+        matchesSearch = name.includes(q) || regional.includes(q) || country.includes(q) || category.includes(q);
+      }
+
+      if (matchesFilter && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (visibleCount === 0) {
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+    }
+  }
+
+  // Filter button clicks
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.getAttribute('data-filter');
+      filterGames();
+    });
+  });
+
+  // Search input events
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      if (clearBtn) {
+        clearBtn.style.display = searchQuery ? 'block' : 'none';
+      }
+      filterGames();
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearBtn.style.display = 'none';
+      filterGames();
+      searchInput.focus();
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+      filterBtns.forEach(b => b.classList.remove('active'));
+      const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+      if (allBtn) allBtn.classList.add('active');
+      activeFilter = 'all';
+      filterGames();
+    });
+  }
+});
+</script>
