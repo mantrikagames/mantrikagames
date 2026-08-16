@@ -195,14 +195,23 @@
 .game-viewport-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 520px;
+  aspect-ratio: 1 / 1;
+  max-width: 600px;
+  margin: 0 auto;
   background: radial-gradient(circle at 50% 40%, #201A16 0%, #0D0B0A 100%);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: $breakpoint-tablet) {
-    aspect-ratio: 4 / 3;
-    min-height: 440px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    min-height: 320px;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 280px;
   }
 }
 
