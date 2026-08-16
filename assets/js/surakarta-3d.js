@@ -23,11 +23,11 @@
     if (!canvas) return;
 
     ctx = canvas.getContext('2d');
+    resetBoard();
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
     initDOM();
-    resetBoard();
   }
 
   function resizeCanvas() {
@@ -221,7 +221,7 @@
   }
 
   function render() {
-    if (!canvas || !ctx) return;
+    if (!canvas || !ctx || !board || !board.length) return;
     const size = canvas.width / (window.devicePixelRatio || 1);
     ctx.clearRect(0, 0, size, size);
 

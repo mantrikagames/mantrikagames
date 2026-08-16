@@ -26,11 +26,11 @@
     if (!canvas) return;
 
     ctx = canvas.getContext('2d');
+    resetBoard();
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
     initDOM();
-    resetBoard();
   }
 
   function resizeCanvas() {
