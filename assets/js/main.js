@@ -210,19 +210,43 @@ function initHistoryModals() {
 }
 
 /**
- * 7. Initialize 3D Board Showcase Components
+ * 7. Initialize 3D Board Showcase Components with IntersectionObserver Lazy Loading
  */
 function initBoardShowcases() {
   if (!window.createBoardShowcase) return;
 
   const showcases = document.querySelectorAll('.game-board-showcase[data-board-type]');
-  showcases.forEach(el => {
-    const boardType = el.getAttribute('data-board-type');
-    window.createBoardShowcase(el, boardType, { size: 280 });
+  if (showcases.length === 0) return;
 
-    if (window.createTilt) {
-      const maxTilt = parseFloat(el.getAttribute('data-tilt-max')) || 10;
-      window.createTilt(el, { maxTilt: maxTilt, scale: 1.03 });
-    }
-  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const boardType = el.getAttribute('data-board-type');
+          
+          window.createBoardShowcase(el, boardType, { size: 280 });
+
+          if (window.createTilt) {
+            const maxTilt = parseFloat(el.getAttribute('data-tilt-max')) || 14;
+            window.createTilt(el, { maxTiltX: maxTilt, maxTiltY: maxTilt, scale: 1.03 });
+          }
+
+          observer.unobserve(el);
+        }
+      });
+    }, { rootMargin: '150px 0px 150px 0px', threshold: 0.05 });
+
+    showcases.forEach(el => observer.observe(el));
+  } else {
+    // Fallback for older browsers
+    showcases.forEach(el => {
+      const boardType = el.getAttribute('data-board-type');
+      window.createBoardShowcase(el, boardType, { size: 280 });
+      if (window.createTilt) {
+        const maxTilt = parseFloat(el.getAttribute('data-tilt-max')) || 14;
+        window.createTilt(el, { maxTiltX: maxTilt, maxTiltY: maxTilt, scale: 1.03 });
+      }
+    });
+  }
 }
