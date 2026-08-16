@@ -2,30 +2,30 @@
   <div class="container">
     <div class="section-header-row reveal-up">
       <div>
-        <span class="section-kicker">Heritage & Strategy</span>
-        <h2>Featured Games</h2>
+        <span class="section-kicker">Heritage & Tabletop Craftsmanship</span>
+        <h2>Traditional Strategy Collection</h2>
       </div>
-      <a href="{{ '/games/' | relative_url }}" class="btn btn-outline view-all-games-btn">View All Games &rarr;</a>
+      <a href="{{ '/games/' | relative_url }}" class="btn btn-outline view-all-games-btn">View Full Catalogue &rarr;</a>
     </div>
     
     <div class="games-list">
       {% for game in site.data.games %}
-        <article class="game-row reveal-up delay-{{ forloop.index | times: 100 }}">
-          <!-- Game Image -->
+        <article class="game-row perspective-container reveal-up delay-{{ forloop.index | times: 100 }}">
+          <!-- 3D Physical Board Showcase Column -->
           <div class="game-image-col">
-            <img src="{{ game.image | relative_url }}" alt="{{ game.name }} Board Game" loading="lazy">
-            {% if game.status == "playable" %}
-              <span class="game-badge-playable">Playable in 3D</span>
-            {% endif %}
+            <div class="game-board-showcase card-3d-wrapper" data-board-type="{{ game.slug }}" data-tilt data-tilt-max="10">
+              <div class="showcase-badge">{{ game.category }}</div>
+              <div class="board-frame-bevel"></div>
+            </div>
           </div>
           
-          <!-- Game Details -->
+          <!-- Game Details Column -->
           <div class="game-info-col">
             <span class="game-number">0{{ forloop.index }}</span>
             <div class="game-meta">
               <span class="game-country">{{ game.country }}</span>
               <span class="game-meta-divider"></span>
-              <span class="game-category">{{ game.category }}</span>
+              <span class="game-players">{{ game.players }}</span>
               <span class="game-meta-divider"></span>
               <span class="game-difficulty">{{ game.difficulty }}</span>
             </div>

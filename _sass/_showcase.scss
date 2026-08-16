@@ -1,0 +1,99 @@
+// _showcase.scss — 3D Board Showcase & Tactile Tabletop Component Styles
+
+.perspective-container {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.card-3d-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s var(--transition-ease), box-shadow 0.4s var(--transition-ease);
+  border-radius: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: var(--shadow-lg), var(--card-3d-glow);
+    border-color: var(--border-gold);
+  }
+}
+
+// 3D Physical Board Showcase
+.game-board-showcase {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 320px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  background: var(--board-wood-dark);
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 var(--board-bevel-highlight),
+    inset 0 -2px 0 var(--board-bevel-shadow);
+  padding: 12px;
+
+  canvas, svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+}
+
+// Tabletop Board Bevel Rim Frame
+.board-frame-bevel {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  border: 2px solid var(--border-gold);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.6);
+}
+
+// Showcase Floating Badge & Controls Overlay
+.showcase-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(15, 13, 12, 0.75);
+  color: var(--accent);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  z-index: 5;
+}
+
+// Mobile and Reduced Motion Adaptations
+@media (max-width: 768px) {
+  .perspective-container {
+    perspective: none;
+  }
+  .card-3d-wrapper {
+    transform: none !important;
+  }
+  .game-board-showcase {
+    transform: none !important;
+    max-width: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .perspective-container, .card-3d-wrapper, .game-board-showcase {
+    perspective: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

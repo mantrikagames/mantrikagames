@@ -1,25 +1,27 @@
-(function() {
-  const hero = document.getElementById('hero');
-  if (!hero) return;
+/**
+ * hero-3d.js — Interactive Hero 3D Board Showcase
+ * Mantrika Games
+ */
 
-  const content = hero.querySelector('.hero-content');
-  if (!content) return;
+(function () {
+  'use strict';
 
-  hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const width = rect.width;
-    const height = rect.height;
-    
-    const rotateX = ((y / height) - 0.5) * -8;
-    const rotateY = ((x / width) - 0.5) * 8;
-    
-    content.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
+  function initHeroShowcase() {
+    const heroBoardEl = document.getElementById('hero-board-showcase');
+    if (!heroBoardEl) return;
 
-  hero.addEventListener('mouseleave', () => {
-    content.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-  });
+    if (window.createBoardShowcase) {
+      window.createBoardShowcase(heroBoardEl, 'mills', { size: 320 });
+    }
+
+    if (window.createTilt) {
+      window.createTilt(heroBoardEl, { maxTilt: 15, scale: 1.04 });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroShowcase);
+  } else {
+    initHeroShowcase();
+  }
 })();

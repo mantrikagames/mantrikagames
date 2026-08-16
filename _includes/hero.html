@@ -1,34 +1,45 @@
 <section id="hero" class="hero">
-  <!-- Geometric Board Pattern Background -->
   <div class="hero-grid-bg"></div>
   <div class="hero-radial-glow"></div>
 
   <div class="hero-container container">
-    <div class="hero-content reveal-up">
-      <div class="logo-placeholder">
-        <span class="gold-dot"></span>
-        Timeless Strategy
+    <div class="hero-layout">
+      <!-- Left Hero Content -->
+      <div class="hero-content reveal-up">
+        <div class="logo-placeholder">
+          <span class="gold-dot"></span>
+          Timeless Strategy Studio
+        </div>
+        
+        <h1><span>Handcrafted 3D Tabletop Games</span></h1>
+        
+        <p class="desc">
+          Experience timeless traditional and abstract board games with tactile 3D visuals, intelligent AI algorithms, and seamless multiplayer.
+        </p>
+        
+        <div class="hero-cta">
+          <a href="#games" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            Explore Game Collection
+          </a>
+          <a href="{{ '/board-of-mills/' | relative_url }}" class="btn btn-secondary">
+            Board of Mills
+          </a>
+        </div>
       </div>
-      
-      <h1><span>Mantrika Games</span></h1>
-      
-      <p class="desc">
-        Play timeless traditional board games with beautiful design, intelligent AI, and seamless multiplayer.
-      </p>
-      
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; margin-right: 8px; vertical-align: middle;">
-            <path d="M5.25 3.037a1.5 1.5 0 0 0-1.42 1.512v14.9a1.5 1.5 0 0 0 1.42 1.513L13.786 12 5.25 3.037zm9.605 9.878l1.71 1.782a1.5 1.5 0 0 0 2.227-.087l1.788-2.686a1.5 1.5 0 0 0-.295-2.072l-1.92-1.39-3.51 4.453zm-.965-.96L6.5 4.545a1.5 1.5 0 0 0-1.25.492l8.64 6.915zm0 1.92l-8.64 6.915a1.5 1.5 0 0 0 1.25.492l7.39-7.407z"/>
-          </svg>
-          Download on Google Play
-        </a>
-        <a href="#games" class="btn btn-secondary">Explore Games</a>
+
+      <!-- Right 3D Floating Tabletop Showcase -->
+      <div class="hero-visual-col perspective-container reveal-up delay-200">
+        <div id="hero-board-showcase" class="game-board-showcase card-3d-wrapper" data-tilt data-tilt-max="14">
+          <div class="showcase-badge">3D Interactive</div>
+          <div class="board-frame-bevel"></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Subtle Scroll Indicator -->
   <a href="#games" class="scroll-indicator" aria-label="Scroll to games">
     <span class="mouse-icon"></span>
     <span class="scroll-text">Scroll to explore</span>

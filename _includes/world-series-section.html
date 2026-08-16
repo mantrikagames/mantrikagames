@@ -1,0 +1,101 @@
+<section id="world-series" class="games-section world-series-section" style="padding: 6rem 0;">
+  <div class="container">
+    <div class="section-header-row reveal-up">
+      <div>
+        <span class="section-kicker">3D Tabletop Engine</span>
+        <h2>Mantrika World Series</h2>
+        <p class="section-subtitle" style="color: var(--text-secondary); margin-top: 0.5rem; max-width: 650px;">
+          Master class abstract strategy games built with physical 3D board rendering, custom lighting models, and Minimax AI engines.
+        </p>
+      </div>
+    </div>
+
+    <div class="world-series-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+      
+      <!-- Gomoku World -->
+      <article class="card-3d-wrapper perspective-container reveal-up" style="padding: 1.75rem;">
+        <div class="game-board-showcase" data-board-type="gomoku" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
+          <div class="showcase-badge">Five in a Row</div>
+          <div class="board-frame-bevel"></div>
+        </div>
+        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Gomoku World</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Continuous alignment strategy on an engraved 15x15 wooden grid with convex obsidian and porcelain Go stones.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">2 Players • Abstract</span>
+          <a href="{{ '/games/gomoku/' | relative_url }}" class="btn btn-outline btn-sm">Explore World</a>
+        </div>
+      </article>
+
+      <!-- Reversi World -->
+      <article class="card-3d-wrapper perspective-container reveal-up delay-100" style="padding: 1.75rem;">
+        <div class="game-board-showcase" data-board-type="reversi" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
+          <div class="showcase-badge">3D Disc Flip</div>
+          <div class="board-frame-bevel"></div>
+        </div>
+        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Reversi World</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Outflank opposing discs on a 3D felt-lined wood frame with physical horizontal axis disc flip rotations.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">2 Players • Outflank</span>
+          <a href="{{ '/games/reversi/' | relative_url }}" class="btn btn-outline btn-sm">Explore World</a>
+        </div>
+      </article>
+
+      <!-- Ataxx World -->
+      <article class="card-3d-wrapper perspective-container reveal-up delay-200" style="padding: 1.75rem;">
+        <div class="game-board-showcase" data-board-type="ataxx" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
+          <div class="showcase-badge">Infection</div>
+          <div class="board-frame-bevel"></div>
+        </div>
+        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Ataxx World</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Infect and convert surrounding opponent tokens on a 7x7 grid featuring parabolic arc jumps.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">2 Players • Territorial</span>
+          <a href="{{ '/games/ataxx/' | relative_url }}" class="btn btn-outline btn-sm">Explore World</a>
+        </div>
+      </article>
+
+      <!-- Hex World -->
+      <article class="card-3d-wrapper perspective-container reveal-up delay-300" style="padding: 1.75rem;">
+        <div class="game-board-showcase" data-board-type="hex" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
+          <div class="showcase-badge">Hex Topology</div>
+          <div class="board-frame-bevel"></div>
+        </div>
+        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Hex World</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Connect opposing board borders across a true 3D hexagonal grid with animated gold path connection beams.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">2 Players • Connection</span>
+          <a href="{{ '/games/hex/' | relative_url }}" class="btn btn-outline btn-sm">Explore World</a>
+        </div>
+      </article>
+
+      <!-- Quoridor World -->
+      <article class="card-3d-wrapper perspective-container reveal-up delay-400" style="padding: 1.75rem;">
+        <div class="game-board-showcase" data-board-type="quoridor" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
+          <div class="showcase-badge">Maze Strategy</div>
+          <div class="board-frame-bevel"></div>
+        </div>
+        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Quoridor World</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Navigate pawns to the target baseline while placing 3D physical wooden walls to obstruct opponents.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">2 Players • Maze Wall</span>
+          <a href="{{ '/games/quoridor/' | relative_url }}" class="btn btn-outline btn-sm">Explore World</a>
+        </div>
+      </article>
+
+      <!-- Surakarta World -->
+      <article class="card-3d-wrapper perspective-container reveal-up delay-500" style="padding: 1.75rem;">
+        <div class="game-board-showcase" data-board-type="surakarta" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
+          <div class="showcase-badge">Loop Capture</div>
+          <div class="board-frame-bevel"></div>
+        </div>
+        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Surakarta World</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Traditional Indonesian strategy featuring circular corner loops for high-speed arc sliding captures.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">2 Players • Circular Loop</span>
+          <a href="{{ '/games/surakarta/' | relative_url }}" class="btn btn-outline btn-sm">Explore World</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>

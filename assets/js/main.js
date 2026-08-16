@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCookieConsent();
   initMobileMenu();
   initHistoryModals();
+  initBoardShowcases();
 });
 
 /**
@@ -204,6 +205,24 @@ function initHistoryModals() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) {
       closeModal();
+    }
+  });
+}
+
+/**
+ * 7. Initialize 3D Board Showcase Components
+ */
+function initBoardShowcases() {
+  if (!window.createBoardShowcase) return;
+
+  const showcases = document.querySelectorAll('.game-board-showcase[data-board-type]');
+  showcases.forEach(el => {
+    const boardType = el.getAttribute('data-board-type');
+    window.createBoardShowcase(el, boardType, { size: 280 });
+
+    if (window.createTilt) {
+      const maxTilt = parseFloat(el.getAttribute('data-tilt-max')) || 10;
+      window.createTilt(el, { maxTilt: maxTilt, scale: 1.03 });
     }
   });
 }

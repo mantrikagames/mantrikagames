@@ -149,3 +149,118 @@
   image_png: /assets/images/game_pretwa.png
   rules_summary: 3 concentric circles intersected by 3 diameters (19 intersections). 9 pieces each. Slide to adjacent empty node or jump over an enemy to capture.
   history: An abstract strategy game native to the Bihar region of India. Unlike globally documented games, Pretwa has survived through oral community traditions and village play. Its circular board represents astronomical orbits or mandala crop rings.
+
+- name: Gomoku World
+  country: Japan & China (Wuziqi)
+  regional_names: Five in a Row, Renju
+  description: Continuous alignment strategy on an engraved 15x15 wooden grid with convex obsidian and porcelain 3D Go stones.
+  difficulty: Medium
+  slug: gomoku
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 10–20 mins
+  featured: true
+  play_url: /games/gomoku/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  rules_summary: 15x15 wooden grid. Place stones to align 5 in a row horizontally, vertically, or diagonally.
+  history: Dating back to 10th century Japan and ancient China, Gomoku (Wuziqi) is a timeless abstract alignment game requiring continuous attack and defense foresight.
+
+- name: Reversi World
+  country: England & Global (Othello)
+  regional_names: Othello, Reversi
+  description: Outflank opposing discs on an 8x8 felt-lined wood frame with physical horizontal axis disc flip rotations.
+  difficulty: Medium
+  slug: reversi
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 10–20 mins
+  featured: true
+  play_url: /games/reversi/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  rules_summary: 8x8 grid. Outflank opponent discs between your pieces to flip their colors. Most discs at end wins.
+  history: Invented in 19th century London and popularized globally as Othello in Japan, Reversi is known for the motto "A minute to learn, a lifetime to master."
+
+- name: Ataxx World
+  country: Global Arcade Classic
+  regional_names: Infection, Spot
+  description: Infect and convert surrounding opponent tokens on a 7x7 grid featuring parabolic arc jumps and clone expansions.
+  difficulty: Medium
+  slug: ataxx
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 10–15 mins
+  featured: true
+  play_url: /games/ataxx/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  rules_summary: 7x7 grid. Clone adjacent (1 step) or jump (2 steps). Convert all adjacent enemy tokens upon landing.
+  history: Originally developed as an arcade video game in 1990 by Leland Corporation, Ataxx is a tactical infection game famous for dramatic chain-reaction flips.
+
+- name: Hex World
+  country: Denmark & Princeton (Nash)
+  regional_names: John Nash Hex, Polygon
+  description: Connect opposing board borders across a true 3D hexagonal grid with animated gold path connection beams.
+  difficulty: Hard
+  slug: hex
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 10–20 mins
+  featured: true
+  play_url: /games/hex/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  rules_summary: Rhombic hexagonal grid. Build an unbroken path connecting your two opposite borders. Draws are impossible.
+  history: Invented independently by Piet Hein in Denmark (1942) and Nobel laureate John Nash at Princeton (1948), Hex is a landmark topological game.
+
+- name: Quoridor World
+  country: France (Mirko Marchesi)
+  regional_names: Blockade, Corridor
+  description: Navigate pawns to the target baseline while placing 3D physical wooden wall barriers to obstruct opponents.
+  difficulty: Medium
+  slug: quoridor
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 10–15 mins
+  featured: true
+  play_url: /games/quoridor/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  rules_summary: 9x9 grid. Move pawn 1 space or place a 2-cell wall barrier. Never completely block the last path to the goal.
+  history: Designed by Mirko Marchesi and published in 1997, Quoridor is a famous Mensa Select award-winning maze building race game.
+
+- name: Surakarta World
+  country: Java, Indonesia
+  regional_names: Permainan Surakarta
+  description: Traditional Indonesian strategy featuring circular corner loop tracks for high-speed arc sliding captures.
+  difficulty: Medium
+  slug: surakarta
+  status: playable
+  category: Strategy
+  category_tag: strategy
+  players: 2 Players
+  player_count_tag: 2
+  duration: 10–20 mins
+  featured: true
+  play_url: /games/surakarta/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  rules_summary: 6x6 grid with 8 corner loops. Moves are 1 step; captures MUST travel along at least 1 circular loop track.
+  history: Native to the island of Java in Indonesia, Surakarta is named after the ancient royal city of Surakarta in central Java.
+

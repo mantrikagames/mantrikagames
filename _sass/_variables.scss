@@ -47,6 +47,15 @@ $breakpoint-large: 1200px;
   // Transitions
   --transition-speed: 0.4s;
   --transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  // 3D Tabletop Design Tokens
+  --board-wood-dark: #2B160C;
+  --board-wood-light: #5C361D;
+  --board-surface: #3D2413;
+  --board-bevel-highlight: rgba(255, 235, 180, 0.35);
+  --board-bevel-shadow: rgba(15, 8, 4, 0.75);
+  --piece-shadow-contact: rgba(0, 0, 0, 0.45);
+  --card-3d-glow: rgba(200, 155, 60, 0.12);
 }
 
 [data-theme="dark"] {
@@ -78,4 +87,13 @@ $breakpoint-large: 1200px;
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.4);
   --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.1);
+
+  // 3D Tabletop Design Tokens (Dark Theme Inset)
+  --board-wood-dark: #120A05;
+  --board-wood-light: #3D2413;
+  --board-surface: #24140A;
+  --board-bevel-highlight: rgba(255, 230, 160, 0.25);
+  --board-bevel-shadow: rgba(0, 0, 0, 0.9);
+  --piece-shadow-contact: rgba(0, 0, 0, 0.7);
+  --card-3d-glow: rgba(212, 175, 55, 0.2);
 }
