@@ -325,8 +325,35 @@
       }
     }
 
-    checkMillFormed(nodeIdx, player) {
-      return MILLS.some(mill => mill.includes(nodeIdx) && mill.every(n => this.board[n] === player));
+    checkWin() {
+      if (this.unplaced[0] === 0 && this.unplaced[1] === 0) {
+        const whiteCount = this.board.filter(v => v === 0).length;
+        const blackCount = this.board.filter(v => v === 1).length;
+
+        if (whiteCount < 3) {
+          this.winner = 1;
+          this.setMessage('🎉 BLACK WINS! White has fewer than 3 stones remaining.');
+          return;
+        }
+        if (blackCount < 3) {
+          this.winner = 0;
+          this.setMessage('🎉 WHITE WINS! Black has fewer than 3 stones remaining.');
+          return;
+        }
+
+        const activePlayer = this.turn;
+        const activeStones = [];
+        this.board.forEach((v, idx) => { if (v === activePlayer) activeStones.push(idx); });
+
+        if (activeStones.length > 3) {
+          const hasMove = activeStones.some(from => ADJACENCY[from].some(to => this.board[to] === -1));
+          if (!hasMove) {
+            this.winner = activePlayer === 0 ? 1 : 0;
+            const winnerName = this.winner === 0 ? 'WHITE' : 'BLACK';
+            this.setMessage(`🎉 ${winnerName} WINS! Opponent is trapped with no legal moves.`);
+          }
+        }
+      }
     }
 
     passTurn() {
