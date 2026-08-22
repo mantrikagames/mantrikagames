@@ -344,9 +344,20 @@
 
         const curPlayer = this.activePlayerIndices[this.currentTurnIndex];
         this.legalMoves = [];
+        const SAFE_STEPS = [0, 12, 17, 24, 40];
+
         this.pawnsState[curPlayer].forEach((step, pIdx) => {
           if (step < 40 && step + score <= 40) {
-            this.legalMoves.push({ pIdx, from: step, to: step + score });
+            const targetStep = step + score;
+            let isCapture = false;
+            if (targetStep > 0 && targetStep < 40 && !SAFE_STEPS.includes(targetStep)) {
+              this.activePlayerIndices.forEach(otherP => {
+                if (otherP !== curPlayer && this.pawnsState[otherP].includes(targetStep)) {
+                  isCapture = true;
+                }
+              });
+            }
+            this.legalMoves.push({ pIdx, from: step, to: targetStep, isCapture });
           }
         });
 
@@ -371,23 +382,53 @@
     executeAIMove() {
       const curPlayer = this.activePlayerIndices[this.currentTurnIndex];
       if (this.legalMoves.length > 0) {
-        this.applyMove(curPlayer, this.legalMoves[0]);
+        // Prioritize capture moves
+        const captures = this.legalMoves.filter(m => m.isCapture);
+        if (captures.length > 0) {
+          this.applyMove(curPlayer, captures[0]);
+        } else {
+          this.applyMove(curPlayer, this.legalMoves[0]);
+        }
       }
     }
 
     applyMove(pId, move) {
       this.pawnsState[pId][move.pIdx] = move.to;
+
+      const SAFE_STEPS = [0, 12, 17, 24, 40];
+      let capturedOpponent = false;
+      if (move.to > 0 && move.to < 40 && !SAFE_STEPS.includes(move.to)) {
+        this.activePlayerIndices.forEach(otherP => {
+          if (otherP !== pId) {
+            this.pawnsState[otherP].forEach((s, idx) => {
+              if (s === move.to) {
+                this.pawnsState[otherP][idx] = 0; // Send captured pawn back home
+                capturedOpponent = true;
+              }
+            });
+          }
+        });
+      }
+
       this.updatePawnPositions();
 
       if (this.pawnsState[pId].every(s => s === 40)) {
         this.winner = pId;
-        this.setMessage(`${PLAYER_CONFIG[pId].name} Wins Pachisi!`);
+        this.setMessage(`🎉 ${PLAYER_CONFIG[pId].name} Wins Pachisi!`);
         return;
       }
 
+      if (capturedOpponent) {
+        this.setMessage(`💥 ${PLAYER_CONFIG[pId].nameShort} captured an opposing pawn!`);
+      }
+
       if (this.currentRoll === 25 || this.currentRoll === 10 || this.currentRoll === 6) {
-        this.setMessage(`${PLAYER_CONFIG[pId].nameShort} earned an EXTRA ROLL!`);
+        this.setMessage(`${PLAYER_CONFIG[pId].nameShort} rolled ${this.currentRoll} and earned an EXTRA ROLL!`);
         if (this.isAITurn()) setTimeout(() => this.triggerRoll(), 1000);
+      } else {
+        setTimeout(() => this.passTurn(), capturedOpponent ? 900 : 600);
+      }
+    }
       } else {
         setTimeout(() => this.passTurn(), 600);
       }

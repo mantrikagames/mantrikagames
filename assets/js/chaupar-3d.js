@@ -257,11 +257,32 @@
         const curP = this.activePlayerIndices[this.currentTurnIndex];
         this.legalMoves = [];
         this.pawnsState[curP].forEach((s, idx) => {
-          if (s + sum <= 40) this.legalMoves.push({ idx, from: s, to: s + sum });
+          if (s + sum <= 40) {
+            const targetStep = s + sum;
+            let isBlockaded = false;
+            let isCapture = false;
+
+            if (targetStep > 0 && targetStep < 40) {
+              this.activePlayerIndices.forEach(otherP => {
+                if (otherP !== curP) {
+                  const pawnsAtTarget = this.pawnsState[otherP].filter(step => step === targetStep).length;
+                  if (pawnsAtTarget >= 2) {
+                    isBlockaded = true; // Impenetrable Joori pair blockade!
+                  } else if (pawnsAtTarget === 1) {
+                    isCapture = true;
+                  }
+                }
+              });
+            }
+
+            if (!isBlockaded) {
+              this.legalMoves.push({ idx, from: s, to: targetStep, isCapture });
+            }
+          }
         });
 
         if (this.legalMoves.length === 0) {
-          this.setMessage(`No legal moves for ${sum}. Passing turn...`);
+          this.setMessage(`No legal moves for ${sum} (path blocked or reached limit). Passing turn...`);
           setTimeout(() => this.passTurn(), 1000);
         } else if (this.isAITurn()) {
           setTimeout(() => this.executeAIMove(), 800);
@@ -280,18 +301,48 @@
 
     executeAIMove() {
       const curP = this.activePlayerIndices[this.currentTurnIndex];
-      if (this.legalMoves.length > 0) this.applyMove(curP, this.legalMoves[0]);
+      if (this.legalMoves.length > 0) {
+        // Prioritize capture moves, then farthest advance
+        const captures = this.legalMoves.filter(m => m.isCapture);
+        if (captures.length > 0) {
+          this.applyMove(curP, captures[0]);
+        } else {
+          this.legalMoves.sort((a, b) => b.to - a.to);
+          this.applyMove(curP, this.legalMoves[0]);
+        }
+      }
     }
 
     applyMove(pId, move) {
       this.pawnsState[pId][move.idx] = move.to;
+
+      let capturedOpponent = false;
+      if (move.to > 0 && move.to < 40) {
+        this.activePlayerIndices.forEach(otherP => {
+          if (otherP !== pId) {
+            this.pawnsState[otherP].forEach((s, idx) => {
+              if (s === move.to) {
+                this.pawnsState[otherP][idx] = 0; // Send back to home yard
+                capturedOpponent = true;
+              }
+            });
+          }
+        });
+      }
+
       this.updatePawnPositions();
+
       if (this.pawnsState[pId].every(s => s === 40)) {
         this.winner = pId;
-        this.setMessage(`${PLAYER_CONFIG[pId].name} Wins Chaupar!`);
+        this.setMessage(`🎉 ${PLAYER_CONFIG[pId].name} Wins Chaupar!`);
         return;
       }
-      setTimeout(() => this.passTurn(), 600);
+
+      if (capturedOpponent) {
+        this.setMessage(`💥 ${PLAYER_CONFIG[pId].nameShort} captured an opposing pawn!`);
+      }
+
+      setTimeout(() => this.passTurn(), capturedOpponent ? 900 : 600);
     }
 
     passTurn() {

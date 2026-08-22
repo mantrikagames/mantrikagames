@@ -17,6 +17,90 @@
     }
   });
 
+  // Build Adjacency Table
+  function buildAdjacency() {
+    const adj = {};
+    for (let i = 0; i < 19; i++) adj[i] = [];
+
+    // Center node 0 connects to all 6 inner ring nodes (1 to 6)
+    for (let i = 1; i <= 6; i++) {
+      adj[0].push(i);
+      adj[i].push(0);
+    }
+
+    // Concentric ring circular connections
+    const rings = [[1,2,3,4,5,6], [7,8,9,10,11,12], [13,14,15,16,17,18]];
+    rings.forEach(ring => {
+      for (let i = 0; i < 6; i++) {
+        const u = ring[i];
+        const v = ring[(i + 1) % 6];
+        if (!adj[u].includes(v)) adj[u].push(v);
+        if (!adj[v].includes(u)) adj[v].push(u);
+      }
+    });
+
+    // Radial spoke connections across rings
+    for (let i = 0; i < 6; i++) {
+      const inner = 1 + i;
+      const mid = 7 + i;
+      const outer = 13 + i;
+      if (!adj[inner].includes(mid)) adj[inner].push(mid);
+      if (!adj[mid].includes(inner)) adj[mid].push(inner);
+      if (!adj[mid].includes(outer)) adj[mid].push(outer);
+      if (!adj[outer].includes(mid)) adj[outer].push(mid);
+    }
+
+    return adj;
+  }
+
+  const ADJACENCY = buildAdjacency();
+
+  // Leap Jump Lines: [from, over, to]
+  function buildJumpLines() {
+    const jumps = [];
+
+    // 1. Concentric Ring Jumps
+    const rings = [[1,2,3,4,5,6], [7,8,9,10,11,12], [13,14,15,16,17,18]];
+    rings.forEach(ring => {
+      for (let i = 0; i < 6; i++) {
+        const from = ring[i];
+        const over = ring[(i + 1) % 6];
+        const to = ring[(i + 2) % 6];
+        jumps.push({ from, over, to });
+        jumps.push({ from: to, over, to: from });
+      }
+    });
+
+    // 2. Radial Spoke Jumps
+    for (let i = 0; i < 6; i++) {
+      const inner = 1 + i;
+      const mid = 7 + i;
+      const outer = 13 + i;
+      const oppInner = 1 + ((i + 3) % 6);
+      const oppMid = 7 + ((i + 3) % 6);
+
+      // outer <-> mid <-> inner
+      jumps.push({ from: outer, over: mid, to: inner });
+      jumps.push({ from: inner, over: mid, to: outer });
+
+      // mid <-> inner <-> center
+      jumps.push({ from: mid, over: inner, to: 0 });
+      jumps.push({ from: 0, over: inner, to: mid });
+
+      // inner <-> center <-> oppInner
+      jumps.push({ from: inner, over: 0, to: oppInner });
+      jumps.push({ from: oppInner, over: 0, to: inner });
+
+      // center <-> oppInner <-> oppMid
+      jumps.push({ from: 0, over: oppInner, to: oppMid });
+      jumps.push({ from: oppMid, over: oppInner, to: 0 });
+    }
+
+    return jumps;
+  }
+
+  const JUMP_LINES = buildJumpLines();
+
   class PretwaApp {
     constructor() {
       this.container = document.getElementById('game-viewport-container');
@@ -25,12 +109,9 @@
 
       this.gameMode = 'ai';
       this.board = Array(19).fill(-1);
-      this.board[0] = -1; // Center empty
-      for (let i = 1; i <= 9; i++) this.board[i] = 0;  // South Player (Lapis)
-      for (let i = 10; i <= 18; i++) this.board[i] = 1; // North Player (Carnelian)
-
       this.turn = 0;
       this.selectedIdx = null;
+      this.legalMoves = [];
       this.winner = -1;
 
       this.initLoadingSimulation();
@@ -100,7 +181,7 @@
       rimLight.penumbra = 0.8;
       this.scene.add(rimLight);
 
-      // Floating Ambient Gold Dust Motes Particle System
+      // Dust particles
       const dustGeo = new THREE.BufferGeometry();
       const dustCount = 80;
       const dustPos = new Float32Array(dustCount * 3);
@@ -122,54 +203,43 @@
 
       this.buildBoard();
       this.buildPiecesGroup();
+      this.buildHighlightGroup();
       this.setupInteraction();
       this.animate();
     }
 
     buildBoard() {
       this.boardGroup = new THREE.Group();
-      
-      // Procedural Circular Teakwood Mandala Texture
-      const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
-      const ctx = canvas.getContext('2d');
-      const grad = ctx.createRadialGradient(256, 256, 10, 256, 256, 360);
-      grad.addColorStop(0, '#472718');
-      grad.addColorStop(1, '#2B160C');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, 512, 512);
-      const woodTex = new THREE.CanvasTexture(canvas);
 
-      const woodMat = new THREE.MeshStandardMaterial({ map: woodTex, roughness: 0.4, metalness: 0.1 });
-      const slab = new THREE.Mesh(new THREE.CylinderGeometry(8.5, 8.8, 0.4, 48), woodMat);
-      slab.position.y = -0.2;
+      // Board Base
+      const woodMat = new THREE.MeshStandardMaterial({ color: 0x2A180E, roughness: 0.35, metalness: 0.1 });
+      const slab = new THREE.Mesh(new THREE.CylinderGeometry(8.2, 8.4, 0.45, 48), woodMat);
+      slab.position.y = -0.22;
       slab.receiveShadow = true;
       this.boardGroup.add(slab);
 
-      // Brass Inlaid Rings & Radial Spokes
+      // Gold Inlay Circles
       const brassMat = new THREE.MeshStandardMaterial({ color: 0xD4AF37, metalness: 0.85, roughness: 0.2 });
-
       RADII.forEach(r => {
-        const ring = new THREE.Mesh(new THREE.TorusGeometry(r, 0.025, 8, 48), brassMat);
-        ring.rotation.x = Math.PI / 2;
+        const ring = new THREE.Mesh(new THREE.RingGeometry(r - 0.04, r + 0.04, 64), brassMat);
+        ring.rotation.x = -Math.PI / 2;
         ring.position.y = 0.01;
         this.boardGroup.add(ring);
       });
 
-      // 3 Radial Diameters (6 Spokes)
+      // 3 Radial Diameters (6 spokes)
       for (let i = 0; i < 3; i++) {
-        const spoke = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.02, 13.2), brassMat);
-        spoke.rotation.y = (i / 3) * Math.PI;
+        const spoke = new THREE.Mesh(new THREE.BoxGeometry(13.2, 0.02, 0.06), brassMat);
+        spoke.rotation.y = (i * Math.PI) / 3;
         spoke.position.y = 0.01;
         this.boardGroup.add(spoke);
       }
 
-      // 19 Node Dots
-      NODE_COORDS.forEach((pos, idx) => {
-        const dot = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 0.03, 16), brassMat);
-        dot.position.set(pos.x, 0.015, pos.z);
-        this.boardGroup.add(dot);
+      // 19 Brass Inlay Node Wells
+      NODE_COORDS.forEach((c) => {
+        const well = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.38, 0.08, 20), brassMat);
+        well.position.set(c.x, 0.02, c.z);
+        this.boardGroup.add(well);
       });
 
       this.scene.add(this.boardGroup);
@@ -180,21 +250,46 @@
       this.scene.add(this.piecesGroup);
     }
 
+    buildHighlightGroup() {
+      this.highlightGroup = new THREE.Group();
+      this.scene.add(this.highlightGroup);
+    }
+
     updatePieces3D() {
       while (this.piecesGroup.children.length > 0) this.piecesGroup.remove(this.piecesGroup.children[0]);
 
-      const lapisMat = new THREE.MeshStandardMaterial({ color: 0x1D4ED8, roughness: 0.2, metalness: 0.3 });
-      const redMat = new THREE.MeshStandardMaterial({ color: 0xDC2626, roughness: 0.2, metalness: 0.2 });
+      const lapisMat = new THREE.MeshStandardMaterial({ color: 0x1D4ED8, roughness: 0.25, metalness: 0.3 });
+      const carnelianMat = new THREE.MeshStandardMaterial({ color: 0xDC2626, roughness: 0.25, metalness: 0.2 });
 
       this.board.forEach((val, idx) => {
         if (val === -1) return;
         const pos = NODE_COORDS[idx];
-        const mat = val === 0 ? lapisMat : redMat;
-        const piece = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.38, 0.3, 16), mat);
-        piece.position.set(pos.x, 0.16, pos.z);
+        const mat = val === 0 ? lapisMat : carnelianMat;
+        const piece = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.4, 0.32, 20), mat);
+        piece.position.set(pos.x, 0.18, pos.z);
         piece.userData = { idx, player: val };
         this.piecesGroup.add(piece);
       });
+
+      this.updateHighlightMarkers();
+    }
+
+    updateHighlightMarkers() {
+      while (this.highlightGroup.children.length > 0) this.highlightGroup.remove(this.highlightGroup.children[0]);
+
+      if (this.selectedIdx !== null && this.legalMoves.length > 0) {
+        this.legalMoves.forEach(m => {
+          const pos = NODE_COORDS[m.to];
+          const color = m.isJump ? 0xEF4444 : 0xFFD700;
+          const marker = new THREE.Mesh(
+            new THREE.RingGeometry(0.2, 0.45, 24),
+            new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide, transparent: true, opacity: 0.8 })
+          );
+          marker.rotation.x = -Math.PI / 2;
+          marker.position.set(pos.x, 0.08, pos.z);
+          this.highlightGroup.add(marker);
+        });
+      }
     }
 
     setupInteraction() {
@@ -233,24 +328,86 @@
       return best;
     }
 
+    getLegalMovesForNode(nodeIdx, currentBoard = this.board, player = this.turn) {
+      if (currentBoard[nodeIdx] !== player) return [];
+      const opp = player === 0 ? 1 : 0;
+      const moves = [];
+
+      // 1. Standard 1-step moves to connected adjacent empty nodes
+      const neighbors = ADJACENCY[nodeIdx] || [];
+      neighbors.forEach(nbr => {
+        if (currentBoard[nbr] === -1) {
+          moves.push({ from: nodeIdx, to: nbr, isJump: false });
+        }
+      });
+
+      // 2. Leap captures over opponent into empty node
+      JUMP_LINES.forEach(jl => {
+        if (jl.from === nodeIdx) {
+          if (currentBoard[jl.over] === opp && currentBoard[jl.to] === -1) {
+            moves.push({ from: nodeIdx, over: jl.over, to: jl.to, isJump: true });
+          }
+        }
+      });
+
+      return moves;
+    }
+
     handleNodeClick(nodeIdx) {
       if (this.selectedIdx === null) {
-        if (this.board[nodeIdx] === 0) {
+        if (this.board[nodeIdx] === this.turn) {
           this.selectedIdx = nodeIdx;
-          this.setMessage(`Selected piece at node ${nodeIdx}. Click connected empty node or jump enemy.`);
+          this.legalMoves = this.getLegalMovesForNode(nodeIdx, this.board, this.turn);
+          const jumps = this.legalMoves.filter(m => m.isJump).length;
+          if (jumps > 0) {
+            this.setMessage(`Selected piece: ${jumps} leap capture(s) available!`);
+          } else {
+            this.setMessage(`Selected piece: Click adjacent highlighted node to slide.`);
+          }
+          this.updateHighlightMarkers();
         }
       } else {
-        if (this.board[nodeIdx] === -1) {
-          // Check move / jump
-          this.board[this.selectedIdx] = -1;
-          this.board[nodeIdx] = 0;
+        if (this.selectedIdx === nodeIdx) {
           this.selectedIdx = null;
-          this.updatePieces3D();
-          this.passTurn();
+          this.legalMoves = [];
+          this.updateHighlightMarkers();
           return;
         }
-        this.selectedIdx = null;
+
+        const chosenMove = this.legalMoves.find(m => m.to === nodeIdx);
+        if (chosenMove) {
+          this.executeMove(chosenMove);
+          this.selectedIdx = null;
+          this.legalMoves = [];
+          return;
+        }
+
+        // Reselect another friendly piece
+        if (this.board[nodeIdx] === this.turn) {
+          this.selectedIdx = nodeIdx;
+          this.legalMoves = this.getLegalMovesForNode(nodeIdx, this.board, this.turn);
+          this.updateHighlightMarkers();
+        } else {
+          this.selectedIdx = null;
+          this.legalMoves = [];
+          this.updateHighlightMarkers();
+        }
       }
+    }
+
+    executeMove(move) {
+      this.board[move.from] = -1;
+      if (move.isJump) {
+        this.board[move.over] = -1; // Captured!
+      }
+      this.board[move.to] = this.turn;
+
+      this.updatePieces3D();
+      if (move.isJump) {
+        this.setMessage('Leap capture executed!');
+      }
+
+      this.passTurn();
     }
 
     passTurn() {
@@ -259,40 +416,55 @@
 
       if (p1Count === 0) {
         this.winner = 0;
-        this.setMessage('Lapis Army Wins Pretwa!');
+        this.setMessage('🎉 LAPIS ARMY WINS PRETWA!');
+        this.updateHUD();
         return;
       }
       if (p0Count === 0) {
         this.winner = 1;
-        this.setMessage('Carnelian Army Wins Pretwa!');
+        this.setMessage('🎉 CARNELIAN ARMY WINS PRETWA!');
+        this.updateHUD();
         return;
       }
 
       this.turn = this.turn === 0 ? 1 : 0;
       this.updateHUD();
 
-      if (this.turn === 1 && this.gameMode === 'ai') {
-        this.setMessage('AI is calculating circular geometry...');
-        setTimeout(() => this.executeAI(), 700);
+      if (this.turn === 1 && this.gameMode === 'ai' && this.winner === -1) {
+        this.setMessage('Carnelian AI calculating geometric leaps...');
+        setTimeout(() => this.executeAI(), 600);
       } else {
         this.setMessage(`Lapis turn: Select a piece to slide or leap.`);
       }
     }
 
     executeAI() {
-      const aiPieces = [];
-      this.board.forEach((v, idx) => { if (v === 1) aiPieces.push(idx); });
-      const freeNodes = [];
-      this.board.forEach((v, idx) => { if (v === -1) freeNodes.push(idx); });
+      if (this.winner !== -1) return;
 
-      if (aiPieces.length > 0 && freeNodes.length > 0) {
-        const from = aiPieces[0];
-        const to = freeNodes[0];
-        this.board[from] = -1;
-        this.board[to] = 1;
-        this.updatePieces3D();
-        this.passTurn();
+      const aiMoves = [];
+      this.board.forEach((v, idx) => {
+        if (v === 1) {
+          const moves = this.getLegalMovesForNode(idx, this.board, 1);
+          moves.forEach(m => aiMoves.push(m));
+        }
+      });
+
+      if (aiMoves.length === 0) {
+        this.winner = 0;
+        this.setMessage('Carnelian AI has no legal moves! Lapis Wins!');
+        return;
       }
+
+      // 1. Prioritize Jump Captures
+      const jumps = aiMoves.filter(m => m.isJump);
+      if (jumps.length > 0) {
+        this.executeMove(jumps[Math.floor(Math.random() * jumps.length)]);
+        return;
+      }
+
+      // 2. Otherwise advance towards center / human pieces
+      aiMoves.sort((a, b) => a.to - b.to);
+      this.executeMove(aiMoves[0]);
     }
 
     initDOMControls() {
@@ -322,22 +494,25 @@
 
     startNewGame() {
       this.board = Array(19).fill(-1);
-      this.board[0] = -1;
-      for (let i = 1; i <= 9; i++) this.board[i] = 0;
-      for (let i = 10; i <= 18; i++) this.board[i] = 1;
+      this.board[0] = -1; // Center empty
+      for (let i = 1; i <= 9; i++) this.board[i] = 0;  // South Player (Lapis)
+      for (let i = 10; i <= 18; i++) this.board[i] = 1; // North Player (Carnelian)
       this.turn = 0;
       this.winner = -1;
       this.selectedIdx = null;
+      this.legalMoves = [];
       this.updatePieces3D();
       this.updateHUD();
-      this.setMessage('Pretwa started! Select a Lapis piece to move.');
+      this.setMessage('Pretwa started! Select a Lapis piece to move or leap.');
     }
 
     updateHUD() {
       const p0 = this.board.filter(v => v === 0).length;
       const p1 = this.board.filter(v => v === 1).length;
       const name = document.getElementById('current-player-name');
-      if (name) name.textContent = `Lapis Pieces: ${p0} | Carnelian Pieces: ${p1}`;
+      const dot = document.getElementById('current-player-color-dot');
+      if (dot) dot.style.background = this.turn === 0 ? '#1D4ED8' : '#DC2626';
+      if (name) name.textContent = `Lapis: ${p0} pieces • Carnelian: ${p1} pieces`;
     }
 
     setMessage(msg) {
@@ -354,6 +529,19 @@
     }
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => new PretwaApp());
-  else new PretwaApp();
+  // Export for test suite
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+      buildAdjacency,
+      buildJumpLines,
+      NODE_COORDS,
+      ADJACENCY,
+      JUMP_LINES
+    };
+  }
+
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => new PretwaApp());
+    else new PretwaApp();
+  }
 })();

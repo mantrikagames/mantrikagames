@@ -268,6 +268,13 @@
       return best;
     }
 
+    checkMillFormed(nodeIdx, player, customBoard = this.board) {
+      return MILLS.some(mill => {
+        if (!mill.includes(nodeIdx)) return false;
+        return mill.every(n => (n === nodeIdx ? player : customBoard[n]) === player);
+      });
+    }
+
     handleNodeClick(nodeIdx) {
       // If player must remove an opponent piece due to a Mill
       if (this.mustRemoveOpponent) {
@@ -560,6 +567,18 @@
     }
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => new MorrisApp());
-  else new MorrisApp();
+  // Export for test suite
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+      MILLS,
+      ADJACENCY,
+      NODE_COORDS,
+      MorrisApp
+    };
+  }
+
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => new MorrisApp());
+    else new MorrisApp();
+  }
 })();
