@@ -88,7 +88,7 @@
   hero_featured: true
   play_url: /games/pachisi/
   image: /assets/images/game_pachisi.svg
-  image_png: /assets/images/game_pachisi.png
+  image_png: /assets/images/game_bagh_bakri_art.jpg
   image_card: /assets/images/hero_pachisi.jpg
   board_geometry: Cross-shaped board (4 arms with 3 columns of 8 squares each, plus central Charkoni)
   rules_summary: "Cast 6 cowrie shells for values (10, 25 [Grace], 2, 3, 4, 5, 6). Navigate pawns from center around board perimeter and back down the home arm into the Charkoni."
@@ -140,8 +140,8 @@
   featured: true
   hero_featured: false
   play_url: /games/gomoku/
-  image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
+  image: /assets/images/game_gomoku_art.jpg
+  image_png: /assets/images/hero_pachisi.jpg
   image_card: /assets/images/game_gomoku_art.jpg
   board_geometry: 15x15 wooden grid (225 intersections)
   rules_summary: "Players alternate placing black and white stones on intersections. The first to form an unbroken chain of 5 stones horizontally, vertically, or diagonally wins."
@@ -190,9 +190,9 @@
   featured: true
   hero_featured: false
   play_url: /games/reversi/
-  image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/game_morris.png
+  image: /assets/images/game_reversi_art.jpg
+  image_png: /assets/images/game_gomoku_art.jpg
+  image_card: /assets/images/game_reversi_art.jpg
   board_geometry: 8x8 grid (64 cells)
   rules_summary: "Place discs to trap opposing discs in a straight line between your new disc and an existing disc. All trapped discs flip to your color. Most discs at game end wins."
   how_to_play:
@@ -241,8 +241,8 @@
   hero_featured: false
   play_url: /games/nine-mens-morris/
   image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/game_morris.png
+  image_png: /assets/images/game_reversi_art.jpg
+  image_card: /assets/images/game_nine_mens_morris_art.jpg
   board_geometry: 3 concentric squares connected by midpoint lines (24 intersection nodes)
   rules_summary: "Form rows of 3 pieces (Mills) along grid lines to remove an opponent piece. Once reduced to 3 pieces, a player gains flying movement."
   how_to_play:
@@ -293,8 +293,8 @@
   hero_featured: false
   play_url: /games/pallanguzhi/
   image: /assets/images/game_pallanguzhi.svg
-  image_png: /assets/images/game_pallanguzhi.png
-  image_card: /assets/images/game_pallanguzhi.png
+  image_png: /assets/images/game_nine_mens_morris_art.jpg
+  image_card: /assets/images/game_pallanguzhi_art.jpg
   board_geometry: 14 carved wooden pits (2 rows of 7 cups)
   rules_summary: "5 seeds per pit (70 seeds). Players lift seeds from a cup on their side and sow clockwise. When the last seed lands before an empty cup, the player captures the seeds in the cup beyond."
   how_to_play:
@@ -346,8 +346,8 @@
   hero_featured: false
   play_url: /games/chowka-bara/
   image: /assets/images/game_chowka_bara.svg
-  image_png: /assets/images/game_chowka_bara.png
-  image_card: /assets/images/game_chowka_bara.png
+  image_png: /assets/images/game_pallanguzhi_art.jpg
+  image_card: /assets/images/game_chowka_bara_art.jpg
   board_geometry: 5x5 square grid (25 cells) with 5 safe castle Kattas
   rules_summary: "5x5 grid with safe Kattas. Cast 4 cowrie shells (values 1, 2, 3, 4, 8). Capture opponent pawns to unlock the inner track and reach the central Ghar."
   how_to_play:
@@ -398,8 +398,8 @@
   hero_featured: false
   play_url: /games/chaupar/
   image: /assets/images/game_chaupar.svg
-  image_png: /assets/images/game_chaupar.png
-  image_card: /assets/images/game_chaupar.png
+  image_png: /assets/images/game_chowka_bara_art.jpg
+  image_card: /assets/images/game_chaupar_art.jpg
   board_geometry: Cross-shaped board with 4 arms and central Charkoni
   rules_summary: "3 long cubic dice (Pasa). Pawns move in pairs (Joori) for protection since there are no safe castles on the board."
   how_to_play:
@@ -450,8 +450,8 @@
   hero_featured: false
   play_url: /games/twelve-beads/
   image: /assets/images/game_twelve_beads.svg
-  image_png: /assets/images/game_twelve_beads.png
-  image_card: /assets/images/game_twelve_beads.png
+  image_png: /assets/images/game_chaupar_art.jpg
+  image_card: /assets/images/game_twelve_beads_art.jpg
   board_geometry: 5x5 diagonal intersecting grid with 25 nodes
   rules_summary: "Two opposing armies of 12 beads. Move 1 step along connecting lines or leap over an adjacent enemy bead into a vacant spot to capture."
   how_to_play:
@@ -502,8 +502,8 @@
   hero_featured: false
   play_url: /games/pretwa/
   image: /assets/images/game_pretwa.svg
-  image_png: /assets/images/game_pretwa.png
-  image_card: /assets/images/game_pretwa.png
+  image_png: /assets/images/game_twelve_beads_art.jpg
+  image_card: /assets/images/game_pretwa_art.jpg
   board_geometry: 3 concentric circles intersected by 3 diameters (19 nodes)
   rules_summary: "3 concentric circles intersected by 3 diameters (19 intersections). 9 pieces each. Slide to adjacent empty node or jump over an enemy to capture."
   how_to_play:
@@ -551,9 +551,9 @@
   featured: false
   hero_featured: false
   play_url: /games/ataxx/
-  image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/game_morris.png
+  image: /assets/images/game_ataxx_art.jpg
+  image_png: /assets/images/game_pretwa_art.jpg
+  image_card: /assets/images/game_ataxx_art.jpg
   board_geometry: 7x7 grid (49 squares)
   rules_summary: "7x7 grid. Clone adjacent (1 step) or jump (2 steps). Convert all adjacent enemy tokens upon landing."
   how_to_play:
@@ -603,9 +603,9 @@
   featured: false
   hero_featured: false
   play_url: /games/hex/
-  image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/game_morris.png
+  image: /assets/images/game_hex_art.jpg
+  image_png: /assets/images/game_ataxx_art.jpg
+  image_card: /assets/images/game_hex_art.jpg
   board_geometry: 7x7 Rhombic hexagonal grid (49 hexagons)
   rules_summary: "Rhombic hexagonal grid. Build an unbroken path connecting your two opposite borders. Draws are mathematically impossible."
   how_to_play:
@@ -653,9 +653,9 @@
   featured: false
   hero_featured: false
   play_url: /games/quoridor/
-  image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/game_morris.png
+  image: /assets/images/game_quoridor_art.jpg
+  image_png: /assets/images/game_hex_art.jpg
+  image_card: /assets/images/game_quoridor_art.jpg
   board_geometry: 9x9 grid with groove tracks for walls (10 walls per player)
   rules_summary: "9x9 grid. Move pawn 1 space or place a 2-cell wall barrier. Never completely block the last path to the goal."
   how_to_play:
@@ -703,9 +703,9 @@
   featured: false
   hero_featured: false
   play_url: /games/surakarta/
-  image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/game_morris.png
+  image: /assets/images/game_surakarta_art.jpg
+  image_png: /assets/images/game_quoridor_art.jpg
+  image_card: /assets/images/game_surakarta_art.jpg
   board_geometry: 6x6 grid with 8 circular corner loop tracks (36 grid points)
   rules_summary: "6x6 grid with 8 corner loops. Moves are 1 step; captures MUST travel along at least 1 circular loop track."
   how_to_play:
@@ -754,8 +754,8 @@
   hero_featured: false
   play_url: /board-of-mills/
   image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/collection_mills.jpg
+  image_png: /assets/images/game_surakarta_art.jpg
+  image_card: /assets/images/game_twelve_mens_morris_art.jpg
   board_geometry: 3 concentric squares with 4 diagonal corner lines (24 nodes, 12 pieces)
   rules_summary: "12 pieces per player. Form mills along orthogonal lines or diagonal corner lines."
   history: Widely played in post-Roman Medieval Europe and documented in the 13th-century Spanish *Libro de los Juegos* of King Alfonso X.
@@ -789,8 +789,8 @@
   hero_featured: false
   play_url: /board-of-mills/
   image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/collection_mills.jpg
+  image_png: /assets/images/game_twelve_mens_morris_art.jpg
+  image_card: /assets/images/game_six_mens_morris_art.jpg
   board_geometry: 2 concentric squares (16 nodes, 6 pieces per player)
   rules_summary: "6 pieces per player. 16 intersection points. Fast opening phase where early placement mistakes are decisive."
   history: Popular in medieval taverns throughout France and England as a swift alternative to the full 9-men game.
@@ -823,8 +823,8 @@
   hero_featured: false
   play_url: /board-of-mills/
   image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  image_card: /assets/images/collection_mills.jpg
+  image_png: /assets/images/game_six_mens_morris_art.jpg
+  image_card: /assets/images/game_morabaraba_art.jpg
   board_geometry: 3 concentric squares with 4 diagonal corner lines (24 nodes, 12 cows per side)
   rules_summary: "Form mills of 3 cows to shoot opposing cows. Flying phase activates when reduced to 3 cows."
   history: Recognized as an official mind sport in South Africa, traditionally played by herd-boys to hone tactical vigilance.
@@ -858,9 +858,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_classics.jpg
-  image_png: /assets/images/collection_classics.jpg
-  image_card: /assets/images/collection_classics.jpg
+  image: /assets/images/game_hashi_world_art.jpg
+  image_png: /assets/images/game_morabaraba_art.jpg
+  image_card: /assets/images/game_hashi_world_art.jpg
   rules_summary: "Connect islands with bridges. The number on each island dictates how many bridges connect to it. Bridges cannot cross."
 
 - id: abalone-world
@@ -887,9 +887,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_abstract.jpg
-  image_png: /assets/images/collection_abstract.jpg
-  image_card: /assets/images/collection_abstract.jpg
+  image: /assets/images/game_abalone_world_art.jpg
+  image_png: /assets/images/game_hashi_world_art.jpg
+  image_card: /assets/images/game_abalone_world_art.jpg
   rules_summary: "Push lines of 2 or 3 marbles against smaller enemy lines (3 against 2, 3 against 1, 2 against 1) to eject 6 opposing marbles from the board."
 
 - id: realmforge
@@ -916,9 +916,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_abstract.jpg
-  image_png: /assets/images/collection_abstract.jpg
-  image_card: /assets/images/collection_abstract.jpg
+  image: /assets/images/game_realmforge_art.jpg
+  image_png: /assets/images/game_abalone_world_art.jpg
+  image_card: /assets/images/game_realmforge_art.jpg
   rules_summary: "Custom strategic world-building and tactical scenarios powered by procedural board generation."
 
 - id: chai-chudi
@@ -944,9 +944,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_heritage.jpg
-  image_png: /assets/images/collection_heritage.jpg
-  image_card: /assets/images/collection_heritage.jpg
+  image: /assets/images/game_chai_chudi_art.jpg
+  image_png: /assets/images/game_realmforge_art.jpg
+  image_card: /assets/images/game_chai_chudi_art.jpg
   rules_summary: "Traditional Indian folk alignment and distribution game documented in regional oral heritage."
 
 - id: mastermind-world
@@ -972,9 +972,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_classics.jpg
-  image_png: /assets/images/collection_classics.jpg
-  image_card: /assets/images/collection_classics.jpg
+  image: /assets/images/game_mastermind_world_art.jpg
+  image_png: /assets/images/game_chai_chudi_art.jpg
+  image_card: /assets/images/game_mastermind_world_art.jpg
   rules_summary: "Guess hidden combinations using exact-match and color-match feedback clues."
 
 - id: klotski-world
@@ -1000,9 +1000,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_classics.jpg
-  image_png: /assets/images/collection_classics.jpg
-  image_card: /assets/images/collection_classics.jpg
+  image: /assets/images/game_klotski_world_art.jpg
+  image_png: /assets/images/game_mastermind_world_art.jpg
+  image_card: /assets/images/game_klotski_world_art.jpg
   rules_summary: "Move rectangular blocks within a confined tray to liberate the large master square."
 
 - id: sokoban-world
@@ -1028,9 +1028,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_classics.jpg
-  image_png: /assets/images/collection_classics.jpg
-  image_card: /assets/images/collection_classics.jpg
+  image: /assets/images/game_sokoban_world_art.jpg
+  image_png: /assets/images/game_klotski_world_art.jpg
+  image_card: /assets/images/game_sokoban_world_art.jpg
   rules_summary: "Crates can only be pushed, never pulled. Solve each level by placing every crate on a designated goal tile."
 
 - id: hive-world
@@ -1056,9 +1056,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_abstract.jpg
-  image_png: /assets/images/collection_abstract.jpg
-  image_card: /assets/images/collection_abstract.jpg
+  image: /assets/images/game_hive_world_art.jpg
+  image_png: /assets/images/game_sokoban_world_art.jpg
+  image_card: /assets/images/game_hive_world_art.jpg
   rules_summary: "Move ants, grasshoppers, spiders, and beetles around an ever-shifting one-piece connected hive to trap the rival queen."
 
 - id: onitama-world
@@ -1084,9 +1084,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_abstract.jpg
-  image_png: /assets/images/collection_abstract.jpg
-  image_card: /assets/images/collection_abstract.jpg
+  image: /assets/images/game_onitama_world_art.jpg
+  image_png: /assets/images/game_hive_world_art.jpg
+  image_card: /assets/images/game_onitama_world_art.jpg
   rules_summary: "Win by capturing the enemy Master or moving your Master onto the opponent's shrine arch."
 
 - id: tak-world
@@ -1113,9 +1113,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_abstract.jpg
-  image_png: /assets/images/collection_abstract.jpg
-  image_card: /assets/images/collection_abstract.jpg
+  image: /assets/images/game_tak_world_art.jpg
+  image_png: /assets/images/game_onitama_world_art.jpg
+  image_card: /assets/images/game_tak_world_art.jpg
   rules_summary: "Place and stack stones to forge a connected road from one board edge to the opposite edge."
 
 - id: pylos-world
@@ -1141,9 +1141,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_abstract.jpg
-  image_png: /assets/images/collection_abstract.jpg
-  image_card: /assets/images/collection_abstract.jpg
+  image: /assets/images/game_pylos_world_art.jpg
+  image_png: /assets/images/game_tak_world_art.jpg
+  image_card: /assets/images/game_pylos_world_art.jpg
   rules_summary: "Selected roadmap choice over Pentago. Place wooden spheres to complete squares and climb higher; the player who places the crown sphere atop the pyramid wins."
 
 - id: living-world
@@ -1169,9 +1169,9 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_abstract.jpg
-  image_png: /assets/images/collection_abstract.jpg
-  image_card: /assets/images/collection_abstract.jpg
+  image: /assets/images/game_living_world_art.jpg
+  image_png: /assets/images/game_pylos_world_art.jpg
+  image_card: /assets/images/game_living_world_art.jpg
   rules_summary: "Emergent organic growth mechanics on a living topological board."
 
 - id: moksha-patam
@@ -1197,7 +1197,7 @@
   featured: false
   hero_featured: false
   play_url: /games/
-  image: /assets/images/collection_classics.jpg
-  image_png: /assets/images/collection_classics.jpg
-  image_card: /assets/images/collection_classics.jpg
+  image: /assets/images/game_moksha_patam_art.jpg
+  image_png: /assets/images/game_living_world_art.jpg
+  image_card: /assets/images/game_moksha_patam_art.jpg
   rules_summary: "Climb ladders of virtue and descend serpents of folly to achieve spiritual liberation (Moksha)."

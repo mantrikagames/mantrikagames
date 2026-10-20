@@ -174,7 +174,7 @@ permalink: /games/
                           data-description="{{ game.description | escape }}" 
                           data-history="{{ game.history | escape }}" 
                           data-rules="{{ game.rules_summary | escape }}"
-                          data-image="{{ game.image | relative_url }}"
+                          data-image="{{ game.image_card | default: game.image | relative_url }}"
                           data-status="{{ game.status }}"
                           data-playurl="{{ game.play_url | relative_url }}">
                     View Overview &amp; Rules
