@@ -1,0 +1,125 @@
+- id: indian-heritage
+  name: Indian Board Game Heritage
+  short_name: Indian Heritage
+  subtitle: Ancient games. Living traditions.
+  count_label: "8 Games"
+  filter_tag: indian-heritage
+  image: /assets/images/collection_heritage.jpg
+  description: Centuries of strategic ingenuity from the Indian subcontinent, from the royal courts of Akbar to village courtyards.
+  primary_games:
+    - slug: bagh-bakri
+      name: Bagh Bakri
+      region: Nepal & Northern India
+    - slug: pachisi
+      name: Pachisi
+      region: Ancient India
+    - slug: chowka-bara
+      name: Chowka Bara
+      region: Karnataka & Tamil Nadu
+    - slug: chaupar
+      name: Chaupar
+      region: Medieval India
+    - slug: pallanguzhi
+      name: Pallanguzhi
+      region: Tamil Nadu & South India
+    - slug: twelve-beads
+      name: Twelve Beads
+      region: Bengal & Bangladesh
+    - slug: pretwa
+      name: Pretwa
+      region: Bihar, India
+    - slug: nine-mens-morris
+      name: Navakankari
+      region: Ancient India & Global
+
+- id: global-strategy
+  name: Global Strategy Worlds
+  short_name: Global Strategy
+  subtitle: Masterworks of international abstract strategy.
+  count_label: "6 Games"
+  filter_tag: global-strategy
+  image: /assets/images/collection_global.jpg
+  description: Elegant mathematical rules, infinite tactical possibilities from Asia, Europe, and around the world.
+  primary_games:
+    - slug: gomoku
+      name: Gomoku World
+      origin: Japan & China
+    - slug: reversi
+      name: Reversi World
+      origin: England & Global
+    - slug: ataxx
+      name: Ataxx World
+      origin: Global Arcade Classic
+    - slug: hex
+      name: Hex World
+      origin: Denmark & Princeton
+    - slug: quoridor
+      name: Quoridor World
+      origin: France
+    - slug: surakarta
+      name: Surakarta World
+      origin: Java, Indonesia
+
+- id: board-of-mills
+  name: Board of Mills Collection
+  short_name: Board of Mills
+  subtitle: The ancient family of three-in-a-row alignment games.
+  count_label: "4 Games"
+  filter_tag: board-of-mills
+  image: /assets/images/collection_mills.jpg
+  description: From Egyptian temple carvings to medieval taverns and African plains, the definitive three-in-a-row alignment suite.
+  page_url: /board-of-mills/
+  primary_games:
+    - slug: nine-mens-morris
+      name: Nine Men's Morris
+      note: Classic 24-node board
+    - slug: twelve-mens-morris
+      name: Twelve Men's Morris
+      note: Diagonal corner variant
+    - slug: six-mens-morris
+      name: Six Men's Morris
+      note: 2-square compact board
+    - slug: morabaraba
+      name: Morabaraba
+      note: Southern African cow game
+
+- id: abstract-strategy
+  name: Abstract Strategy
+  short_name: Abstract Strategy
+  subtitle: Modern & classical tactical perfection.
+  count_label: "5 Games"
+  filter_tag: abstract-strategy
+  image: /assets/images/collection_abstract.jpg
+  description: Pure skill, zero luck, and emergent tactical depth across innovative board topologies.
+  primary_games:
+    - slug: abalone
+      name: Abalone World
+      note: Push-and-capture marble sumo
+    - slug: hive
+      name: Hive World
+      note: Gridless bug surrounding
+    - slug: onitama
+      name: Onitama World
+      note: Shared movement cards
+    - slug: tak
+      name: Tak World
+      note: 3D path building
+    - slug: pylos
+      name: Pylos World
+      note: Sphere pyramid stacking
+
+- id: traditional-classics
+  name: Traditional Classics
+  short_name: Traditional Classics
+  subtitle: Time-tested puzzles and historic games.
+  count_label: "2 Games"
+  filter_tag: traditional-classics
+  image: /assets/images/collection_classics.jpg
+  description: Time-tested cultural games and logic deduction worlds preserved for modern thinkers.
+  primary_games:
+    - slug: moksha-patam
+      name: Moksha Patam
+      note: Philosophical race ancestor
+    - slug: gyan-chaupar
+      name: Gyan Chaupar
+      note: Ancient spiritual board

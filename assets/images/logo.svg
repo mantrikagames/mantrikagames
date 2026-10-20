@@ -1,5 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <circle cx="50" cy="50" r="45" fill="none" stroke="#C89B3C" stroke-width="2"/>
-  <circle cx="50" cy="50" r="35" fill="none" stroke="#C89B3C" stroke-width="0.5" stroke-dasharray="2 2"/>
-  <circle cx="50" cy="50" r="8" fill="#C89B3C"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Outer Ring with Antique Gold Gradients -->
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE79A"/>
+      <stop offset="50%" stop-color="#D6AD69"/>
+      <stop offset="100%" stop-color="#A37E1C"/>
+    </linearGradient>
+    <radialGradient id="gold-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE79A" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D6AD69" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="60" cy="60" r="54" fill="url(#gold-glow)"/>
+
+  <!-- Outer Concentric Circles -->
+  <circle cx="60" cy="60" r="52" stroke="url(#gold-grad)" stroke-width="1.5" stroke-opacity="0.9"/>
+  <circle cx="60" cy="60" r="48" stroke="url(#gold-grad)" stroke-width="0.75" stroke-dasharray="2 3" stroke-opacity="0.6"/>
+  <circle cx="60" cy="60" r="42" stroke="url(#gold-grad)" stroke-width="1" stroke-opacity="0.8"/>
+
+  <!-- Sacred Geometry: Interlocking Star Yantra Triangles -->
+  <!-- Triangle 1 (Point Up) -->
+  <polygon points="60,20 89,70 31,70" stroke="url(#gold-grad)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+  <!-- Triangle 2 (Point Down) -->
+  <polygon points="60,86 89,36 31,36" stroke="url(#gold-grad)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+  <!-- Secondary Inner Triangle 3 (Point Up) -->
+  <polygon points="60,32 78,63 42,63" stroke="url(#gold-grad)" stroke-width="1" fill="none" stroke-opacity="0.75" stroke-linejoin="round"/>
+  <!-- Secondary Inner Triangle 4 (Point Down) -->
+  <polygon points="60,74 78,43 42,43" stroke="url(#gold-grad)" stroke-width="1" fill="none" stroke-opacity="0.75" stroke-linejoin="round"/>
+
+  <!-- Geometric Ray Nodes -->
+  <circle cx="60" cy="18" r="2" fill="url(#gold-grad)"/>
+  <circle cx="60" cy="88" r="2" fill="url(#gold-grad)"/>
+  <circle cx="25" cy="40" r="2" fill="url(#gold-grad)"/>
+  <circle cx="95" cy="40" r="2" fill="url(#gold-grad)"/>
+  <circle cx="25" cy="66" r="2" fill="url(#gold-grad)"/>
+  <circle cx="95" cy="66" r="2" fill="url(#gold-grad)"/>
+
+  <!-- Inner Sacred Core & Bindu -->
+  <circle cx="60" cy="53" r="7" stroke="url(#gold-grad)" stroke-width="1" fill="none"/>
+  <circle cx="60" cy="53" r="3" fill="url(#gold-grad)"/>
 </svg>

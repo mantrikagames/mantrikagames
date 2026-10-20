@@ -1,25 +1,60 @@
-<footer class="footer">
+<footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <!-- Left: Logo & Copyright -->
-      <div class="footer-left">
-        <a href="{{ '/' | relative_url }}" class="footer-logo" aria-label="Mantrika Games Logo">
-          <span class="logo-icon-emblem"></span>
-          Mantrika Games
+    <div class="footer-top-grid">
+      <!-- Brand & Mission Column -->
+      <div class="footer-brand-col">
+        <a href="{{ '/' | relative_url }}" class="footer-brand" aria-label="Mantrika Games Home">
+          <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Mantrika Games" width="34" height="34">
+          <span class="footer-brand-name">Mantrika Games</span>
         </a>
-        <p class="copyright">&copy; {{ 'now' | date: "%Y" }} Mantrika Games. All rights reserved.</p>
+        <p class="footer-tagline">Timeless Strategy. Beautifully Crafted.</p>
+        <p class="footer-mission-text">
+          Preserving centuries of strategic intelligence, tactile craftsmanship, and cultural board game heritage for the modern world.
+        </p>
       </div>
-      
-      <!-- Right: Links (Privacy, Terms, Contact) -->
-      <div class="footer-right">
-        <ul class="footer-links">
-          <li><a href="{{ '/' | relative_url }}#about">About</a></li>
-          <li><a href="{{ '/' | relative_url }}#games">Games</a></li>
-          <li><a href="{{ '/' | relative_url }}#gallery">Gallery</a></li>
-          <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
-          <li><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+
+      <!-- Discovery Collections -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Game Collections</h4>
+        <ul class="footer-links-list">
+          <li><a href="{{ '/games/' | relative_url }}">All Games Catalogue</a></li>
+          <li><a href="{{ '/' | relative_url }}#heritage">Indian Heritage Games</a></li>
+          <li><a href="{{ '/' | relative_url }}#explore-collection">Global Strategy Worlds</a></li>
+          <li><a href="{{ '/board-of-mills/' | relative_url }}">Board of Mills Suite</a></li>
+          <li><a href="{{ '/games/bagh-bakri/' | relative_url }}">Bagh Bakri 3D</a></li>
+          <li><a href="{{ '/games/pachisi/' | relative_url }}">Pachisi 3D</a></li>
         </ul>
+      </div>
+
+      <!-- Studio & Information -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Studio &amp; Platform</h4>
+        <ul class="footer-links-list">
+          <li><a href="{{ '/' | relative_url }}#about">About Mantrika Games</a></li>
+          <li><a href="{{ '/' | relative_url }}#play-your-way">Play vs AI &amp; Local</a></li>
+          <li><a href="{{ '/' | relative_url }}#play-anywhere">Browser Accessibility</a></li>
+          <li><a href="https://github.com/mantrikagames" target="_blank" rel="noopener noreferrer">GitHub Open Source</a></li>
+          <li><a href="mailto:mantrikagames@gmail.com">mantrikagames@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Compliance -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Legal &amp; Privacy</h4>
+        <ul class="footer-links-list">
+          <li><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a></li>
+          <li><a href="{{ '/delete-account/' | relative_url }}">Account &amp; Data Deletion</a></li>
+          <li><a href="{{ '/privacy/' | relative_url }}#terms">Terms of Service</a></li>
+          <li><span class="footer-status-pill">Hosted on GitHub Pages</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p class="copyright-text">&copy; {{ 'now' | date: "%Y" }} Mantrika Games. All rights reserved. Timeless Strategy, Beautifully Crafted.</p>
+      <div class="footer-bottom-badges">
+        <span class="footer-badge">No Tracking Ads</span>
+        <span class="footer-badge">Pure HTML5 &amp; WebGL</span>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-# Mantrika Games Official Website — 3D Showcase Upgrade Final Report
+# Mantrika Games Official Website — 3D Showcase Upgrade Final Report & Correspondence Visuals
 
 ## Executive Summary
 

@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initHistoryModals();
   initBoardShowcases();
+  initHeroCarousel();
+  initCollectionFiltering();
+  initNavSearch();
+  initGameTabs();
 });
 
 /**
@@ -18,7 +22,7 @@ function initTheme() {
   const getPreferredTheme = () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) return savedTheme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark'; // Default to deep charcoal dark theme matching reference
   };
 
   const setTheme = (theme) => {
@@ -51,8 +55,8 @@ function initNavbarScroll() {
     }
   };
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Initial load run
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 }
 
 /**
@@ -69,7 +73,6 @@ function initMobileMenu() {
     toggleBtn.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close drawer when clicking links
   const mobileLinks = drawer.querySelectorAll('a');
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -89,8 +92,8 @@ function initScrollAnimations() {
   if ('IntersectionObserver' in window) {
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.1
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.05
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -239,7 +242,6 @@ function initBoardShowcases() {
 
     showcases.forEach(el => observer.observe(el));
   } else {
-    // Fallback for older browsers
     showcases.forEach(el => {
       const boardType = el.getAttribute('data-board-type');
       window.createBoardShowcase(el, boardType, { size: 280 });
@@ -249,4 +251,245 @@ function initBoardShowcases() {
       }
     });
   }
+}
+
+/**
+ * 8. Cinematic Hero Carousel (Pachisi <-> Bagh Bakri)
+ */
+function initHeroCarousel() {
+  const container = document.getElementById('hero-carousel-container');
+  if (!container) return;
+
+  const slides = container.querySelectorAll('.hero-carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const prevBtn = document.getElementById('hero-prev-btn');
+  const nextBtn = document.getElementById('hero-next-btn');
+
+  if (slides.length <= 1) return;
+
+  let currentIdx = 0;
+
+  function showSlide(idx) {
+    if (idx < 0) idx = slides.length - 1;
+    if (idx >= slides.length) idx = 0;
+    currentIdx = idx;
+
+    slides.forEach((slide, i) => {
+      if (i === currentIdx) {
+        slide.style.display = 'block';
+        setTimeout(() => slide.classList.add('active'), 20);
+      } else {
+        slide.classList.remove('active');
+        slide.style.display = 'none';
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIdx);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => showSlide(currentIdx - 1));
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => showSlide(currentIdx + 1));
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      const idx = parseInt(e.target.getAttribute('data-slide'), 10);
+      if (!isNaN(idx)) showSlide(idx);
+    });
+  });
+}
+
+/**
+ * 9. Explore the Collection — Real-Time Search & Multi-Criteria Filtering
+ */
+function initCollectionFiltering() {
+  const searchInput = document.getElementById('catalogue-search-input');
+  const categorySelect = document.getElementById('filter-category');
+  const playersSelect = document.getElementById('filter-players');
+  const diffSelect = document.getElementById('filter-difficulty');
+  const availSelect = document.getElementById('filter-availability');
+  const clearBtn = document.getElementById('clear-all-filters-btn');
+  const resetBtn = document.getElementById('reset-collection-filters-btn');
+  const cards = document.querySelectorAll('.discovery-card');
+  const emptyState = document.getElementById('collection-empty-state');
+  const collectionBanners = document.querySelectorAll('.collection-card');
+
+  if (!cards.length) return;
+
+  // Check URL parameters for preset category (e.g., ?category=indian-heritage)
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramCategory = urlParams.get('category');
+  if (paramCategory && categorySelect) {
+    categorySelect.value = paramCategory;
+    highlightCollectionCard(paramCategory);
+  }
+
+  function highlightCollectionCard(cat) {
+    collectionBanners.forEach(banner => {
+      const filter = banner.getAttribute('data-collection-filter');
+      banner.classList.toggle('active', filter === cat);
+    });
+  }
+
+  function applyFilters() {
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const selectedCat = categorySelect ? categorySelect.value : 'all';
+    const selectedPlayers = playersSelect ? playersSelect.value : 'all';
+    const selectedDiff = diffSelect ? diffSelect.value : 'all';
+    const selectedAvail = availSelect ? availSelect.value : 'all';
+
+    let matchCount = 0;
+
+    cards.forEach(card => {
+      const name = (card.getAttribute('data-name') || '').toLowerCase();
+      const regional = (card.getAttribute('data-regional') || '').toLowerCase();
+      const category = card.getAttribute('data-category') || '';
+      const players = card.getAttribute('data-players') || '';
+      const diff = card.getAttribute('data-difficulty') || '';
+      const status = card.getAttribute('data-status') || '';
+
+      // Search match
+      const matchesSearch = !query || name.includes(query) || regional.includes(query);
+
+      // Category match
+      let matchesCat = (selectedCat === 'all');
+      if (!matchesCat) {
+        if (selectedCat === 'board-of-mills') {
+          matchesCat = (category === 'board-of-mills' || card.getAttribute('data-name') === "nine men's morris");
+        } else {
+          matchesCat = (category === selectedCat);
+        }
+      }
+
+      // Players match
+      let matchesPlayers = (selectedPlayers === 'all');
+      if (!matchesPlayers) {
+        matchesPlayers = (players === selectedPlayers || players.includes(selectedPlayers));
+      }
+
+      // Difficulty match
+      const matchesDiff = (selectedDiff === 'all') || (diff.toLowerCase() === selectedDiff.toLowerCase());
+
+      // Availability match
+      const matchesAvail = (selectedAvail === 'all') || (status === selectedAvail);
+
+      if (matchesSearch && matchesCat && matchesPlayers && matchesDiff && matchesAvail) {
+        card.style.display = 'flex';
+        matchCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (emptyState) {
+      emptyState.style.display = matchCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  // Event Listeners
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+  if (categorySelect) {
+    categorySelect.addEventListener('change', () => {
+      highlightCollectionCard(categorySelect.value);
+      applyFilters();
+    });
+  }
+  if (playersSelect) playersSelect.addEventListener('change', applyFilters);
+  if (diffSelect) diffSelect.addEventListener('change', applyFilters);
+  if (availSelect) availSelect.addEventListener('change', applyFilters);
+
+  // Clear filters
+  const resetAll = () => {
+    if (searchInput) searchInput.value = '';
+    if (categorySelect) categorySelect.value = 'all';
+    if (playersSelect) playersSelect.value = 'all';
+    if (diffSelect) diffSelect.value = 'all';
+    if (availSelect) availSelect.value = 'all';
+    highlightCollectionCard('all');
+    applyFilters();
+  };
+
+  if (clearBtn) clearBtn.addEventListener('click', resetAll);
+  if (resetBtn) resetBtn.addEventListener('click', resetAll);
+
+  // Collection card clicks
+  collectionBanners.forEach(banner => {
+    banner.addEventListener('click', () => {
+      const filter = banner.getAttribute('data-collection-filter');
+      if (categorySelect) {
+        categorySelect.value = filter;
+        highlightCollectionCard(filter);
+        applyFilters();
+        // Smooth scroll to discovery grid
+        const resultsGrid = document.getElementById('collection-results-grid');
+        if (resultsGrid) resultsGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+
+  // Run on initial load
+  applyFilters();
+}
+
+/**
+ * 10. Header Quick Search integration
+ */
+function initNavSearch() {
+  const navInput = document.getElementById('nav-search-input');
+  const mobileInput = document.getElementById('mobile-search-input');
+  const catalogueInput = document.getElementById('catalogue-search-input');
+
+  const handleNavSearch = (input) => {
+    if (!input) return;
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const query = input.value.trim();
+        if (catalogueInput) {
+          catalogueInput.value = query;
+          catalogueInput.dispatchEvent(new Event('input'));
+          const section = document.getElementById('explore-collection');
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.href = `/games/?search=${encodeURIComponent(query)}`;
+        }
+      }
+    });
+  };
+
+  handleNavSearch(navInput);
+  handleNavSearch(mobileInput);
+}
+
+/**
+ * 11. Game Detail Information Tabs
+ */
+function initGameTabs() {
+  const tabBtns = document.querySelectorAll('.game-tab-btn');
+  const tabPanes = document.querySelectorAll('.game-tab-pane');
+
+  if (!tabBtns.length || !tabPanes.length) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
+
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      tabPanes.forEach(pane => pane.classList.remove('active'));
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const targetPane = document.getElementById(`tab-${targetTab}`);
+      if (targetPane) targetPane.classList.add('active');
+    });
+  });
 }

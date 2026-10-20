@@ -1,266 +1,1203 @@
-- name: Chowka Bara
-  country: India (Karnataka, Maharashtra, Tamil Nadu)
-  regional_names: Katte Mane, Ashta Chamma, Daayam, Pakidakali, Chauka Bara
-  description: A classic race-strategy game played on a 5x5 grid using 4 cowrie shells. Players navigate concentric loops, capture opponent pawns to unlock the inner sanctum, and race to the central Ghar.
-  difficulty: Easy
-  slug: chowka-bara
-  status: playable
-  category: Race
-  category_tag: race
-  players: 2–4 Players
-  player_count_tag: 2-4
-  duration: 15–30 mins
-  featured: false
-  play_url: /games/chowka-bara/
-  image: /assets/images/game_chowka_bara.svg
-  image_png: /assets/images/game_chowka_bara.png
-  rules_summary: 5x5 grid with safe Kattas. Roll 4 cowrie shells (values 1, 2, 3, 4, 8). Capture opponent pawns to unlock the inner track and reach the central Ghar.
-  history: Also known as Katte Mane in Kannada, Ashta Chamma in Telugu, and Daayam in Tamil, Chowka Bara is one of the most revered traditional board games of the Indian subcontinent, dating back to antiquity and referenced in ancient epic folklore. Historically played on cloth or carved wooden boards with split tamarind seeds or cowrie shells, it teaches probabilistic risk assessment, territorial defense, and tactical encirclement.
+# ==============================================================================
+# MANTRIKA GAMES — CANONICAL GAME CATALOGUE (SINGLE SOURCE OF TRUTH)
+# ==============================================================================
 
-- name: Pachisi
-  country: Ancient India
-  regional_names: Chaupad, Twenty-Five, Sokkattan
-  description: The historic race game of India played on a cross-shaped board. Players cast 6 cowrie shells to navigate four pieces home, using safe zones and capturing opponents.
-  difficulty: Medium
-  slug: pachisi
-  status: playable
-  category: Race
-  category_tag: race
-  players: 2–4 Players
-  player_count_tag: 2-4
-  duration: 20–45 mins
-  featured: false
-  play_url: /games/pachisi/
-  image: /assets/images/game_pachisi.svg
-  image_png: /assets/images/game_pachisi.png
-  rules_summary: Cross-shaped board with 4 arms. 6 cowrie shells cast for values (10, 25 [Grace], 2, 3, 4, 5, 6). Navigate pawns around the board perimeter into the central Charkoni.
-  history: Regarded as the "National Game of India", Pachisi dates back to at least the 4th century CE. It was so revered that the Mughal Emperor Akbar played it in Fatehpur Sikri using court dancers as live pieces on a giant stone courtyard board. It is the direct ancestor of modern Ludo but with far deeper tactical depth.
+# SECTION 1: PLAYABLE 3D IN-BROWSER GAMES (14 TITLES)
 
-- name: Chaupar
-  country: Ancient India
-  regional_names: Chausar, Chaupad
-  description: A strategic royal race game played on a cross-shaped cloth board with 3 long rectangular cubic wooden dice. Featuring no safe zones, players form pairs (Joori) to build impenetrable blockades.
-  difficulty: Hard
-  slug: chaupar
-  status: playable
-  category: Strategy
-  category_tag: strategy
-  players: 2–4 Players
-  player_count_tag: 2-4
-  duration: 30–60 mins
-  featured: false
-  play_url: /games/chaupar/
-  image: /assets/images/game_chaupar.svg
-  image_png: /assets/images/game_chaupar.png
-  rules_summary: 3 long cubic dice (Pasa). Pawns move in pairs (Joori) for protection since there are no safe castles on the board.
-  history: A royal race game played in the royal courts of India for centuries. Unlike Pachisi, Chaupar features no safe castles on the board and relies heavily on strategic grouping of pieces (Joori) to block opponent paths, requiring absolute tactical precision.
-
-- name: Bagh Bakri
-  country: Nepal & Northern India
-  regional_names: Bagh Chal, Adu Huli, Puli Joodam
-  description: An asymmetric strategy game where 4 ferocious tigers hunt 20 goats, while the goats coordinate to surround and immobilize the tigers across a 5x5 intersecting grid.
-  difficulty: Hard
+- id: bagh-bakri
   slug: bagh-bakri
-  status: playable
-  category: Strategy
-  category_tag: strategy
+  name: Bagh Bakri
+  subtitle: Tigers and Goats — A Timeless Indian Strategy Game
+  country: Nepal & Northern India
+  regional_names: Bagh Chal, Adu Huli, Puli Joodam, Pulijudam
+  description: A classic Indian board game where 4 ferocious tigers hunt and 20 agile goats cooperate to block them. Simple rules, deep strategy, and centuries of history.
+  full_description: >-
+    Bagh Bakri (also known as Bagh Chal in Nepal and Adu Huli in Karnataka) is an asymmetric hunt-and-block strategy game played on a 5x5 diagonal intersecting grid. One player commands 4 ferocious tigers aiming to capture 5 goats, while the other player places and slides 20 goats aiming to surround and immobilize all 4 tigers.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - Strategy
+    - Asymmetric
+  mechanics: Hunt and Block
   players: 2 Players
-  player_count_tag: 2
-  duration: 15–30 mins
-  featured: false
+  player_count_tag: "2"
+  duration: 20–30 mins
+  difficulty: Medium
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Android (In Development)"
+  featured: true
+  hero_featured: false
   play_url: /games/bagh-bakri/
   image: /assets/images/game_bagh_bakri.svg
   image_png: /assets/images/game_bagh_bakri.png
-  rules_summary: 5x5 grid with diagonal intersections. Tigers jump over goats along grid lines to capture; goats place and slide to fence in all 4 tigers.
-  history: A classic asymmetric hunt game widely played in Nepal and Northern India (often known as Bagh Chal). Tigers hunt goats while goats attempt to fence in the tigers. It represents the eternal struggle between predator and prey, requiring teamwork and sacrifice from the goat player to outwit the tigers.
+  image_card: /assets/images/game_bagh_bakri_art.jpg
+  board_geometry: 5x5 grid with diagonal intersections (25 nodes, 56 lines)
+  rules_summary: "4 tigers start at board corners. Goat player places 20 goats one by one on empty nodes. Tigers jump over adjacent goats along grid lines to capture. Goats win by surrounding all 4 tigers so they cannot move."
+  how_to_play:
+    - phase: Placement Phase
+      text: "The Goat player places one goat per turn on any vacant intersection. During this phase, goats cannot move, but tigers can slide or jump-capture."
+    - phase: Movement Phase
+      text: "Once all 20 goats are placed, the goat player may slide any goat one step along a grid line to an adjacent vacant intersection."
+    - phase: Tiger Captures
+      text: "A tiger captures a goat by leaping over it along a straight marked line onto the immediate vacant node beyond."
+  rules_detailed:
+    - 4 tigers start placed on the four outermost corner nodes.
+    - The goat player has 20 goats in reserve.
+    - Goats move first.
+    - Tigers can jump over a goat in any direction along marked lines, provided the destination node is unoccupied. Multiple jumps in one turn are not allowed.
+    - Tigers win if they capture 5 goats.
+    - Goats win if they trap and immobilize all 4 tigers so no legal move is possible.
+  history: >-
+    Revered across the Himalayan valleys of Nepal and northern and southern India, Bagh Bakri has been etched into temple flagstones, courtyard clay, and carved wood for centuries. Known as Bagh Chal (Nepal's national game) and Adu Huli (Karnataka), it embodies the eternal dance of predator and community defense.
+  strategy_tips:
+    - Goats should maintain tight triangular defensive clusters to prevent tigers from leaping through lines.
+    - Avoid placing single isolated goats on edges where diagonal escape lines exist.
+    - Tigers should seek early captures during the placement phase before the goat wall solidifies.
+  related_game_ids:
+    - pachisi
+    - chowka-bara
+    - pretwa
+    - twelve-beads
 
-- name: Pallanguzhi
-  country: South India & Sri Lanka
-  regional_names: Ali Guli Mane, Vamana Guntalu, Kuzhipara
-  description: A traditional Mancala-style game played to capture cowrie shells or tamarind seeds across 14 carved pits. Requires strategic arithmetic and tactical sowing.
+- id: pachisi
+  slug: pachisi
+  name: Pachisi
+  subtitle: A Royal Game of India with Dice and Strategy
+  country: Ancient India
+  regional_names: Chaupad, Twenty-Five, Sokkattan, Chausar
+  description: The historic national race game of India played on a cross-shaped board. Players cast 6 cowrie shells to navigate four pawns home through safe castles and tactical captures.
+  full_description: >-
+    Regarded as the National Game of India, Pachisi dates back to the 4th century CE. Played on an embroidered cloth or carved wooden cross-shaped board with 6 cowrie shells as dice, four players race their pawns around the outer perimeter and down the home arm into the central Charkoni.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - Royal Classic
+    - Race & Capture
+  mechanics: Race, Cowrie Cast, Capture
+  players: 2–4 Players
+  player_count_tag: "2-4"
+  duration: 20–45 mins
   difficulty: Medium
-  slug: pallanguzhi
   status: playable
-  category: Mancala
-  category_tag: mancala
-  players: 2 Players
-  player_count_tag: 2
-  duration: 15–25 mins
-  featured: false
-  play_url: /games/pallanguzhi/
-  image: /assets/images/game_pallanguzhi.svg
-  image_png: /assets/images/game_pallanguzhi.png
-  rules_summary: 14 wooden cups (2 rows of 7). Players take seeds from a pit and sow clockwise, capturing accumulated cups and Pasu stores upon reaching empty pits.
-  history: Originating in Tamil Nadu and Karnataka, Pallanguzhi is a traditional mancala-style game mentioned in ancient Sangam literature. Historically played by women and children using cowrie shells or tamarind seeds in a carved wooden board of 14 pits, it was used to teach strategic planning, mental arithmetic, and sharing.
-
-- name: Nine Men's Morris
-  country: Global & India (Navakankari)
-  regional_names: Navakankari, Merels, Mill
-  description: An ancient strategy game where players place and slide pieces along 3 concentric squares to form mills of three, capturing opponent pieces.
-  difficulty: Medium
-  slug: nine-mens-morris
-  status: playable
-  category: Strategy
-  category_tag: strategy
-  players: 2 Players
-  player_count_tag: 2
-  duration: 15–30 mins
+  platform_release: "Web Browser (Playable in 3D), Android (In Development)"
   featured: true
-  play_url: /games/nine-mens-morris/
-  image: /assets/images/game_morris.svg
-  image_png: /assets/images/game_morris.png
-  rules_summary: 3 nested squares with 24 intersection points. Form rows of 3 (Mills) to remove an opponent piece. Flying phase when reduced to 3 pieces.
-  history: Known as Navakankari in ancient India and Merels in Europe, Nine Men's Morris is one of the oldest strategy games in human history, with boards carved into the temple of Kurna in Egypt (1400 BCE), Ajanta/Ellora caves in India, and widely played across the Roman Empire and Medieval Europe.
+  hero_featured: true
+  play_url: /games/pachisi/
+  image: /assets/images/game_pachisi.svg
+  image_png: /assets/images/game_pachisi.png
+  image_card: /assets/images/hero_pachisi.jpg
+  board_geometry: Cross-shaped board (4 arms with 3 columns of 8 squares each, plus central Charkoni)
+  rules_summary: "Cast 6 cowrie shells for values (10, 25 [Grace], 2, 3, 4, 5, 6). Navigate pawns from center around board perimeter and back down the home arm into the Charkoni."
+  how_to_play:
+    - phase: Cowrie Cast
+      text: "Players cast 6 cowrie shells. The number of shells landing mouth-up determines the movement count. Rolling 25 or 10 grants a bonus roll."
+    - phase: Pawn Entry
+      text: "Pawns enter from the central Charkoni into the player's home arm and proceed counter-clockwise around the outer track."
+    - phase: Safe Squares & Captures
+      text: "Marked 'X' squares are safe castles where pieces cannot be captured. Landing on an opponent's pawn on an unmarked square captures it and returns it to start."
+  rules_detailed:
+    - 6 cowries cast: 5 up = 25 (Pachis, bonus turn), 1 up = 10 (bonus turn), 2 up = 2, 3 up = 3, 4 up = 4, 6 up = 6 (bonus turn), 0 up = 6 (or 12).
+    - Landing on an opponent pawn returns it to the center.
+    - Pawns on castle squares (marked with X) are immune from capture.
+    - All 4 pawns must complete the circuit and enter the Charkoni by exact roll to win.
+  history: >-
+    Dating back over 1,600 years, Pachisi is celebrated across ancient Indian epics. In the 16th century, Mughal Emperor Akbar constructed a colossal stone Pachisi board in the courtyard of Fatehpur Sikri, utilizing sixteen court maidens as living pawns moving across the stones at his command. It is the direct ancestor of modern Ludo and Parcheesi.
+  strategy_tips:
+    - Prioritize resting pawns on castle squares before making long dashes across enemy territory.
+    - Coordinate moving pawns in tandem to cover each other's rear tracks.
+  related_game_ids:
+    - chaupar
+    - chowka-bara
+    - bagh-bakri
 
-- name: Twelve Beads
-  country: Bengal, India & Bangladesh
-  regional_names: Baro Guti, 12 Guti
-  description: Also known as Baro Guti, this is a strategic war alignment game where players jump and capture opposing beads across an intersecting diamond grid.
-  difficulty: Easy
-  slug: twelve-beads
-  status: playable
-  category: Strategy
-  category_tag: strategy
-  players: 2 Players
-  player_count_tag: 2
-  duration: 10–20 mins
-  featured: false
-  play_url: /games/twelve-beads/
-  image: /assets/images/game_twelve_beads.svg
-  image_png: /assets/images/game_twelve_beads.png
-  rules_summary: Two opposing armies of 12 beads. Move 1 step along connecting lines or leap over an adjacent enemy bead into a vacant spot to capture.
-  history: Popular in rural Bengal, Bangladesh, and eastern India, Baro Guti belongs to the Alquerque family of games. Historically played in courtyards on boards etched into stone or clay with polished river stones, it is a masterclass in tactical flank maneuvers and piece sacrifices.
-
-- name: Pretwa
-  country: Bihar, India
-  regional_names: Circular Alquerque
-  description: A rare traditional strategy game from Bihar played on a circular mandala board. Players slide pieces along radial lines and concentric arcs, leaping to capture.
-  difficulty: Medium
-  slug: pretwa
-  status: playable
-  category: Strategy
-  category_tag: strategy
-  players: 2 Players
-  player_count_tag: 2
-  duration: 15–25 mins
-  featured: false
-  play_url: /games/pretwa/
-  image: /assets/images/game_pretwa.svg
-  image_png: /assets/images/game_pretwa.png
-  rules_summary: 3 concentric circles intersected by 3 diameters (19 intersections). 9 pieces each. Slide to adjacent empty node or jump over an enemy to capture.
-  history: An abstract strategy game native to the Bihar region of India. Unlike globally documented games, Pretwa has survived through oral community traditions and village play. Its circular board represents astronomical orbits or mandala crop rings.
-
-- name: Gomoku World
-  country: Japan & China (Wuziqi)
-  regional_names: Five in a Row, Renju
-  description: Continuous alignment strategy on an engraved 15x15 wooden grid with convex obsidian and porcelain 3D Go stones.
-  difficulty: Medium
+- id: gomoku
   slug: gomoku
-  status: playable
-  category: Strategy
-  category_tag: strategy
+  name: Gomoku World
+  subtitle: Five in a Row — Infinite Strategic Possibilities
+  country: Japan & China (Wuziqi)
+  regional_names: Five in a Row, Renju, Wuziqi
+  description: Five in a row. Simple rules, infinite tactical possibilities. Continuous alignment strategy on an engraved 15x15 wooden grid with convex obsidian and porcelain Go stones.
+  full_description: >-
+    Dating back to 10th century Japan and ancient China, Gomoku (Wuziqi) is a timeless abstract alignment game requiring continuous attack and defense foresight. Two players take turns placing black and white stones on empty intersections of a 15x15 grid. The first player to align five consecutive stones in an unbroken row wins.
+  category: Global Strategy
+  category_tag: global-strategy
+  collection_id: global-strategy
+  secondary_tags:
+    - Global Strategy
+    - Alignment
+    - Pure Skill
+  mechanics: Line Formation
   players: 2 Players
-  player_count_tag: 2
+  player_count_tag: "2"
   duration: 10–20 mins
+  difficulty: Easy
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Google Play (Released: com.mantrikagames.gomokuworld)"
   featured: true
+  hero_featured: false
   play_url: /games/gomoku/
   image: /assets/images/game_morris.svg
   image_png: /assets/images/game_morris.png
-  rules_summary: 15x15 wooden grid. Place stones to align 5 in a row horizontally, vertically, or diagonally.
-  history: Dating back to 10th century Japan and ancient China, Gomoku (Wuziqi) is a timeless abstract alignment game requiring continuous attack and defense foresight.
+  image_card: /assets/images/game_gomoku_art.jpg
+  board_geometry: 15x15 wooden grid (225 intersections)
+  rules_summary: "Players alternate placing black and white stones on intersections. The first to form an unbroken chain of 5 stones horizontally, vertically, or diagonally wins."
+  how_to_play:
+    - phase: Alternating Turns
+      text: "Black plays first, placing one stone on any empty intersection. White follows. Stones cannot be moved or removed once placed."
+    - phase: Winning Condition
+      text: "Align exactly five (or five or more) of your stones in a straight unbroken line in any direction."
+  rules_detailed:
+    - 15x15 grid of intersections.
+    - Black moves first.
+    - Win by connecting 5 stones in a row.
+  history: >-
+    Originating in ancient China as Wuziqi and refined in Meiji-era Japan as Gomoku Narabe and Renju, Gomoku embodies pure abstract strategy. With no randomness or hidden information, it has been studied extensively by mathematicians and computer scientists.
+  strategy_tips:
+    - Always aim to create open threes and double fours that cannot be defended simultaneously.
+    - Defense is paramount: immediately block opposing open threes before they become unblockable fours.
+  related_game_ids:
+    - reversi
+    - hex
+    - nine-mens-morris
 
-- name: Reversi World
+- id: reversi
+  slug: reversi
+  name: Reversi World
+  subtitle: Capture, Flip, and Control the Tabletop
   country: England & Global (Othello)
   regional_names: Othello, Reversi
-  description: Outflank opposing discs on an 8x8 felt-lined wood frame with physical horizontal axis disc flip rotations.
-  difficulty: Medium
-  slug: reversi
-  status: playable
-  category: Strategy
-  category_tag: strategy
+  description: Capture, flip, and control the board. Outflank opposing discs on an 8x8 felt-lined wood frame with physical horizontal axis disc flip rotations.
+  full_description: >-
+    Invented in 19th-century London and refined in Japan as Othello, Reversi is known for the motto "A minute to learn, a lifetime to master." Players trap opponent discs between their own along rows, columns, or diagonals, flipping them to their own color.
+  category: Global Strategy
+  category_tag: global-strategy
+  collection_id: global-strategy
+  secondary_tags:
+    - Global Strategy
+    - Disc Flip
+    - Outflanking
+  mechanics: Encirclement & Conversion
   players: 2 Players
-  player_count_tag: 2
+  player_count_tag: "2"
   duration: 10–20 mins
+  difficulty: Easy
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Google Play (Released: com.mantrikagames.reversiworld)"
   featured: true
+  hero_featured: false
   play_url: /games/reversi/
   image: /assets/images/game_morris.svg
   image_png: /assets/images/game_morris.png
-  rules_summary: 8x8 grid. Outflank opponent discs between your pieces to flip their colors. Most discs at end wins.
-  history: Invented in 19th century London and popularized globally as Othello in Japan, Reversi is known for the motto "A minute to learn, a lifetime to master."
+  image_card: /assets/images/game_morris.png
+  board_geometry: 8x8 grid (64 cells)
+  rules_summary: "Place discs to trap opposing discs in a straight line between your new disc and an existing disc. All trapped discs flip to your color. Most discs at game end wins."
+  how_to_play:
+    - phase: Disc Placement
+      text: "Place a disc such that at least one opponent disc is outflanked in a straight line between your newly placed disc and another of your color."
+    - phase: Flipping
+      text: "All trapped discs are flipped to your color. If no legal move exists, the player must pass."
+  rules_detailed:
+    - 8x8 square board with 4 center starting discs.
+    - Legal moves must flip at least one opponent disc.
+    - Game ends when the board is full or neither player can make a move.
+  history: >-
+    Invented in England in 1883 by Lewis Waterman or John W. Mollett, Reversi was modernized in Japan by Goro Hasegawa in 1971 under the name Othello, referencing Shakespeare's dramatic turns of fortune.
+  strategy_tips:
+    - Corner squares are permanent and can never be flipped; controlling corners is the single strongest strategic advantage.
+    - Minimize your disc count in the early game to restrict opponent mobility.
+  related_game_ids:
+    - gomoku
+    - ataxx
+    - quoridor
 
-- name: Ataxx World
+- id: nine-mens-morris
+  slug: nine-mens-morris
+  name: Nine Men's Morris
+  subtitle: An Ancient Classic of Strategic Alignment
+  country: Global & India (Navakankari)
+  regional_names: Navakankari, Merels, Mill, Nine Men's Mill
+  description: An ancient classic of strategic alignment. Players place and slide pieces along 3 concentric squares to form mills of three, capturing opponent pieces.
+  full_description: >-
+    Nine Men's Morris (known as Navakankari in India and Merels across Medieval Europe) is one of the oldest strategy games in human civilization. Played on a board of three nested concentric squares with 24 intersection points, players place and slide stones to form 'mills' of three in a row to capture opposing pieces.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: board-of-mills
+  secondary_tags:
+    - Indian Heritage
+    - Board of Mills
+    - Alignment
+  mechanics: Mill Formation & Capture
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 15–30 mins
+  difficulty: Medium
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Google Play (Released: com.mantrikagames.boardofmills)"
+  featured: true
+  hero_featured: false
+  play_url: /games/nine-mens-morris/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  image_card: /assets/images/game_morris.png
+  board_geometry: 3 concentric squares connected by midpoint lines (24 intersection nodes)
+  rules_summary: "Form rows of 3 pieces (Mills) along grid lines to remove an opponent piece. Once reduced to 3 pieces, a player gains flying movement."
+  how_to_play:
+    - phase: Phase 1 — Placement
+      text: "Players take turns placing their 9 pieces onto empty intersection points. Forming a mill allows capturing an opponent's piece."
+    - phase: Phase 2 — Movement
+      text: "Players slide one piece along a line to an adjacent empty node. Forming a mill allows capturing an opponent piece."
+    - phase: Phase 3 — Flying
+      text: "When reduced to 3 pieces, a player's pieces can 'fly' to any vacant node on the board."
+  rules_detailed:
+    - 24 nodes, 16 potential mills.
+    - Pieces in an existing mill cannot be captured unless no other opponent pieces are available.
+    - Win by reducing the opponent to 2 pieces or immobilizing all opponent pieces.
+  history: >-
+    Boards have been found carved into the temple of Kurna in Egypt (1400 BCE), the caves of Ajanta and Ellora in Maharashtra, Roman stone steps, and medieval European cathedral cloisters. In Shakespeare's *A Midsummer Night's Dream*, Titania laments that "the nine men's morris is fill'd up with mud."
+  strategy_tips:
+    - Strive to create a "double mill" (pumping mill) where moving one piece back and forth completes a mill on every single turn.
+    - Avoid crowding outer corners in early placement; midpoint nodes offer greater connectivity.
+  related_game_ids:
+    - bagh-bakri
+    - twelve-beads
+    - gomoku
+
+- id: pallanguzhi
+  slug: pallanguzhi
+  name: Pallanguzhi
+  subtitle: A Traditional Indian Game of Strategy and Math
+  country: South India & Sri Lanka
+  regional_names: Ali Guli Mane, Vamana Guntalu, Kuzhipara, Chenne Mane
+  description: A traditional Indian game of strategy and math. Distribute and capture cowrie shells or tamarind seeds across 14 carved wooden pits.
+  full_description: >-
+    Pallanguzhi is an ancient Mancala-family sowing game originating in Tamil Nadu and Karnataka. Played on an intricately carved wooden board featuring two rows of seven cups with 70 cowrie shells or tamarind seeds, it develops mental arithmetic, planning, and tactical sowing cycles.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - Mancala
+    - Sowing Strategy
+  mechanics: Sowing & Capture
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 15–25 mins
+  difficulty: Medium
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Android (In Development)"
+  featured: true
+  hero_featured: false
+  play_url: /games/pallanguzhi/
+  image: /assets/images/game_pallanguzhi.svg
+  image_png: /assets/images/game_pallanguzhi.png
+  image_card: /assets/images/game_pallanguzhi.png
+  board_geometry: 14 carved wooden pits (2 rows of 7 cups)
+  rules_summary: "5 seeds per pit (70 seeds). Players lift seeds from a cup on their side and sow clockwise. When the last seed lands before an empty cup, the player captures the seeds in the cup beyond."
+  how_to_play:
+    - phase: Sowing
+      text: "Choose a pit on your side containing seeds, lift all seeds, and sow them one by one in subsequent cups moving clockwise."
+    - phase: Continuation
+      text: "If the last seed falls into an occupied cup, pick up all seeds in that cup and continue sowing."
+    - phase: Capture
+      text: "If the last seed falls into a cup followed by an empty cup, you capture all seeds in the cup immediately beyond the empty one."
+  rules_detailed:
+    - 14 cups total (7 on North, 7 on South).
+    - 5 seeds per cup at match start (70 seeds).
+    - Accumulating 4 seeds in any cup (Pasu/Cow) allows immediate capture by the cup owner.
+    - Player with the most captured seeds at end of round wins.
+  history: >-
+    Mentioned in ancient Tamil Sangam literature and celebrated across South Indian folklore, Pallanguzhi was traditionally played using brass, teak, or rosewood boards with cowrie shells or tamarind seeds (*puliyaankottai*). It served as an informal school of arithmetic, resource management, and foresight.
+  strategy_tips:
+    - Plan your sowing cycles to empty key pits so you land on capture conditions.
+    - Watch for Pasu (4 seeds in a cup) creation on your side to claim bonus captures.
+  related_game_ids:
+    - chowka-bara
+    - bagh-bakri
+    - pachisi
+
+- id: chowka-bara
+  slug: chowka-bara
+  name: Chowka Bara
+  subtitle: Concentric Loops and Royal Castle Defenses
+  country: India (Karnataka, Maharashtra, Tamil Nadu)
+  regional_names: Katte Mane, Ashta Chamma, Daayam, Pakidakali, Chauka Bara
+  description: A classic race-strategy game played on a 5x5 grid using 4 cowrie shells. Players navigate concentric loops, capture opponent pawns to unlock the inner sanctum, and race to the central Ghar.
+  full_description: >-
+    Chowka Bara (also known as Katte Mane in Kannada, Ashta Chamma in Telugu, and Daayam in Tamil) is a traditional race-strategy game played on a 5x5 grid of 25 squares. Four cowrie shells serve as dice. Players must navigate outer concentric tracks and capture at least one opponent pawn to earn the right to enter the inner sanctum and reach the central Ghar.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - Race & Capture
+    - Cowrie Dice
+  mechanics: Concentric Track Navigation & Capture Unlock
+  players: 2–4 Players
+  player_count_tag: "2-4"
+  duration: 15–30 mins
+  difficulty: Easy
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Android (In Development)"
+  featured: false
+  hero_featured: false
+  play_url: /games/chowka-bara/
+  image: /assets/images/game_chowka_bara.svg
+  image_png: /assets/images/game_chowka_bara.png
+  image_card: /assets/images/game_chowka_bara.png
+  board_geometry: 5x5 square grid (25 cells) with 5 safe castle Kattas
+  rules_summary: "5x5 grid with safe Kattas. Cast 4 cowrie shells (values 1, 2, 3, 4, 8). Capture opponent pawns to unlock the inner track and reach the central Ghar."
+  how_to_play:
+    - phase: Cowrie Shell Cast
+      text: "Cast 4 cowrie shells: 1 up = 1, 2 up = 2, 3 up = 3, 4 up = 4 (bonus), 0 up = 8 (bonus)."
+    - phase: Outer Track Navigation
+      text: "Move pawns along the outer perimeter clockwise from your home castle Katta."
+    - phase: Inner Sanctum Unlock
+      text: "You MUST capture at least one opponent pawn with any of your pawns before your pawns can turn into the inner counter-clockwise track."
+  rules_detailed:
+    - 5 safe castle squares marked with X (home Kattas and center Ghar).
+    - Capturing an opponent pawn grants a bonus turn.
+    - Exact roll required to enter the central Ghar.
+  history: >-
+    Widely played across Karnataka, Andhra Pradesh, Telangana, Maharashtra, and Tamil Nadu for centuries. Known by a dozen regional names including Ashta Chamma, Katte Mane, and Daayam, it teaches probabilistic risk assessment, territorial defense, and tactical encirclement.
+  strategy_tips:
+    - Secure an early capture quickly so all four of your pawns can unlock entry to the inner track.
+    - Use safe Kattas as staging posts before darting toward the central Ghar.
+  related_game_ids:
+    - pachisi
+    - chaupar
+    - pallanguzhi
+
+- id: chaupar
+  slug: chaupar
+  name: Chaupar
+  subtitle: The Royal Blockade Game of Medieval Courts
+  country: Ancient India
+  regional_names: Chausar, Chaupad
+  description: A strategic royal race game played on a cross-shaped cloth board with 3 long rectangular cubic wooden dice. Featuring no safe zones, players form pairs (Joori) to build impenetrable blockades.
+  full_description: >-
+    Unlike Pachisi, Chaupar has no safe castles on the playing board. Played with 3 long four-sided rectangular dice (Pasa) on an embroidered cross, pawns are constantly vulnerable to capture unless grouped into pairs (Joori). Paired pieces move together as a single unit and can only be captured by another pair.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - Royal Strategy
+    - Joori Blockade
+  mechanics: Paired Movement & Blockades
+  players: 2–4 Players
+  player_count_tag: "2-4"
+  duration: 30–60 mins
+  difficulty: Hard
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Android (In Development)"
+  featured: false
+  hero_featured: false
+  play_url: /games/chaupar/
+  image: /assets/images/game_chaupar.svg
+  image_png: /assets/images/game_chaupar.png
+  image_card: /assets/images/game_chaupar.png
+  board_geometry: Cross-shaped board with 4 arms and central Charkoni
+  rules_summary: "3 long cubic dice (Pasa). Pawns move in pairs (Joori) for protection since there are no safe castles on the board."
+  how_to_play:
+    - phase: Pasa Dice Cast
+      text: "Roll 3 four-sided long wooden dice with numbered face values (1, 2, 5, 6)."
+    - phase: Paired Movement (Joori)
+      text: "When two pawns of the same color occupy the same cell, they form a Joori (pair). A Joori moves together and cannot be captured by single pawns."
+    - phase: Charkoni Finish
+      text: "Pawns must travel around all three arms and enter the central Charkoni by exact roll."
+  rules_detailed:
+    - No safe castles on the board.
+    - A Joori can only be captured by an opponent's Joori landing on the exact square.
+    - Joori pieces can block opposing pieces from passing unless leap rules are permitted.
+  history: >-
+    Chaupar is celebrated in the ancient epic Mahabharata, where the legendary dice match between the Pandavas and Kauravas altered the fate of kingdoms. It was played extensively by Rajput royalty and Mughal emperors with long ivory and sandalwood dice.
+  strategy_tips:
+    - Form Joori pairs as early as possible to prevent vulnerable single pawns from being captured.
+    - Use Joori formations to physically blockade narrow track corridors.
+  related_game_ids:
+    - pachisi
+    - chowka-bara
+    - bagh-bakri
+
+- id: twelve-beads
+  slug: twelve-beads
+  name: Twelve Beads
+  subtitle: Tactical Flank Combat on the Diamond Grid
+  country: Bengal, India & Bangladesh
+  regional_names: Baro Guti, 12 Guti, Barah Guti
+  description: Also known as Baro Guti, this is a strategic war alignment game where players jump and capture opposing beads across an intersecting diamond grid.
+  full_description: >-
+    Baro Guti (Twelve Beads) is a strategic war game native to Bengal, Bangladesh, and eastern India. Played on a 5x5 grid with two additional triangular points forming a diamond structure with 25 nodes, each player commands 12 beads. Players move and leap to capture opposing pieces until one army is wiped out.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - War Strategy
+    - Alquerque Family
+  mechanics: Leap and Capture
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 10–20 mins
+  difficulty: Easy
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Android (In Development)"
+  featured: false
+  hero_featured: false
+  play_url: /games/twelve-beads/
+  image: /assets/images/game_twelve_beads.svg
+  image_png: /assets/images/game_twelve_beads.png
+  image_card: /assets/images/game_twelve_beads.png
+  board_geometry: 5x5 diagonal intersecting grid with 25 nodes
+  rules_summary: "Two opposing armies of 12 beads. Move 1 step along connecting lines or leap over an adjacent enemy bead into a vacant spot to capture."
+  how_to_play:
+    - phase: Movement
+      text: "Move one bead one step along any connected line to an adjacent vacant intersection."
+    - phase: Capture
+      text: "Leap over an adjacent enemy bead into an immediately vacant node beyond along the line. Multi-jumps are permitted."
+    - phase: Victory
+      text: "The player who captures all 12 opposing beads wins."
+  rules_detailed:
+    - 24 beads total (12 per side).
+    - Center node starts empty.
+    - Jumping to capture is mandatory in classical tournament play.
+  history: >-
+    Belonging to the historic Alquerque family, Baro Guti has been etched into courtyard clay, temple verandahs, and stone slabs across Bengal, Odisha, and Bihar for centuries. It remains one of the most accessible yet tactically sharp traditional games of eastern India.
+  strategy_tips:
+    - Control the central intersection (Node 12) to dominate four diagonal and orthogonal jump avenues.
+    - Set up chain captures by baiting an enemy bead into an exposed position.
+  related_game_ids:
+    - bagh-bakri
+    - pretwa
+    - nine-mens-morris
+
+- id: pretwa
+  slug: pretwa
+  name: Pretwa
+  subtitle: Circular Mandala Geometry and Radial Leap Tactics
+  country: Bihar, India
+  regional_names: Circular Alquerque
+  description: A rare traditional strategy game from Bihar played on a circular mandala board. Players slide pieces along radial lines and concentric arcs, leaping to capture.
+  full_description: >-
+    Pretwa is a rare, culturally rich abstract strategy game originating from the rural Bihar region of northern India. Played on a board composed of 3 concentric circles intersected by 3 diameters (yielding 19 intersection nodes), two players command 9 stones each, maneuvering along circular arcs and radial spokes.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - Mandala Geometry
+    - Rare Folk Game
+  mechanics: Radial Movement & Arc Jumping
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 15–25 mins
+  difficulty: Medium
+  status: playable
+  platform_release: "Web Browser (Playable in 3D), Android (In Development)"
+  featured: false
+  hero_featured: false
+  play_url: /games/pretwa/
+  image: /assets/images/game_pretwa.svg
+  image_png: /assets/images/game_pretwa.png
+  image_card: /assets/images/game_pretwa.png
+  board_geometry: 3 concentric circles intersected by 3 diameters (19 nodes)
+  rules_summary: "3 concentric circles intersected by 3 diameters (19 intersections). 9 pieces each. Slide to adjacent empty node or jump over an enemy to capture."
+  how_to_play:
+    - phase: Movement
+      text: "Slide one piece along a radial diameter or circular arc line to an adjacent empty node."
+    - phase: Capture
+      text: "Leap over an adjacent enemy piece along a straight radial line or along a circular arc into a vacant node beyond."
+  rules_detailed:
+    - 19 nodes total. Central node starts empty.
+    - Each player controls 9 pieces.
+    - First player to capture all opposing pieces wins.
+  history: >-
+    Unlike globally commercialized games, Pretwa has survived through oral traditions and village courtyard play in Bihar. Its circular geometry mirrors traditional Indian mandalas, astronomical rings, and ancient grain storage patterns.
+  strategy_tips:
+    - The central node connects to 6 surrounding nodes; controlling the center provides dominant reach across all three rings.
+    - Arc captures can take players by surprise; calculate curved jumps carefully.
+  related_game_ids:
+    - twelve-beads
+    - bagh-bakri
+    - surakarta
+
+- id: ataxx
+  slug: ataxx
+  name: Ataxx World
+  subtitle: Territorial Infection and Parabolic Arc Jumps
   country: Global Arcade Classic
   regional_names: Infection, Spot
   description: Infect and convert surrounding opponent tokens on a 7x7 grid featuring parabolic arc jumps and clone expansions.
-  difficulty: Medium
-  slug: ataxx
-  status: playable
-  category: Strategy
-  category_tag: strategy
+  full_description: >-
+    Originally developed as an arcade classic, Ataxx is a tactical infection game famous for dramatic chain-reaction flips. Two players battle on a 7x7 grid. Moving 1 space clones your piece, while jumping 2 spaces relocates it. Landing next to opponent tokens infects and instantly converts all adjacent pieces to your color.
+  category: Global Strategy
+  category_tag: global-strategy
+  collection_id: global-strategy
+  secondary_tags:
+    - Global Strategy
+    - Territorial
+    - Chain Infection
+  mechanics: Cloning, Jumping & Adjacent Conversion
   players: 2 Players
-  player_count_tag: 2
+  player_count_tag: "2"
   duration: 10–15 mins
-  featured: true
+  difficulty: Medium
+  status: playable
+  platform_release: "Web Browser (Playable in 3D)"
+  featured: false
+  hero_featured: false
   play_url: /games/ataxx/
   image: /assets/images/game_morris.svg
   image_png: /assets/images/game_morris.png
-  rules_summary: 7x7 grid. Clone adjacent (1 step) or jump (2 steps). Convert all adjacent enemy tokens upon landing.
-  history: Originally developed as an arcade video game in 1990 by Leland Corporation, Ataxx is a tactical infection game famous for dramatic chain-reaction flips.
+  image_card: /assets/images/game_morris.png
+  board_geometry: 7x7 grid (49 squares)
+  rules_summary: "7x7 grid. Clone adjacent (1 step) or jump (2 steps). Convert all adjacent enemy tokens upon landing."
+  how_to_play:
+    - phase: Clone Move (1 Step)
+      text: "Move to an adjacent empty square to spawn a duplicate piece without leaving your starting square."
+    - phase: Jump Move (2 Steps)
+      text: "Leap 2 squares away to an empty cell; the piece leaves its original square."
+    - phase: Conversion
+      text: "Any opposing tokens orthogonally or diagonally adjacent to your landing square are instantly converted to your color."
+  rules_detailed:
+    - 49 cells total.
+    - Players start with 2 pieces placed in opposite diagonal corners.
+    - Most pieces when the board is filled wins.
+  history: >-
+    Invented in 1988 by Dave Crummock and Craig Galley and released in arcades by The Leland Corporation in 1990, Ataxx pioneered the viral piece-infection genre.
+  strategy_tips:
+    - Favor 1-step clone moves early in the game to build a dense, unbreakable wall of territory.
+    - Save 2-step jumps for devastating surprise conversions deep inside opponent territory.
+  related_game_ids:
+    - reversi
+    - gomoku
+    - hex
 
-- name: Hex World
+- id: hex
+  slug: hex
+  name: Hex World
+  subtitle: Topological Connection Across the Hexagonal Grid
   country: Denmark & Princeton (Nash)
   regional_names: John Nash Hex, Polygon
   description: Connect opposing board borders across a true 3D hexagonal grid with animated gold path connection beams.
-  difficulty: Hard
-  slug: hex
-  status: playable
-  category: Strategy
-  category_tag: strategy
+  full_description: >-
+    Invented independently by Danish polymath Piet Hein (1942) and Nobel laureate John Nash at Princeton (1948), Hex is a landmark topological board game. Two players place stones on a rhombus of hexagonal cells, each aiming to construct an unbroken connected path between their assigned opposite borders. A draw is mathematically impossible.
+  category: Global Strategy
+  category_tag: global-strategy
+  collection_id: global-strategy
+  secondary_tags:
+    - Global Strategy
+    - Connection
+    - Topological
+  mechanics: Path Connection & Blocking
   players: 2 Players
-  player_count_tag: 2
+  player_count_tag: "2"
   duration: 10–20 mins
-  featured: true
+  difficulty: Hard
+  status: playable
+  platform_release: "Web Browser (Playable in 3D)"
+  featured: false
+  hero_featured: false
   play_url: /games/hex/
   image: /assets/images/game_morris.svg
   image_png: /assets/images/game_morris.png
-  rules_summary: Rhombic hexagonal grid. Build an unbroken path connecting your two opposite borders. Draws are impossible.
-  history: Invented independently by Piet Hein in Denmark (1942) and Nobel laureate John Nash at Princeton (1948), Hex is a landmark topological game.
+  image_card: /assets/images/game_morris.png
+  board_geometry: 7x7 Rhombic hexagonal grid (49 hexagons)
+  rules_summary: "Rhombic hexagonal grid. Build an unbroken path connecting your two opposite borders. Draws are mathematically impossible."
+  how_to_play:
+    - phase: Alternating Turns
+      text: "Players take turns placing one stone of their color on any empty hexagon. Stones are never moved or captured."
+    - phase: Path Connection
+      text: "Connect your two colored opposite edges of the board with a continuous unbroken chain of adjacent stones."
+  rules_detailed:
+    - 7x7 rhombic grid.
+    - Gold player connects North and South borders; Ruby/Ivory player connects East and West borders.
+    - Draws are impossible due to the topology of the hexagonal lattice (Hex Theorem).
+  history: >-
+    Piet Hein introduced the game in Denmark under the name Polygon. Six years later, John Nash independently reinvented it while at Princeton University, where it was played intensely in the mathematics department common room.
+  strategy_tips:
+    - Use the "virtual connection" (two-bridge) concept: two stones spaced such that if the opponent plays in one bridge cell, you can play in the other.
+    - Never defend passively; counter-attack by threading crossing connection attempts.
+  related_game_ids:
+    - quoridor
+    - gomoku
+    - reversi
 
-- name: Quoridor World
+- id: quoridor
+  slug: quoridor
+  name: Quoridor World
+  subtitle: Maze Navigation and Wooden Wall Blockades
   country: France (Mirko Marchesi)
   regional_names: Blockade, Corridor
   description: Navigate pawns to the target baseline while placing 3D physical wooden wall barriers to obstruct opponents.
-  difficulty: Medium
-  slug: quoridor
-  status: playable
-  category: Strategy
-  category_tag: strategy
+  full_description: >-
+    Designed by Mirko Marchesi and published in 1997, Quoridor is a famous Mensa Select award-winning maze building race game. Two players start on opposite sides of a 9x9 grid. On each turn, a player can either move their pawn one space or place a two-square wooden wall barrier to slow down the opponent. You may never completely seal off the last remaining path to the goal.
+  category: Global Strategy
+  category_tag: global-strategy
+  collection_id: global-strategy
+  secondary_tags:
+    - Global Strategy
+    - Maze Building
+    - Pathfinding
+  mechanics: Pawn Movement & Wall Placement
   players: 2 Players
-  player_count_tag: 2
+  player_count_tag: "2"
   duration: 10–15 mins
-  featured: true
+  difficulty: Medium
+  status: playable
+  platform_release: "Web Browser (Playable in 3D)"
+  featured: false
+  hero_featured: false
   play_url: /games/quoridor/
   image: /assets/images/game_morris.svg
   image_png: /assets/images/game_morris.png
-  rules_summary: 9x9 grid. Move pawn 1 space or place a 2-cell wall barrier. Never completely block the last path to the goal.
-  history: Designed by Mirko Marchesi and published in 1997, Quoridor is a famous Mensa Select award-winning maze building race game.
+  image_card: /assets/images/game_morris.png
+  board_geometry: 9x9 grid with groove tracks for walls (10 walls per player)
+  rules_summary: "9x9 grid. Move pawn 1 space or place a 2-cell wall barrier. Never completely block the last path to the goal."
+  how_to_play:
+    - phase: Player Action Choice
+      text: "On your turn, either move your pawn one space orthogonally, OR place one of your wooden wall barriers in the groove between squares."
+    - phase: Goal
+      text: "The first pawn to reach any square on the opponent's starting baseline wins."
+  rules_detailed:
+    - 9x9 board with 10 walls per player.
+    - Pawns can jump over adjacent pawns if not blocked by a wall.
+    - Placing a wall that completely blocks all paths to the target baseline is strictly illegal.
+  history: >-
+    Quoridor evolved from Mirko Marchesi's 1975 game Blockade. Published by Gigamic in 1997, it won the Mensa Select award and remains a staple of modern abstract strategy games.
+  strategy_tips:
+    - Conserve your walls for critical endgame corridors rather than burning them on early minor detours.
+    - Build branching mazes that force your opponent to take long, looping peripheral paths.
+  related_game_ids:
+    - hex
+    - reversi
+    - surakarta
 
-- name: Surakarta World
+- id: surakarta
+  slug: surakarta
+  name: Surakarta World
+  subtitle: High-Speed Corner Loop Rails and Arc Sliding Captures
   country: Java, Indonesia
   regional_names: Permainan Surakarta
   description: Traditional Indonesian strategy featuring circular corner loop tracks for high-speed arc sliding captures.
-  difficulty: Medium
-  slug: surakarta
-  status: playable
-  category: Strategy
-  category_tag: strategy
+  full_description: >-
+    Native to the island of Java in Indonesia and named after the historic royal city of Surakarta, this unique game is played on a 6x6 grid with eight circular corner loop tracks. Regular moves are one step along grid lines, but captures MUST travel along at least one circular loop track before striking an opposing piece.
+  category: Global Strategy
+  category_tag: global-strategy
+  collection_id: global-strategy
+  secondary_tags:
+    - Global Strategy
+    - Loop Rail
+    - Indonesian Heritage
+  mechanics: Loop Track Captures
   players: 2 Players
-  player_count_tag: 2
+  player_count_tag: "2"
   duration: 10–20 mins
-  featured: true
+  difficulty: Medium
+  status: playable
+  platform_release: "Web Browser (Playable in 3D)"
+  featured: false
+  hero_featured: false
   play_url: /games/surakarta/
   image: /assets/images/game_morris.svg
   image_png: /assets/images/game_morris.png
-  rules_summary: 6x6 grid with 8 corner loops. Moves are 1 step; captures MUST travel along at least 1 circular loop track.
-  history: Native to the island of Java in Indonesia, Surakarta is named after the ancient royal city of Surakarta in central Java.
+  image_card: /assets/images/game_morris.png
+  board_geometry: 6x6 grid with 8 circular corner loop tracks (36 grid points)
+  rules_summary: "6x6 grid with 8 corner loops. Moves are 1 step; captures MUST travel along at least 1 circular loop track."
+  how_to_play:
+    - phase: Non-Capturing Move
+      text: "Move one piece one step in any direction (orthogonal or diagonal) to an adjacent empty node."
+    - phase: Capturing Move
+      text: "Slide along a grid line, through at least one corner circular loop track without jumping any pieces, and strike an opponent piece on the exit line."
+  rules_detailed:
+    - 12 pieces per player, set up on the two outer rows.
+    - Captures can traverse multiple corner loops in a single continuous glide.
+    - Player who captures all 12 opposing pieces wins.
+  history: >-
+    Originating in central Java, Surakarta is known locally as Permainan Surakarta. Its elegant loop mechanics are entirely unique among world board games, turning peripheral corners into launch pads for long-range tactical snipes.
+  strategy_tips:
+    - Never leave a piece stationary on a loop exit track without ensuring the entry line is blocked.
+    - Position pieces to guard the mouths of corner loops to prevent opponent glide strikes.
+  related_game_ids:
+    - pretwa
+    - ataxx
+    - gomoku
 
+# SECTION 2: BOARD OF MILLS SUITE VARIANTS (IN DEVELOPMENT / CONCEPTUAL)
+
+- id: twelve-mens-morris
+  slug: twelve-mens-morris
+  name: Twelve Men's Morris
+  subtitle: The Diagonal Cross Variant of Classical Mills
+  country: Medieval Europe & Roman Empire
+  regional_names: Morabaraba Ancestor, Large Merels
+  description: An extended variant of Nine Men's Morris adding four diagonal corner lines connecting all three concentric squares, played with 12 pieces per side.
+  category: Board of Mills
+  category_tag: board-of-mills
+  collection_id: board-of-mills
+  secondary_tags:
+    - Board of Mills
+    - Alignment
+    - Diagonal Lines
+  mechanics: Mill Formation with Diagonal Movement
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 20–35 mins
+  difficulty: Hard
+  status: in_development
+  platform_release: "Web Suite (Via /board-of-mills/), Android (Planned)"
+  featured: false
+  hero_featured: false
+  play_url: /board-of-mills/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  image_card: /assets/images/collection_mills.jpg
+  board_geometry: 3 concentric squares with 4 diagonal corner lines (24 nodes, 12 pieces)
+  rules_summary: "12 pieces per player. Form mills along orthogonal lines or diagonal corner lines."
+  history: Widely played in post-Roman Medieval Europe and documented in the 13th-century Spanish *Libro de los Juegos* of King Alfonso X.
+  related_game_ids:
+    - nine-mens-morris
+    - six-mens-morris
+    - morabaraba
+
+- id: six-mens-morris
+  slug: six-mens-morris
+  name: Six Men's Morris
+  subtitle: Fast-Paced Compact Alignment Strategy
+  country: Medieval France & England
+  regional_names: Small Merels
+  description: A shorter, intense 2-square variant played with 6 pieces each on 16 intersection nodes.
+  category: Board of Mills
+  category_tag: board-of-mills
+  collection_id: board-of-mills
+  secondary_tags:
+    - Board of Mills
+    - Alignment
+    - Fast Strategy
+  mechanics: Fast Mill Formation
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 10–15 mins
+  difficulty: Easy
+  status: in_development
+  platform_release: "Web Suite (Via /board-of-mills/), Android (Planned)"
+  featured: false
+  hero_featured: false
+  play_url: /board-of-mills/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  image_card: /assets/images/collection_mills.jpg
+  board_geometry: 2 concentric squares (16 nodes, 6 pieces per player)
+  rules_summary: "6 pieces per player. 16 intersection points. Fast opening phase where early placement mistakes are decisive."
+  history: Popular in medieval taverns throughout France and England as a swift alternative to the full 9-men game.
+  related_game_ids:
+    - nine-mens-morris
+    - twelve-mens-morris
+
+- id: morabaraba
+  slug: morabaraba
+  name: Morabaraba
+  subtitle: The Traditional Southern African Cow Alignment Game
+  country: Southern Africa (Lesotho & South Africa)
+  regional_names: Umlabalaba, African Morris
+  description: Traditional Southern African mill game played with 12 'cows' per player on a 24-node diagonal grid with flying transitions.
+  category: Board of Mills
+  category_tag: board-of-mills
+  collection_id: board-of-mills
+  secondary_tags:
+    - Board of Mills
+    - African Heritage
+    - Cultural Sport
+  mechanics: Cow Mills & Flying Phase
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 20–30 mins
+  difficulty: Hard
+  status: in_development
+  platform_release: "Web Suite (Via /board-of-mills/), Android (Planned)"
+  featured: false
+  hero_featured: false
+  play_url: /board-of-mills/
+  image: /assets/images/game_morris.svg
+  image_png: /assets/images/game_morris.png
+  image_card: /assets/images/collection_mills.jpg
+  board_geometry: 3 concentric squares with 4 diagonal corner lines (24 nodes, 12 cows per side)
+  rules_summary: "Form mills of 3 cows to shoot opposing cows. Flying phase activates when reduced to 3 cows."
+  history: Recognized as an official mind sport in South Africa, traditionally played by herd-boys to hone tactical vigilance.
+  related_game_ids:
+    - nine-mens-morris
+    - twelve-mens-morris
+
+# SECTION 3: ROADMAP & IN-DEVELOPMENT EXPANSION (PUZZLES, ABSTRACT STRATEGY & ORIGINALS)
+
+- id: hashi-world
+  slug: hashi-world
+  name: Hashi World
+  subtitle: Islands and Bridges — Pure Deductive Network Logic
+  country: Japan (Nikoli)
+  regional_names: Hashiwokakero, Bridges
+  description: Connect numbered islands with single or double horizontal and vertical bridges until every island has its required degrees without crossing.
+  category: Logic & Puzzle
+  category_tag: logic-puzzle
+  collection_id: traditional-classics
+  secondary_tags:
+    - Logic & Puzzle
+    - Network Logic
+    - Nikoli Classic
+  mechanics: Bridge Connection & Island Degree Matching
+  players: 1 Player (Puzzle)
+  player_count_tag: "1"
+  duration: 5–20 mins
+  difficulty: Medium
+  status: in_development
+  platform_release: "Web (In Development), Android (Planned)"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_classics.jpg
+  image_png: /assets/images/collection_classics.jpg
+  image_card: /assets/images/collection_classics.jpg
+  rules_summary: "Connect islands with bridges. The number on each island dictates how many bridges connect to it. Bridges cannot cross."
+
+- id: abalone-world
+  slug: abalone-world
+  name: Abalone World
+  subtitle: Sumo Marble Pushing on the Hexagonal Ring
+  country: France (Laurent Levi & Michel Lalet)
+  regional_names: Abalone
+  description: Push opposing marbles off the hexagonal board using numerical superiority (Sumito) along straight lines and broadside maneuvers.
+  category: Abstract Strategy
+  category_tag: abstract-strategy
+  collection_id: abstract-strategy
+  secondary_tags:
+    - Abstract Strategy
+    - Marble Sumo
+    - Hexagonal Physics
+  mechanics: Sumito Push & Group Movement
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 15–30 mins
+  difficulty: Medium
+  status: in_development
+  platform_release: "Web (In Development), Android (Planned)"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_abstract.jpg
+  image_png: /assets/images/collection_abstract.jpg
+  image_card: /assets/images/collection_abstract.jpg
+  rules_summary: "Push lines of 2 or 3 marbles against smaller enemy lines (3 against 2, 3 against 1, 2 against 1) to eject 6 opposing marbles from the board."
+
+- id: realmforge
+  slug: realmforge
+  name: RealmForge
+  subtitle: The Original Procedural Strategy Experience
+  country: Original Concept (Mantrika Games)
+  regional_names: RealmForge Mobile
+  description: Mantrika's proprietary game creation and strategy exploration engine.
+  category: Original Worlds
+  category_tag: original-worlds
+  collection_id: abstract-strategy
+  secondary_tags:
+    - Original Worlds
+    - Procedural
+    - Engine
+  mechanics: Procedural Generation & Tactical Combat
+  players: 1–2 Players
+  player_count_tag: "1-2"
+  duration: 20–40 mins
+  difficulty: Hard
+  status: in_development
+  platform_release: "Google Play (Registered Package: com.mantrikagames.realmforge)"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_abstract.jpg
+  image_png: /assets/images/collection_abstract.jpg
+  image_card: /assets/images/collection_abstract.jpg
+  rules_summary: "Custom strategic world-building and tactical scenarios powered by procedural board generation."
+
+- id: chai-chudi
+  slug: chai-chudi
+  name: Chai-Chudi
+  subtitle: Traditional Deccan Bangle and Alignment Game
+  country: Deccan, India
+  regional_names: Glass Bangle Alignment
+  description: A traditional folk game from the Deccan plateau played with circular bangle rings and seeds.
+  category: Indian Heritage
+  category_tag: indian-heritage
+  collection_id: indian-heritage
+  secondary_tags:
+    - Indian Heritage
+    - Folk Classic
+  mechanics: Alignment and Ring Capture
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 15–20 mins
+  difficulty: Easy
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_heritage.jpg
+  image_png: /assets/images/collection_heritage.jpg
+  image_card: /assets/images/collection_heritage.jpg
+  rules_summary: "Traditional Indian folk alignment and distribution game documented in regional oral heritage."
+
+- id: mastermind-world
+  slug: mastermind-world
+  name: Mastermind World
+  subtitle: Deduction, Permutations, and Code-Breaking
+  country: Global (Mordecai Meirowitz)
+  regional_names: Bulls and Cows, Mastermind
+  description: Deduce a hidden four-peg color code in 10 guesses or fewer using black and white feedback pegs.
+  category: Logic & Puzzle
+  category_tag: logic-puzzle
+  collection_id: traditional-classics
+  secondary_tags:
+    - Logic & Puzzle
+    - Deduction
+  mechanics: Code Breaking
+  players: 1–2 Players
+  player_count_tag: "1-2"
+  duration: 10–15 mins
+  difficulty: Medium
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_classics.jpg
+  image_png: /assets/images/collection_classics.jpg
+  image_card: /assets/images/collection_classics.jpg
+  rules_summary: "Guess hidden combinations using exact-match and color-match feedback clues."
+
+- id: klotski-world
+  slug: klotski-world
+  name: Klotski World
+  subtitle: Ancient Sliding-Block Escapes
+  country: China & Global
+  regional_names: Huarong Dao, Sliding Block
+  description: Slide hardwood blocks of varying dimensions through constrained corridors to guide the primary block to the exit.
+  category: Logic & Puzzle
+  category_tag: logic-puzzle
+  collection_id: traditional-classics
+  secondary_tags:
+    - Logic & Puzzle
+    - Sliding Block
+  mechanics: Spatial Sliding
+  players: 1 Player (Puzzle)
+  player_count_tag: "1"
+  duration: 10–30 mins
+  difficulty: Hard
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_classics.jpg
+  image_png: /assets/images/collection_classics.jpg
+  image_card: /assets/images/collection_classics.jpg
+  rules_summary: "Move rectangular blocks within a confined tray to liberate the large master square."
+
+- id: sokoban-world
+  slug: sokoban-world
+  name: Sokoban World
+  subtitle: The Definitive Warehouse Storage Puzzle
+  country: Japan (Hiroyuki Imabayashi)
+  regional_names: Warehouse Keeper
+  description: Push storage crates onto marked target squares in labyrinthine warehouses without trapping boxes against walls.
+  category: Logic & Puzzle
+  category_tag: logic-puzzle
+  collection_id: traditional-classics
+  secondary_tags:
+    - Logic & Puzzle
+    - Grid Maze
+  mechanics: Pushing & Spatial Optimization
+  players: 1 Player (Puzzle)
+  player_count_tag: "1"
+  duration: 10–25 mins
+  difficulty: Medium
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_classics.jpg
+  image_png: /assets/images/collection_classics.jpg
+  image_card: /assets/images/collection_classics.jpg
+  rules_summary: "Crates can only be pushed, never pulled. Solve each level by placing every crate on a designated goal tile."
+
+- id: hive-world
+  slug: hive-world
+  name: Hive World
+  subtitle: Gridless Bug Surrounding Strategy
+  country: United Kingdom (John Yianni)
+  regional_names: Hive
+  description: A boardless abstract strategy game where players place and maneuver insect tiles to completely surround the opposing Queen Bee.
+  category: Abstract Strategy
+  category_tag: abstract-strategy
+  collection_id: abstract-strategy
+  secondary_tags:
+    - Abstract Strategy
+    - Gridless
+  mechanics: Surrounding & Unique Piece Movement
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 15–25 mins
+  difficulty: Medium
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_abstract.jpg
+  image_png: /assets/images/collection_abstract.jpg
+  image_card: /assets/images/collection_abstract.jpg
+  rules_summary: "Move ants, grasshoppers, spiders, and beetles around an ever-shifting one-piece connected hive to trap the rival queen."
+
+- id: onitama-world
+  slug: onitama-world
+  name: Onitama World
+  subtitle: Martial Arts Movement on the 5x5 Shrine
+  country: Japan (SShimpei Sato)
+  regional_names: Onitama
+  description: Martial arts dueling on a 5x5 grid using five shared movement cards that cycle between players after each strike.
+  category: Abstract Strategy
+  category_tag: abstract-strategy
+  collection_id: abstract-strategy
+  secondary_tags:
+    - Abstract Strategy
+    - Card-Driven
+  mechanics: Shared Move Cards & Master Capture
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 10–20 mins
+  difficulty: Medium
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_abstract.jpg
+  image_png: /assets/images/collection_abstract.jpg
+  image_card: /assets/images/collection_abstract.jpg
+  rules_summary: "Win by capturing the enemy Master or moving your Master onto the opponent's shrine arch."
+
+- id: tak-world
+  slug: tak-world
+  name: Tak World
+  subtitle: A Beautiful 3D Road-Building Game
+  country: United States (James Ernest & Patrick Rothfuss)
+  regional_names: Tak
+  description: Build an unbroken road across the board using flat stones, standing walls, and towering capstones.
+  category: Abstract Strategy
+  category_tag: abstract-strategy
+  collection_id: abstract-strategy
+  secondary_tags:
+    - Abstract Strategy
+    - Stacking
+    - Path Building
+  mechanics: Stacking & Road Connection
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 15–30 mins
+  difficulty: Hard
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_abstract.jpg
+  image_png: /assets/images/collection_abstract.jpg
+  image_card: /assets/images/collection_abstract.jpg
+  rules_summary: "Place and stack stones to forge a connected road from one board edge to the opposite edge."
+
+- id: pylos-world
+  slug: pylos-world
+  name: Pylos World
+  subtitle: 3D Sphere Pyramid Stacking and Conservation
+  country: France (David G. Royffe)
+  regional_names: Pylos
+  description: Stack spheres on a 4x4 base to construct a four-tiered pyramid. Conserve your spheres to place the final apex sphere.
+  category: Abstract Strategy
+  category_tag: abstract-strategy
+  collection_id: abstract-strategy
+  secondary_tags:
+    - Abstract Strategy
+    - 3D Stacking
+  mechanics: Sphere Conservation & Layer Climbing
+  players: 2 Players
+  player_count_tag: "2"
+  duration: 10–15 mins
+  difficulty: Medium
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_abstract.jpg
+  image_png: /assets/images/collection_abstract.jpg
+  image_card: /assets/images/collection_abstract.jpg
+  rules_summary: "Selected roadmap choice over Pentago. Place wooden spheres to complete squares and climb higher; the player who places the crown sphere atop the pyramid wins."
+
+- id: living-world
+  slug: living-world
+  name: Living World
+  subtitle: Dynamic Ecological Simulation Strategy
+  country: Original Concept (Mantrika Games)
+  regional_names: Living World Concept
+  description: An original Mantrika strategy concept modeling emergent territorial ecosystems.
+  category: Original Worlds
+  category_tag: original-worlds
+  collection_id: abstract-strategy
+  secondary_tags:
+    - Original Worlds
+    - Simulation
+  mechanics: Ecosystem Dynamics
+  players: 1–2 Players
+  player_count_tag: "1-2"
+  duration: 25–45 mins
+  difficulty: Hard
+  status: planned
+  platform_release: "Roadmap Concept"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_abstract.jpg
+  image_png: /assets/images/collection_abstract.jpg
+  image_card: /assets/images/collection_abstract.jpg
+  rules_summary: "Emergent organic growth mechanics on a living topological board."
+
+- id: moksha-patam
+  slug: moksha-patam
+  name: Moksha Patam
+  subtitle: The Ancient Philosophical Ladder of Destiny
+  country: Ancient India
+  regional_names: Gyan Chaupar, Original Snakes and Ladders
+  description: The ancient spiritual moral race game of India that originated Snakes and Ladders, teaching virtues (ladders) and vices (snakes).
+  category: Traditional Classics
+  category_tag: traditional-classics
+  collection_id: traditional-classics
+  secondary_tags:
+    - Traditional Classics
+    - Heritage Backlog
+  mechanics: Moral Path Progression
+  players: 2–4 Players
+  player_count_tag: "2-4"
+  duration: 20–30 mins
+  difficulty: Easy
+  status: planned
+  platform_release: "Heritage Backlog"
+  featured: false
+  hero_featured: false
+  play_url: /games/
+  image: /assets/images/collection_classics.jpg
+  image_png: /assets/images/collection_classics.jpg
+  image_card: /assets/images/collection_classics.jpg
+  rules_summary: "Climb ladders of virtue and descend serpents of folly to achieve spiritual liberation (Moksha)."

@@ -1,5 +1,5 @@
 (function() {
   const savedTheme = localStorage.getItem('theme');
-  const preferredTheme = savedTheme ? savedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const preferredTheme = savedTheme ? savedTheme : 'dark';
   document.documentElement.setAttribute('data-theme', preferredTheme);
 })();

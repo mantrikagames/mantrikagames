@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Games Catalogue — Traditional Board Games of South Asia
-description: Discover and play handcrafted 3D Indian and South Asian traditional board games directly in your browser.
+title: Games Catalogue — Traditional & Global Strategy Games | Mantrika Games
+description: Discover and play handcrafted 3D Indian and South Asian traditional board games and global strategy classics directly in your browser.
 permalink: /games/
 ---
 
@@ -10,50 +10,52 @@ permalink: /games/
   <section class="catalogue-hero">
     <div class="container">
       <div class="catalogue-hero-content reveal-up">
-        <span class="section-kicker">Heritage Strategy Reimagined</span>
-        <h1 class="catalogue-title">Traditional Board Games</h1>
+        <span class="section-kicker">Heritage &amp; Global Classics</span>
+        <h1 class="catalogue-title">The Strategy Catalogue</h1>
         <p class="catalogue-subtitle">
-          Rediscover centuries of mathematical brilliance, asymmetric combat, and royal entertainment—faithfully recreated with handcrafted 3D realism and intelligent AI.
+          Centuries of mathematical ingenuity, royal court favorites, and pure abstract strategy—faithfully crafted with tactile 3D realism and intelligent AI.
         </p>
       </div>
 
-      <!-- Featured Spotlight: Nine Men's Morris -->
-      {% assign morris = site.data.games | where: "slug", "nine-mens-morris" | first %}
-      {% if morris %}
+      <!-- Featured Spotlight: Bagh Bakri / Pachisi -->
+      {% assign spotlight = site.data.games | where: "slug", "pachisi" | first %}
+      {% if spotlight %}
       <div class="spotlight-banner reveal-up delay-100">
-        <div class="spotlight-badge">★ Featured 3D Experience</div>
+        <div class="spotlight-badge">★ Featured Heritage Game</div>
         <div class="spotlight-grid">
           <div class="spotlight-image-col">
-            <img src="{{ morris.image | relative_url }}" alt="Nine Men's Morris 3D Board Game" loading="eager">
+            <img src="{{ spotlight.image_card | default: spotlight.image | relative_url }}" alt="{{ spotlight.name }} Board Game" loading="eager">
           </div>
           <div class="spotlight-info-col">
             <div class="spotlight-meta">
-              <span class="spotlight-country">{{ morris.country }}</span>
+              <span class="spotlight-country">{{ spotlight.country }}</span>
               <span class="spotlight-dot"></span>
-              <span class="spotlight-category">{{ morris.category }}</span>
+              <span class="spotlight-category">{{ spotlight.category }}</span>
               <span class="spotlight-dot"></span>
-              <span class="spotlight-players">{{ morris.players }}</span>
+              <span class="spotlight-players">{{ spotlight.players }}</span>
             </div>
-            <h2 class="spotlight-title">{{ morris.name }}</h2>
-            <p class="spotlight-regional">Regional Names: <em>{{ morris.regional_names }}</em></p>
-            <p class="spotlight-desc">{{ morris.description }}</p>
+            <h2 class="spotlight-title">{{ spotlight.name }}</h2>
+            {% if spotlight.regional_names %}
+              <p class="spotlight-regional">Regional Names: <em>{{ spotlight.regional_names }}</em></p>
+            {% endif %}
+            <p class="spotlight-desc">{{ spotlight.description }}</p>
             
             <div class="spotlight-features">
               <div class="feature-tag"><span>✦</span> Handcrafted 3D Realism</div>
-              <div class="feature-tag"><span>✦</span> 3 Concentric Squares & 16 Mills</div>
-              <div class="feature-tag"><span>✦</span> Smart AI (Easy/Med/Hard)</div>
-              <div class="feature-tag"><span>✦</span> 2 Player Strategic Combat</div>
+              <div class="feature-tag"><span>✦</span> 6 Cowrie Shells Cast Physics</div>
+              <div class="feature-tag"><span>✦</span> Multi-Level Intelligent AI</div>
+              <div class="feature-tag"><span>✦</span> 2–4 Player Royal Race</div>
             </div>
 
             <div class="spotlight-actions">
-              <a href="{{ morris.play_url | relative_url }}" class="btn btn-primary btn-lg spotlight-play-btn">
-                <span>Play Nine Men's Morris in 3D</span>
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <a href="{{ spotlight.play_url | relative_url }}" class="btn btn-primary btn-lg spotlight-play-btn">
+                <span>Play {{ spotlight.name }} in 3D</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
               </a>
-              <a href="{{ '/games/nine-mens-morris/#rules' | relative_url }}" class="btn btn-outline">
-                How to Play & Rules
+              <a href="{{ spotlight.play_url | relative_url }}#tab-how-to-play" class="btn btn-outline">
+                How to Play &amp; Rules
               </a>
             </div>
           </div>
@@ -66,7 +68,7 @@ permalink: /games/
   <!-- Filter & Search Section -->
   <section class="catalogue-filter-section">
     <div class="container">
-      <div class="filter-controls-wrapper reveal-up">
+      <div class="filter-controls-wrapper">
         <!-- Search Input -->
         <div class="search-input-box">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
@@ -79,11 +81,13 @@ permalink: /games/
 
         <!-- Filter Tags -->
         <div class="filter-tags-list" role="tablist" aria-label="Filter games by category">
-          <button class="filter-btn active" data-filter="all">All Games ({{ site.data.games.size }})</button>
-          <button class="filter-btn" data-filter="playable">Playable in 3D ({{ site.data.games.size }})</button>
-          <button class="filter-btn" data-filter="race">Race & Path</button>
-          <button class="filter-btn" data-filter="strategy">Strategic War & Hunt</button>
-          <button class="filter-btn" data-filter="mancala">Mancala Family</button>
+          <button class="filter-btn active" data-filter="all">All Games</button>
+          <button class="filter-btn" data-filter="playable">Playable in 3D (14)</button>
+          <button class="filter-btn" data-filter="indian-heritage">Indian Heritage</button>
+          <button class="filter-btn" data-filter="global-strategy">Global Strategy</button>
+          <button class="filter-btn" data-filter="board-of-mills">Board of Mills</button>
+          <button class="filter-btn" data-filter="abstract-strategy">Abstract Strategy</button>
+          <button class="filter-btn" data-filter="logic-puzzle">Logic &amp; Puzzle</button>
           <button class="filter-btn" data-filter="2-player">2 Players</button>
           <button class="filter-btn" data-filter="4-player">2–4 Players</button>
         </div>
@@ -92,7 +96,7 @@ permalink: /games/
       <!-- Catalogue Games Grid -->
       <div class="catalogue-grid" id="catalogue-games-grid">
         {% for game in site.data.games %}
-          <div class="catalogue-card reveal-up" 
+          <div class="catalogue-card active" 
                data-name="{{ game.name | downcase }}" 
                data-regional="{{ game.regional_names | downcase }}"
                data-country="{{ game.country | downcase }}" 
@@ -102,11 +106,18 @@ permalink: /games/
             
             <!-- Card Image -->
             <div class="card-media">
-              <img src="{{ game.image | relative_url }}" alt="{{ game.name }}" loading="lazy">
-              {% if game.status == "playable" %}
-                <span class="card-badge badge-playable">Playable Now in 3D</span>
+              {% if game.image_card %}
+                <img src="{{ game.image_card | relative_url }}" alt="{{ game.name }}" loading="lazy">
               {% else %}
+                <img src="{{ game.image | relative_url }}" alt="{{ game.name }}" loading="lazy">
+              {% endif %}
+
+              {% if game.status == "playable" %}
+                <span class="card-badge badge-playable">Playable 3D</span>
+              {% elsif game.status == "in_development" %}
                 <span class="card-badge badge-upcoming">In Development</span>
+              {% else %}
+                <span class="card-badge badge-upcoming" style="background: rgba(100,100,100,0.85);">Roadmap</span>
               {% endif %}
             </div>
 
@@ -118,7 +129,13 @@ permalink: /games/
                 <span class="card-category">{{ game.category }}</span>
               </div>
 
-              <h3 class="card-title">{{ game.name }}</h3>
+              <h3 class="card-title">
+                {% if game.status == "playable" %}
+                  <a href="{{ game.play_url | relative_url }}">{{ game.name }}</a>
+                {% else %}
+                  <span>{{ game.name }}</span>
+                {% endif %}
+              </h3>
               
               {% if game.regional_names %}
                 <div class="card-regional">
@@ -160,7 +177,7 @@ permalink: /games/
                           data-image="{{ game.image | relative_url }}"
                           data-status="{{ game.status }}"
                           data-playurl="{{ game.play_url | relative_url }}">
-                    Heritage & Rules
+                    View Overview &amp; Rules
                   </button>
                 {% endif %}
               </div>
@@ -182,7 +199,7 @@ permalink: /games/
 
 <!-- Dynamic Filter & Search Script -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+function initCatalogue() {
   const searchInput = document.getElementById('game-search-input');
   const clearBtn = document.getElementById('clear-search-btn');
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -192,6 +209,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeFilter = 'all';
   let searchQuery = '';
+
+  function setActiveFilter(filter) {
+    activeFilter = filter || 'all';
+    filterBtns.forEach(btn => {
+      if (btn.getAttribute('data-filter') === activeFilter) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    filterGames();
+  }
+
+  // Check URL parameters for preset category (e.g., ?category=indian-heritage or ?search=pachisi)
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramCat = urlParams.get('category');
+  const paramSearch = urlParams.get('search');
+
+  if (paramSearch && searchInput) {
+    searchInput.value = paramSearch;
+    searchQuery = paramSearch;
+    if (clearBtn) clearBtn.style.display = 'block';
+  }
 
   function filterGames() {
     let visibleCount = 0;
@@ -210,12 +250,16 @@ document.addEventListener('DOMContentLoaded', () => {
         matchesFilter = true;
       } else if (activeFilter === 'playable') {
         matchesFilter = (status === 'playable');
-      } else if (activeFilter === 'race') {
-        matchesFilter = (category === 'race');
-      } else if (activeFilter === 'strategy') {
-        matchesFilter = (category === 'strategy');
-      } else if (activeFilter === 'mancala') {
-        matchesFilter = (category === 'mancala');
+      } else if (activeFilter === 'indian-heritage') {
+        matchesFilter = (category === 'indian-heritage');
+      } else if (activeFilter === 'global-strategy') {
+        matchesFilter = (category === 'global-strategy');
+      } else if (activeFilter === 'board-of-mills') {
+        matchesFilter = (category === 'board-of-mills' || name.includes('morris'));
+      } else if (activeFilter === 'abstract-strategy') {
+        matchesFilter = (category === 'abstract-strategy');
+      } else if (activeFilter === 'logic-puzzle') {
+        matchesFilter = (category === 'logic-puzzle');
       } else if (activeFilter === '2-player') {
         matchesFilter = (players === '2' || players === '2-4');
       } else if (activeFilter === '4-player') {
@@ -231,26 +275,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (matchesFilter && matchesSearch) {
         card.style.display = 'flex';
+        card.classList.add('active');
         visibleCount++;
       } else {
         card.style.display = 'none';
       }
     });
 
-    if (visibleCount === 0) {
-      noResults.style.display = 'block';
-    } else {
-      noResults.style.display = 'none';
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
     }
   }
 
   // Filter button clicks
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeFilter = btn.getAttribute('data-filter');
-      filterGames();
+      const filter = btn.getAttribute('data-filter');
+      setActiveFilter(filter);
     });
   });
 
@@ -280,12 +325,17 @@ document.addEventListener('DOMContentLoaded', () => {
       searchInput.value = '';
       searchQuery = '';
       if (clearBtn) clearBtn.style.display = 'none';
-      filterBtns.forEach(b => b.classList.remove('active'));
-      const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
-      if (allBtn) allBtn.classList.add('active');
-      activeFilter = 'all';
-      filterGames();
+      setActiveFilter('all');
     });
   }
-});
+
+  // Initial filter run (using URL param if present)
+  setActiveFilter(paramCat || 'all');
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCatalogue);
+} else {
+  initCatalogue();
+}
 </script>

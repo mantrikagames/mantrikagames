@@ -1,0 +1,30 @@
+<!-- Game Heritage History & Rules Modal Component -->
+<div id="history-modal" class="history-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-overlay"></div>
+  <div class="modal-container">
+    <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+    <div class="modal-content-grid">
+      <div class="modal-img-wrapper">
+        <img id="modal-game-img" src="" alt="Game Art">
+      </div>
+      <div class="modal-text-content">
+        <h2 id="modal-game-title" class="modal-title">Game Title</h2>
+        <p id="modal-game-desc" class="modal-lead"></p>
+        
+        <div class="modal-section">
+          <h4 class="modal-section-title">Historical Significance</h4>
+          <p id="modal-game-history" class="modal-text"></p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">Rules &amp; Strategic Objectives</h4>
+          <p id="modal-game-rules" class="modal-text"></p>
+        </div>
+
+        <div id="modal-play-cta-box" class="modal-play-cta" style="display: none;">
+          <a id="modal-play-link" href="#" class="btn btn-primary btn-lg">Play in 3D</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

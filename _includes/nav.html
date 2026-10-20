@@ -1,36 +1,60 @@
-<header class="navbar">
+<header class="navbar" id="site-header">
   <div class="nav-container container">
-    <a href="{{ '/' | relative_url }}" class="nav-logo" aria-label="Mantrika Games Home">
-      <span class="logo-icon-emblem"></span>
-      Mantrika Games
+    <!-- Brand Logo -->
+    <a href="{{ '/' | relative_url }}" class="nav-brand" aria-label="Mantrika Games Home">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Mantrika Emblem" class="nav-brand-mark" width="36" height="36">
+      <div class="nav-brand-text">
+        <span class="nav-brand-title">Mantrika Games</span>
+        <span class="nav-brand-tagline">Timeless Strategy</span>
+      </div>
     </a>
 
     <!-- Desktop Navigation Links -->
     <nav class="nav-links" aria-label="Main Navigation">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/games/' | relative_url }}" class="nav-link-highlight">Games</a>
-      <a href="{{ '/board-of-mills/' | relative_url }}">Board of Mills</a>
-      <a href="{{ '/' | relative_url }}#world-series">World Series</a>
-      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/games/' | relative_url }}" class="nav-link">Games</a>
+      <a href="{{ '/' | relative_url }}#heritage" class="nav-link">Indian Heritage</a>
+      <a href="{{ '/' | relative_url }}#explore-collection" class="nav-link">Global Strategy</a>
+      <a href="{{ '/board-of-mills/' | relative_url }}" class="nav-link">Board of Mills</a>
+      <a href="{{ '/' | relative_url }}#about" class="nav-link">About</a>
     </nav>
 
-    <!-- Controls -->
+    <!-- Header Controls & Actions -->
     <div class="nav-controls">
-      <!-- Theme Toggle -->
-      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme">
+      <!-- Search Input Trigger -->
+      <div class="nav-search-box" id="nav-search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="nav-search-input" placeholder="Search games..." aria-label="Quick search games" autocomplete="off">
+      </div>
+
+      <!-- Theme Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
         <!-- Sun Icon (for dark theme) -->
-        <svg class="sun-icon" viewBox="0 0 24 24">
-          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-5-2.24-5-5 2.24-5 5-5zm0-5c.55 0 1 .45 1 1v2c0 .55-.45 1-1 1s-1-.45-1-1V3c0-.55.45-1 1-1zm0 16c.55 0 1 .45 1 1v2c0 .55-.45 1-1 1s-1-.45-1-1v-2c0-.55.45-1 1-1zM4.22 5.64c.39-.39 1.02-.39 1.41 0l1.41 1.41c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0L4.22 7.05c-.39-.39-.39-1.02 0-1.41zm12.73 12.73c.39-.39 1.02-.39 1.41 0l1.41 1.41c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0l-1.41-1.41c-.39-.39-.39-1.02 0-1.41zM2 12c0-.55.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1H3c-.55 0-1-.45-1-1zm16 0c0-.55.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1h-2c-.55 0-1-.45-1-1zM5.64 19.78c-.39-.39-.39-1.02 0-1.41l1.41-1.41c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41l-1.41 1.41c-.39.39-1.02.39-1.41 0zm12.73-12.73c-.39-.39-.39-1.02 0-1.41l1.41-1.41c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41l-1.41 1.41c-.39.39-1.02.39-1.41 0z"/>
+        <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
         <!-- Moon Icon (for light theme) -->
-        <svg class="moon-icon" viewBox="0 0 24 24">
-          <path d="M12.3 22h-.1c-5.4 0-10-4.6-10-10 0-4.3 2.9-8.1 7-9.3.5-.2 1.1.1 1.3.6.2.5-.1 1.1-.6 1.3-3.2 1-5.4 3.9-5.4 7.4 0 4.4 3.6 8 8 8 3.5 0 6.4-2.2 7.4-5.4.2-.5.7-.8 1.3-.6.5.2.8.7.6 1.3-1.1 4.2-4.9 7.1-9.2 7.1z"/>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
 
-      <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-primary nav-cta-btn">Play 3D Morris</a>
+      <!-- Prominent Play Now Action Button -->
+      <a href="{{ '/games/bagh-bakri/' | relative_url }}" class="btn btn-primary nav-cta-btn" id="nav-play-now-btn">
+        <span>Play Now</span>
+      </a>
 
-      <!-- Mobile toggle menu -->
+      <!-- Mobile Hamburger Menu Button -->
       <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -40,14 +64,22 @@
 </header>
 
 <!-- Mobile Navigation Drawer -->
-<div class="mobile-nav-drawer" id="mobile-nav-drawer">
-  <ul class="mobile-nav-links">
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-    <li><a href="{{ '/games/' | relative_url }}">All Games</a></li>
-    <li><a href="{{ '/board-of-mills/' | relative_url }}">Board of Mills</a></li>
-    <li><a href="{{ '/' | relative_url }}#world-series">World Series</a></li>
-    <li><a href="{{ '/' | relative_url }}#about">About</a></li>
-    <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
-    <li style="margin-top: 1rem;"><a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-primary w-100">Play Nine Men's Morris</a></li>
-  </ul>
+<div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <div class="mobile-search-wrapper">
+      <input type="text" id="mobile-search-input" placeholder="Search games, e.g. Pachisi, Gomoku..." aria-label="Search games mobile">
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/games/' | relative_url }}">All Games</a></li>
+      <li><a href="{{ '/' | relative_url }}#heritage">Indian Heritage</a></li>
+      <li><a href="{{ '/' | relative_url }}#explore-collection">Global Strategy</a></li>
+      <li><a href="{{ '/board-of-mills/' | relative_url }}">Board of Mills</a></li>
+      <li><a href="{{ '/' | relative_url }}#about">About</a></li>
+      <li><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a></li>
+    </ul>
+    <div class="mobile-cta-box">
+      <a href="{{ '/games/bagh-bakri/' | relative_url }}" class="btn btn-primary w-100">Play Bagh Bakri 3D</a>
+    </div>
+  </div>
 </div>

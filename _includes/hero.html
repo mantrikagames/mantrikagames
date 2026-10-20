@@ -1,47 +1,143 @@
-<section id="hero" class="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-radial-glow"></div>
+<section id="hero" class="hero-cinematic">
+  <div class="hero-atmosphere-glow"></div>
 
   <div class="hero-container container">
-    <div class="hero-layout">
-      <!-- Left Hero Content -->
-      <div class="hero-content reveal-up">
-        <div class="logo-placeholder">
-          <span class="gold-dot"></span>
-          Timeless Strategy Studio
-        </div>
+    <div class="hero-grid">
+      <!-- Left Column: Editorial Headline & Actions -->
+      <div class="hero-copy-col reveal-up">
+        <span class="hero-eyebrow">Ancient Wisdom. Modern Play.</span>
         
-        <h1><span>Handcrafted 3D Tabletop Games</span></h1>
+        <h1 class="hero-title">
+          <span>Timeless Strategy.</span><br>
+          <span class="hero-title-accent">Beautifully Crafted.</span>
+        </h1>
         
-        <p class="desc">
-          Experience timeless traditional and abstract board games with tactile 3D visuals, intelligent AI algorithms, and seamless multiplayer.
+        <p class="hero-subtitle">
+          Discover traditional Indian board games and timeless strategy classics, reimagined for the modern world with handcrafted physical depth and intelligent AI.
         </p>
         
-        <div class="hero-cta">
-          <a href="#games" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
-              <path d="M8 5v14l11-7z"/>
+        <div class="hero-actions-group">
+          <a href="#explore-collection" class="btn btn-primary btn-lg hero-cta-primary">
+            <span>Explore Games</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             </svg>
-            Explore Game Collection
           </a>
-          <a href="{{ '/board-of-mills/' | relative_url }}" class="btn btn-secondary">
-            Board of Mills
+          <a href="{{ '/games/pachisi/' | relative_url }}" class="btn btn-dark btn-lg hero-cta-secondary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <circle cx="8" cy="12" r="1.5"></circle>
+              <circle cx="16" cy="12" r="1.5"></circle>
+            </svg>
+            <span>Play a Game</span>
           </a>
+        </div>
+
+        <!-- Restrained Platform Benefits Metrics Row -->
+        <div class="hero-metrics-row">
+          <div class="hero-metric-item">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18M4 18h16M6 14v4M10 14v4M14 14v4M18 14v4M12 3L2 9h20L12 3z"/>
+              </svg>
+            </div>
+            <div class="metric-text">
+              <span class="metric-value">14 Playable</span>
+              <span class="metric-label">25+ Curated Portfolio</span>
+            </div>
+          </div>
+
+          <div class="hero-metric-item">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <div class="metric-text">
+              <span class="metric-value">Indian Heritage</span>
+              <span class="metric-label">&amp; Global Classics</span>
+            </div>
+          </div>
+
+          <div class="hero-metric-item">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="metric-text">
+              <span class="metric-value">Play vs AI</span>
+              <span class="metric-label">or with Friends</span>
+            </div>
+          </div>
+
+          <div class="hero-metric-item">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <div class="metric-text">
+              <span class="metric-value">Play in Browser</span>
+              <span class="metric-label">Anywhere, Anytime</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Right 3D Floating Tabletop Showcase -->
-      <div class="hero-visual-col perspective-container reveal-up delay-200">
-        <div id="hero-board-showcase" class="game-board-showcase card-3d-wrapper" data-tilt data-tilt-max="14">
-          <div class="showcase-badge">3D Interactive</div>
-          <div class="board-frame-bevel"></div>
+      <!-- Right Column: Cinematic Featured Game Showcase -->
+      <div class="hero-visual-col reveal-up delay-200">
+        <div class="hero-showcase-frame card-3d-wrapper" data-tilt data-tilt-max="6">
+          <div class="hero-showcase-media-container" id="hero-carousel-container">
+            <!-- Slide 1: Pachisi -->
+            <div class="hero-carousel-slide active" data-game-slug="pachisi">
+              <img src="{{ '/assets/images/hero_pachisi.jpg' | relative_url }}" alt="Pachisi — The Royal Game of Ancient India" class="hero-showcase-image" loading="eager">
+              <div class="hero-showcase-badge-card">
+                <span class="showcase-card-kicker">Pachisi</span>
+                <span class="showcase-card-title">A Royal Game of India</span>
+                <a href="{{ '/games/pachisi/' | relative_url }}" class="showcase-card-link">
+                  <span>Play Now</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 2: Bagh Bakri -->
+            <div class="hero-carousel-slide" data-game-slug="bagh-bakri" style="display: none;">
+              <img src="{{ '/assets/images/game_bagh_bakri_art.jpg' | relative_url }}" alt="Bagh Bakri — Tigers and Goats" class="hero-showcase-image" loading="lazy">
+              <div class="hero-showcase-badge-card">
+                <span class="showcase-card-kicker">Bagh Bakri</span>
+                <span class="showcase-card-title">Tigers and Goats Strategy</span>
+                <a href="{{ '/games/bagh-bakri/' | relative_url }}" class="showcase-card-link">
+                  <span>Play Now</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="hero-carousel-controls">
+            <div class="carousel-dots">
+              <button class="carousel-dot active" data-slide="0" aria-label="Slide 1 — Pachisi"></button>
+              <button class="carousel-dot" data-slide="1" aria-label="Slide 2 — Bagh Bakri"></button>
+            </div>
+            <div class="carousel-arrows">
+              <button class="carousel-nav-btn prev" id="hero-prev-btn" aria-label="Previous Featured Game">&lsaquo;</button>
+              <button class="carousel-nav-btn next" id="hero-next-btn" aria-label="Next Featured Game">&rsaquo;</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <a href="#games" class="scroll-indicator" aria-label="Scroll to games">
-    <span class="mouse-icon"></span>
-    <span class="scroll-text">Scroll to explore</span>
-  </a>
 </section>

@@ -81,26 +81,34 @@
 // Cookie Consent slide up
 .cookie-consent {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) translateY(150px);
-  width: 90%;
-  max-width: 480px;
-  background: var(--glass-bg);
+  bottom: 24px;
+  right: 24px;
+  left: auto;
+  transform: translateY(180px);
+  width: calc(100% - 48px);
+  max-width: 420px;
+  background: rgba(17, 20, 22, 0.94);
   border: 1px solid var(--border-gold);
-  border-radius: 4px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(214, 173, 105, 0.15);
   z-index: 9999;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  transition: transform 0.6s var(--transition-ease);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  gap: 0.85rem;
+  transition: transform 0.45s var(--transition-ease);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  @media (max-width: 480px) {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
 
   &.show {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 
   p {

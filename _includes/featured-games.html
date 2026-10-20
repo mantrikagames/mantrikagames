@@ -1,99 +1,70 @@
-<section id="games" class="games-section">
+<section id="featured-games" class="featured-games-section">
   <div class="container">
     <div class="section-header-row reveal-up">
       <div>
-        <span class="section-kicker">Heritage & Tabletop Craftsmanship</span>
-        <h2>Traditional Strategy Collection</h2>
+        <h2>Featured Games</h2>
+        <p class="section-subtitle">A handpicked selection to start your journey.</p>
       </div>
-      <a href="{{ '/games/' | relative_url }}" class="btn btn-outline view-all-games-btn">View Full Catalogue &rarr;</a>
+      <a href="{{ '/games/' | relative_url }}" class="section-view-all">
+        <span>View All Games</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
     </div>
-    
-    <div class="games-list">
-      {% for game in site.data.games %}
-        <article class="game-row perspective-container reveal-up delay-{{ forloop.index | times: 100 }}">
-          <!-- 3D Physical Board Showcase Column -->
-          <div class="game-image-col">
-            <div class="game-board-showcase card-3d-wrapper" data-board-type="{{ game.slug }}" data-tilt data-tilt-max="10">
-              <div class="showcase-badge">{{ game.category }}</div>
-              <div class="board-frame-bevel"></div>
-            </div>
-          </div>
-          
-          <!-- Game Details Column -->
-          <div class="game-info-col">
-            <span class="game-number">0{{ forloop.index }}</span>
-            <div class="game-meta">
-              <span class="game-country">{{ game.country }}</span>
-              <span class="game-meta-divider"></span>
-              <span class="game-players">{{ game.players }}</span>
-              <span class="game-meta-divider"></span>
-              <span class="game-difficulty">{{ game.difficulty }}</span>
-            </div>
-            
-            <h3 class="game-name">{{ game.name }}</h3>
-            {% if game.regional_names %}
-              <p class="game-regional-names">Also known as: <em>{{ game.regional_names }}</em></p>
-            {% endif %}
-            <p class="game-desc">{{ game.description }}</p>
-            
-            <div class="game-actions-row">
-              {% if game.status == "playable" %}
-                <a href="{{ game.play_url | relative_url }}" class="btn btn-primary game-play-btn" aria-label="Play {{ game.name }} in 3D">
-                  <span>Play 3D Now</span>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </a>
-              {% endif %}
 
-              <button class="game-history-btn {% if game.status == 'playable' %}btn-secondary-history{% endif %}" aria-label="Read history of {{ game.name }}" 
-                      data-name="{{ game.name }}" 
-                      data-description="{{ game.description | escape }}" 
-                      data-history="{{ game.history | escape }}" 
-                      data-rules="{{ game.rules_summary | escape }}"
-                      data-image="{{ game.image | relative_url }}"
-                      data-status="{{ game.status }}"
-                      data-playurl="{{ game.play_url | relative_url }}">
-                <span>Heritage & Rules</span>
-                <svg viewBox="0 0 24 24" width="16" height="16">
-                  <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- 6 Featured Cards Grid -->
+    <div class="featured-cards-grid">
+      {% assign featured_games = site.data.games | where: "featured", true %}
+      {% for game in featured_games limit: 6 %}
+        <article class="featured-card reveal-up delay-{{ forloop.index | times: 100 }}">
+          <!-- Card Media Container -->
+          <a href="{{ game.play_url | relative_url }}" class="featured-card-media" aria-label="Play {{ game.name }}">
+            {% if game.image_card %}
+              <img src="{{ game.image_card | relative_url }}" alt="{{ game.name }} Board Game" loading="lazy" class="card-art-img">
+            {% else %}
+              <img src="{{ game.image | relative_url }}" alt="{{ game.name }} Board Game" loading="lazy" class="card-art-img">
+            {% endif %}
+            <div class="media-vignette"></div>
+          </a>
+
+          <!-- Card Body Content -->
+          <div class="featured-card-body">
+            <!-- Category Badge Tag -->
+            <div class="card-badge-row">
+              {% if game.category_tag == 'indian-heritage' %}
+                <span class="badge-pill badge-heritage">Indian Heritage</span>
+              {% elsif game.category_tag == 'global-strategy' %}
+                <span class="badge-pill badge-global">Global Strategy</span>
+              {% elsif game.category_tag == 'board-of-mills' %}
+                <span class="badge-pill badge-mills">Board of Mills</span>
+              {% else %}
+                <span class="badge-pill badge-classic">{{ game.category }}</span>
+              {% endif %}
+            </div>
+
+            <h3 class="card-game-title">
+              <a href="{{ game.play_url | relative_url }}">{{ game.name }}</a>
+            </h3>
+
+            <p class="card-game-desc">{{ game.description }}</p>
+
+            <div class="card-footer-row">
+              <div class="card-game-meta">
+                <span class="meta-item"><span class="meta-icon">♟</span> {{ game.players }}</span>
+                <span class="meta-sep">•</span>
+                <span class="meta-item meta-diff">{{ game.difficulty }}</span>
+              </div>
+
+              <a href="{{ game.play_url | relative_url }}" class="circular-play-btn" aria-label="Play {{ game.name }} Now">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </article>
       {% endfor %}
-    </div>
-    
-    <!-- Heritage History & Rules Modal -->
-    <div id="history-modal" class="history-modal" role="dialog" aria-hidden="true" aria-label="Game Heritage & Rules Details">
-      <div class="modal-overlay"></div>
-      <div class="modal-wrapper">
-        <button class="modal-close-btn" aria-label="Close modal">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </button>
-        <div class="modal-content-grid">
-          <div class="modal-image-panel">
-            <img id="modal-game-img" src="" alt="Game board layout">
-            <div id="modal-play-cta-box" class="modal-play-cta-box" style="display: none;">
-              <a id="modal-play-link" href="#" class="btn btn-primary w-100">Play in 3D Browser</a>
-            </div>
-          </div>
-          <div class="modal-info-panel">
-            <h3 id="modal-game-title"></h3>
-            <p id="modal-game-desc" class="modal-game-subtitle"></p>
-            <div class="modal-divider"></div>
-            
-            <h4 class="modal-section-heading">Cultural Heritage & Origins</h4>
-            <p id="modal-game-history" class="modal-history-text"></p>
-            
-            <h4 class="modal-section-heading" style="margin-top: 1.5rem;">Core Traditional Rules</h4>
-            <p id="modal-game-rules" class="modal-rules-text"></p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>

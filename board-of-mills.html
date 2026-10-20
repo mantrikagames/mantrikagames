@@ -1,95 +1,353 @@
 ---
 layout: default
-title: "Board of Mills Collection — Timeless Alignment Strategy Games | Mantrika Games"
-description: "Explore Board of Mills by Mantrika Games. A masterwork collection of ancient alignment strategy games featuring Nine Men's Morris, Twelve Men's Morris, Morabaraba, and Lasker Morris with 3D tabletop visuals."
+title: "Board of Mills Suite — Ancient Alignment Strategy Games | Mantrika Games"
+description: "Discover the Board of Mills Suite by Mantrika Games. Explore Nine Men's Morris, Twelve Men's Morris, Six Men's Morris, and Morabaraba with tactile 3D visuals and intelligent AI."
 permalink: /board-of-mills/
 ---
 
-<section class="hero" style="padding: 7rem 0 4rem;">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-container container">
-    <div class="hero-layout">
-      <div class="hero-content reveal-up">
-        <div class="logo-placeholder">
-          <span class="gold-dot"></span>
-          Multi-Game Suite
-        </div>
-        <h1><span>Board of Mills</span></h1>
-        <p class="desc">
-          One suite housing centuries of alignment strategy games from Egyptian tombs to medieval European courts and ancient Indian Navakankari.
+<!-- Board of Mills Suite Hero -->
+<section class="mills-suite-hero">
+  <div class="hero-atmosphere-glow"></div>
+  <div class="container">
+    <div class="mills-hero-grid">
+      <div class="mills-hero-copy">
+        <span class="section-kicker">Master Strategy Suite</span>
+        <h1 class="catalogue-title" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.25rem;">
+          The Board of Mills
+        </h1>
+        <p class="catalogue-subtitle" style="max-width: 620px; font-size: 1.12rem; margin-bottom: 2rem;">
+          Centuries of three-in-a-row alignment combat—carved into Egyptian temple roofs, played in Roman legions, championed in Shakespearean England, and preserved across African pastures and Indian royal courts.
         </p>
-        <div class="hero-cta">
-          <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-primary">
-            Play Nine Men's Morris 3D
+
+        <div class="hero-actions-group">
+          <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-primary btn-lg">
+            <span>Play Nine Men's Morris 3D</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </a>
+          <a href="#suite-variants" class="btn btn-outline">
+            Explore All 4 Variants
           </a>
         </div>
       </div>
 
-      <div class="hero-visual-col perspective-container reveal-up delay-200">
-        <div class="game-board-showcase card-3d-wrapper" data-board-type="mills" data-tilt data-tilt-max="14">
-          <div class="showcase-badge">Collection Suite</div>
-          <div class="board-frame-bevel"></div>
+      <div class="mills-hero-visual">
+        <div class="mills-showcase-box">
+          <img src="{{ '/assets/images/collection_mills.jpg' | relative_url }}" alt="Board of Mills Wooden Tabletop Collection" loading="eager">
+          <div class="mills-badge-float">
+            <div>
+              <p class="float-title">4 Reconciled Mill Geometries</p>
+              <span class="float-meta">Nine Men's • Twelve Men's • Six Men's • Morabaraba</span>
+            </div>
+            <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-primary btn-sm">Play 3D</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="games-section" style="padding: 4rem 0 6rem;">
+<!-- The 4 Master Variants Grid -->
+<section id="suite-variants" class="games-section" style="padding: 5rem 0 6rem; background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
   <div class="container">
-    <div class="section-header-row reveal-up">
+    <div class="section-header-row">
       <div>
-        <span class="section-kicker">Included Games</span>
-        <h2>Games in the Collection</h2>
+        <span class="section-kicker">Reconciled Geometries</span>
+        <h2>Four Mill Traditions, One Lineage</h2>
+        <p class="section-subtitle">From Bronze-Age temple carvings to modern tactical tournaments.</p>
       </div>
     </div>
 
-    <div class="games-grid-4col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2.5rem;">
+    <div class="catalogue-grid" style="margin-top: 2.5rem;">
       
-      <!-- Nine Men's Morris -->
-      <article class="card-3d-wrapper perspective-container reveal-up" style="padding: 1.75rem;">
-        <div class="game-board-showcase" data-board-type="mills" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
-          <div class="showcase-badge">Navakankari</div>
-          <div class="board-frame-bevel"></div>
+      <!-- 1. Nine Men's Morris (Navakankari) -->
+      <article class="catalogue-card active">
+        <div class="card-media">
+          <img src="{{ '/assets/images/game_morris.png' | relative_url }}" alt="Nine Men's Morris 3D Board" loading="lazy">
+          <span class="card-badge badge-playable">Playable 3D</span>
         </div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Nine Men's Morris</h3>
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">The classic 24-intersection board. Form mills of 3 to capture opposing stones.</p>
-        <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-outline w-100">Play in Browser</a>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-country">Global &amp; India (Navakankari)</span>
+            <span class="card-dot"></span>
+            <span class="card-category">Classic Mills</span>
+          </div>
+          <h3 class="card-title">
+            <a href="{{ '/games/nine-mens-morris/' | relative_url }}">Nine Men's Morris</a>
+          </h3>
+          <div class="card-regional">
+            <span class="regional-label">Regional:</span> Navakankari, Merels, Mill, Morelles
+          </div>
+          <p class="card-desc">The definitive 24-intersection board across 3 concentric squares. Form mills of 3 to capture opposing stones; includes the famous flying phase when down to 3 pieces.</p>
+          
+          <div class="card-stats-grid">
+            <div class="stat-item">
+              <span class="stat-label">Players</span>
+              <span class="stat-value">2 Players</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">15–30 mins</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Difficulty</span>
+              <span class="stat-value stat-difficulty-medium">Medium</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-primary w-100 card-play-btn">
+              <span>Play 3D in Browser</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </article>
 
-      <!-- Twelve Men's Morris -->
-      <article class="card-3d-wrapper perspective-container reveal-up delay-100" style="padding: 1.75rem;">
-        <div class="game-board-showcase" data-board-type="twelve-beads" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
-          <div class="showcase-badge">12 Men</div>
-          <div class="board-frame-bevel"></div>
+      <!-- 2. Twelve Men's Morris -->
+      <article class="catalogue-card active">
+        <div class="card-media">
+          <img src="{{ '/assets/images/collection_mills.jpg' | relative_url }}" alt="Twelve Men's Morris Board" loading="lazy">
+          <span class="card-badge badge-upcoming">In Development</span>
         </div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Twelve Men's Morris</h3>
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Includes diagonal lines connecting all 4 corners for intense tactical battles.</p>
-        <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-outline w-100">Explore Game</a>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-country">Medieval Europe &amp; Roman Empire</span>
+            <span class="card-dot"></span>
+            <span class="card-category">Extended Mills</span>
+          </div>
+          <h3 class="card-title">
+            <span>Twelve Men's Morris</span>
+          </h3>
+          <div class="card-regional">
+            <span class="regional-label">Regional:</span> Morabaraba Ancestor, Large Merels
+          </div>
+          <p class="card-desc">Adds four diagonal lines connecting the corners of all three concentric squares. Played with 12 pieces per player for ferocious tactical encirclement and rapid combat.</p>
+          
+          <div class="card-stats-grid">
+            <div class="stat-item">
+              <span class="stat-label">Players</span>
+              <span class="stat-value">2 Players</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">20–35 mins</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Difficulty</span>
+              <span class="stat-value stat-difficulty-hard">Hard</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-outline w-100 game-history-btn"
+                    data-name="Twelve Men's Morris"
+                    data-description="Extended medieval variant of Nine Men's Morris adding four diagonal corner lines and 12 pieces per player."
+                    data-history="Popularized throughout medieval Britain and post-Roman Europe, Twelve Men's Morris represented the grandmaster variant of the alignment family. Historical graffiti found in medieval cathedrals often features the diagonal markings of the 12-men layout."
+                    data-rules="2 players place 12 pieces each on 24 intersection points connected by orthogonal lines and 4 corner diagonals. Forming 3-in-a-row (horizontal, vertical, or diagonal) creates a mill to capture an opponent piece. Flying phase triggers when a player is reduced to 3 pieces."
+                    data-image="{{ '/assets/images/collection_mills.jpg' | relative_url }}"
+                    data-status="in_development">
+              View Overview &amp; Rules
+            </button>
+          </div>
+        </div>
       </article>
 
-      <!-- Six Men's Morris -->
-      <article class="card-3d-wrapper perspective-container reveal-up delay-200" style="padding: 1.75rem;">
-        <div class="game-board-showcase" data-board-type="mills" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
-          <div class="showcase-badge">6 Men</div>
-          <div class="board-frame-bevel"></div>
+      <!-- 3. Six Men's Morris -->
+      <article class="catalogue-card active">
+        <div class="card-media">
+          <img src="{{ '/assets/images/collection_classics.jpg' | relative_url }}" alt="Six Men's Morris Board" loading="lazy">
+          <span class="card-badge badge-upcoming">In Development</span>
         </div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Six Men's Morris</h3>
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">A fast-paced 2-concentric-square board ideal for swift opening tactical blunders.</p>
-        <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-outline w-100">Explore Game</a>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-country">Medieval France &amp; England</span>
+            <span class="card-dot"></span>
+            <span class="card-category">Compact Mills</span>
+          </div>
+          <h3 class="card-title">
+            <span>Six Men's Morris</span>
+          </h3>
+          <div class="card-regional">
+            <span class="regional-label">Regional:</span> Small Merels
+          </div>
+          <p class="card-desc">A shorter, intense 2-square variant played with 6 pieces each on 16 intersections. Because space is tighter, opening placement errors are immediately punished.</p>
+          
+          <div class="card-stats-grid">
+            <div class="stat-item">
+              <span class="stat-label">Players</span>
+              <span class="stat-value">2 Players</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">10–15 mins</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Difficulty</span>
+              <span class="stat-value stat-difficulty-easy">Easy–Med</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-outline w-100 game-history-btn"
+                    data-name="Six Men's Morris"
+                    data-description="Fast-paced compact two-concentric-square variant played with 6 pieces each on 16 intersections."
+                    data-history="Six Men's Morris flourished during the medieval period as a rapid gambling and tavern game. It was documented in the 13th-century Libro de los Juegos of King Alfonso X of Castile."
+                    data-rules="Each player places 6 pieces alternately on 16 points. Once placed, pieces slide along lines. Creating a line of 3 allows removal of one opponent piece. First player reduced to 2 pieces loses."
+                    data-image="{{ '/assets/images/collection_classics.jpg' | relative_url }}"
+                    data-status="in_development">
+              View Overview &amp; Rules
+            </button>
+          </div>
+        </div>
       </article>
 
-      <!-- Morabaraba -->
-      <article class="card-3d-wrapper perspective-container reveal-up delay-300" style="padding: 1.75rem;">
-        <div class="game-board-showcase" data-board-type="mills" data-tilt data-tilt-max="10" style="height: 220px; margin-bottom: 1.25rem;">
-          <div class="showcase-badge">Morabaraba</div>
-          <div class="board-frame-bevel"></div>
+      <!-- 4. Morabaraba -->
+      <article class="catalogue-card active">
+        <div class="card-media">
+          <img src="{{ '/assets/images/collection_heritage.jpg' | relative_url }}" alt="Morabaraba African Board Game" loading="lazy">
+          <span class="card-badge badge-upcoming">In Development</span>
         </div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Morabaraba</h3>
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Traditional Southern African variant played with 12 cows per side on a diagonal mill grid.</p>
-        <a href="{{ '/games/nine-mens-morris/' | relative_url }}" class="btn btn-outline w-100">Explore Game</a>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-country">Southern Africa (Lesotho &amp; South Africa)</span>
+            <span class="card-dot"></span>
+            <span class="card-category">African Sport</span>
+          </div>
+          <h3 class="card-title">
+            <span>Morabaraba</span>
+          </h3>
+          <div class="card-regional">
+            <span class="regional-label">Regional:</span> Umlabalaba, African Morris
+          </div>
+          <p class="card-desc">Traditional Southern African mill game played with 12 'cows' per player on a 24-node diagonal grid with flying transitions. Recognized as an official mind sport.</p>
+          
+          <div class="card-stats-grid">
+            <div class="stat-item">
+              <span class="stat-label">Players</span>
+              <span class="stat-value">2 Players</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Duration</span>
+              <span class="stat-value">20–30 mins</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Difficulty</span>
+              <span class="stat-value stat-difficulty-hard">Hard</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-outline w-100 game-history-btn"
+                    data-name="Morabaraba"
+                    data-description="Traditional Southern African mill game played with 12 cows per player on a 24-node diagonal grid with flying transitions."
+                    data-history="Recognized as an official mind sport in South Africa, traditionally played by herd-boys to hone tactical vigilance. It has been institutionalized in the Mind Sports South Africa federation."
+                    data-rules="Form mills of 3 cows to shoot opposing cows. Flying phase activates when reduced to 3 cows. A player loses when reduced to 2 cows or immobilized."
+                    data-image="{{ '/assets/images/collection_heritage.jpg' | relative_url }}"
+                    data-status="in_development">
+              View Overview &amp; Rules
+            </button>
+          </div>
+        </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- Mathematical & Strategic Comparison Matrix -->
+<section class="mills-comparison-section">
+  <div class="container">
+    <div class="section-header-row text-center" style="max-width: 720px; margin: 0 auto 3rem;">
+      <div>
+        <span class="section-kicker">Topology &amp; Rules Comparison</span>
+        <h2>Master Comparative Matrix</h2>
+        <p class="section-subtitle">How board geometry, intersection count, and flying dynamics alter strategic depth.</p>
+      </div>
+    </div>
+
+    <div class="mills-matrix-wrapper">
+      <table class="mills-matrix-table">
+        <thead>
+          <tr>
+            <th>Game Variant</th>
+            <th>Intersections</th>
+            <th>Pieces / Player</th>
+            <th>Concentric Squares</th>
+            <th>Corner Diagonals</th>
+            <th>Flying Phase</th>
+            <th>Platform Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="variant-name-cell">Nine Men's Morris (Navakankari)</td>
+            <td>24</td>
+            <td>9 Stones</td>
+            <td>3 Squares</td>
+            <td>None (Orthogonal only)</td>
+            <td>Yes (at 3 pieces)</td>
+            <td><span class="card-badge badge-playable" style="position: static; display: inline-block;">Playable 3D</span></td>
+          </tr>
+          <tr>
+            <td class="variant-name-cell">Twelve Men's Morris</td>
+            <td>24</td>
+            <td>12 Stones</td>
+            <td>3 Squares</td>
+            <td>4 Diagonal Corner Connectors</td>
+            <td>Yes (at 3 pieces)</td>
+            <td><span class="card-badge badge-upcoming" style="position: static; display: inline-block;">In Development</span></td>
+          </tr>
+          <tr>
+            <td class="variant-name-cell">Six Men's Morris</td>
+            <td>16</td>
+            <td>6 Stones</td>
+            <td>2 Squares</td>
+            <td>None</td>
+            <td>Optional / Rarely used</td>
+            <td><span class="card-badge badge-upcoming" style="position: static; display: inline-block;">In Development</span></td>
+          </tr>
+          <tr>
+            <td class="variant-name-cell">Morabaraba (Umlabalaba)</td>
+            <td>24</td>
+            <td>12 Cows</td>
+            <td>3 Squares</td>
+            <td>4 Diagonal Lines (Allows Diagonal Mills)</td>
+            <td>Yes (Flying Bull Phase)</td>
+            <td><span class="card-badge badge-upcoming" style="position: static; display: inline-block;">In Development</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Deep Strategic Insights (3 Editorial Cards) -->
+    <div class="legal-pillars-grid" style="margin-top: 3.5rem;">
+      <div class="legal-pillar-card">
+        <span class="pillar-icon">✦</span>
+        <h3 class="pillar-title">The Seesaw Trap (Double Mill)</h3>
+        <p class="pillar-desc">
+          The ultimate offensive formation in any Mill game is moving a single piece back and forth between two incomplete mills, capturing an opposing piece on every single turn.
+        </p>
+      </div>
+
+      <div class="legal-pillar-card">
+        <span class="pillar-icon">✦</span>
+        <h3 class="pillar-title">Corner vs Cross Intersections</h3>
+        <p class="pillar-desc">
+          Middle-line intersections command 4 connected pathways, whereas corners command only 2. In Twelve Men's Morris and Morabaraba, corner diagonals elevate corners into lethal hubs.
+        </p>
+      </div>
+
+      <div class="legal-pillar-card">
+        <span class="pillar-icon">✦</span>
+        <h3 class="pillar-title">The Late-Game Flying Phase</h3>
+        <p class="pillar-desc">
+          When reduced to 3 pieces, a player gains "flying" privileges—the ability to hop to any open intersection on the entire board, turning imminent defeat into sudden tactical comebacks.
+        </p>
+      </div>
     </div>
   </div>
 </section>

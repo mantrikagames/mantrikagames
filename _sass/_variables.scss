@@ -1,54 +1,108 @@
 // Typography
-$font-heading: 'Cinzel', Georgia, serif;
-$font-body: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+$font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
 // Responsive Breakpoints
 $breakpoint-mobile: 576px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 992px;
 $breakpoint-large: 1200px;
+$breakpoint-xl: 1440px;
 
 // Theme Design Tokens
 :root {
-  // Light Mode Palette (Warm Editorial Paper & Walnut Wood)
-  --bg-primary: #FAF8F3;         // Warm Ivory paper
-  --bg-secondary: #FDFCF9;       // Slightly lighter ivory
-  --bg-card: #FFFFFF;
-  --text-primary: #1F2937;       // Charcoal
-  --text-secondary: #6B7280;     // Slate Gray
-  --text-muted: #9CA3AF;
+  // Signature Palette — Deep Charcoal, Warm Ivory & Muted Antique Gold
+  --bg-primary: #0B0D0E;         // Deep Charcoal Background
+  --bg-secondary: #151819;       // Dark Graphite Secondary Surfaces
+  --bg-card: #1A1D1F;            // Card Surface
+  --bg-card-hover: #222629;      // Elevated Surface on Hover
+  --bg-elevated: #202426;        // Dialogs, Modals, Popovers
   
-  --primary: #4E342E;            // Deep Walnut Brown
-  --primary-rgb: 78, 52, 46;
-  --accent: #C89B3C;             // Antique Gold
-  --accent-rgb: 200, 155, 60;
-  --accent-light: #F6EEDC;       // Soft gold wash
-  --accent-gradient: linear-gradient(135deg, #DFB76C 0%, #C89B3C 50%, #9E7528 100%);
+  --text-primary: #F4E9D4;       // Warm Ivory Primary Text
+  --text-secondary: #A8A199;     // Soft Warm Grey
+  --text-muted: #736D66;         // Muted Metadata Text
   
-  // Editorial Divider System
-  --border-color: rgba(78, 52, 46, 0.08);
-  --border-gold: rgba(200, 155, 60, 0.25);
-  --border-strong: rgba(78, 52, 46, 0.2);
+  --primary: #D6AD69;            // Muted Antique Gold
+  --primary-rgb: 214, 173, 105;
+  --accent: #D6AD69;             // Antique Gold Accent
+  --accent-rgb: 214, 173, 105;
+  --accent-light: #2A251C;       // Subtle Gold Tinted Surface
+  --accent-hover: #E8C882;       // Lighter Gold on Hover
+  --accent-gradient: linear-gradient(135deg, #FFE79A 0%, #D6AD69 50%, #A37E1C 100%);
+  --gold-glow: 0 0 20px rgba(214, 173, 105, 0.22);
   
-  // Navigation & Floating Layers
-  --glass-bg: rgba(250, 248, 243, 0.85);
-  --glass-border: rgba(78, 52, 46, 0.05);
-  --glass-blur: blur(16px);
+  // Editorial Borders & Dividers
+  --border-color: rgba(244, 233, 212, 0.08); // Subtle Charcoal-Grey
+  --border-subtle: #222629;
+  --border-gold: rgba(214, 173, 105, 0.28);
+  --border-gold-strong: rgba(214, 173, 105, 0.6);
+  --border-strong: rgba(244, 233, 212, 0.16);
   
-  // Background Graphic Grid
-  --cosmic-bg: radial-gradient(circle at 50% 30%, rgba(200, 155, 60, 0.05) 0%, rgba(250, 248, 243, 0) 70%), #FAF8F3;
+  // Navigation & Frosted Glass
+  --glass-bg: rgba(11, 13, 14, 0.88);
+  --glass-border: rgba(244, 233, 212, 0.08);
+  --glass-blur: blur(20px);
   
-  // Shadows (Minimal & Subtle)
-  --shadow-sm: 0 1px 3px rgba(78, 52, 46, 0.03);
-  --shadow-md: 0 8px 24px rgba(78, 52, 46, 0.04);
-  --shadow-lg: 0 16px 40px rgba(78, 52, 46, 0.06);
-  --shadow-glow: 0 0 15px rgba(200, 155, 60, 0.08);
+  // Atmospheric Canvas & Glows
+  --cosmic-bg: radial-gradient(circle at 50% 15%, rgba(214, 173, 105, 0.04) 0%, rgba(11, 13, 14, 0) 65%), #0B0D0E;
+  
+  // Shadows (Deep, Subtle & Cinematic)
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 24px rgba(214, 173, 105, 0.12);
 
   // Transitions
-  --transition-speed: 0.4s;
+  --transition-speed: 0.35s;
   --transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   // 3D Tabletop Design Tokens
+  --board-wood-dark: #120A05;
+  --board-wood-light: #3D2413;
+  --board-surface: #1E120A;
+  --board-bevel-highlight: rgba(255, 230, 160, 0.25);
+  --board-bevel-shadow: rgba(0, 0, 0, 0.9);
+  --piece-shadow-contact: rgba(0, 0, 0, 0.7);
+  --card-3d-glow: rgba(214, 173, 105, 0.18);
+}
+
+// Light Mode Alternative (Warm Ivory Heritage Paper & Dark Walnut)
+[data-theme="light"] {
+  --bg-primary: #FAF8F3;         // Warm Ivory Paper
+  --bg-secondary: #F4EFE6;       // Slightly Deeper Ivory
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAF6ED;
+  --bg-elevated: #FFFFFF;
+  
+  --text-primary: #1F2937;       // Charcoal
+  --text-secondary: #6B7280;     // Slate Grey
+  --text-muted: #9CA3AF;
+  
+  --primary: #4E342E;            // Deep Walnut
+  --primary-rgb: 78, 52, 46;
+  --accent: #C89B3C;             // Warm Antique Gold
+  --accent-rgb: 200, 155, 60;
+  --accent-light: #F6EEDC;
+  --accent-hover: #B88B2C;
+  --accent-gradient: linear-gradient(135deg, #DFB76C 0%, #C89B3C 50%, #9E7528 100%);
+  --gold-glow: 0 0 15px rgba(200, 155, 60, 0.15);
+  
+  --border-color: rgba(78, 52, 46, 0.1);
+  --border-subtle: rgba(78, 52, 46, 0.08);
+  --border-gold: rgba(200, 155, 60, 0.3);
+  --border-gold-strong: rgba(200, 155, 60, 0.6);
+  --border-strong: rgba(78, 52, 46, 0.22);
+  
+  --glass-bg: rgba(250, 248, 243, 0.9);
+  --glass-border: rgba(78, 52, 46, 0.08);
+  
+  --cosmic-bg: radial-gradient(circle at 50% 20%, rgba(200, 155, 60, 0.06) 0%, rgba(250, 248, 243, 0) 70%), #FAF8F3;
+  
+  --shadow-sm: 0 1px 4px rgba(78, 52, 46, 0.05);
+  --shadow-md: 0 8px 24px rgba(78, 52, 46, 0.08);
+  --shadow-lg: 0 16px 40px rgba(78, 52, 46, 0.12);
+  --shadow-glow: 0 0 15px rgba(200, 155, 60, 0.1);
+
   --board-wood-dark: #2B160C;
   --board-wood-light: #5C361D;
   --board-surface: #3D2413;
@@ -56,44 +110,4 @@ $breakpoint-large: 1200px;
   --board-bevel-shadow: rgba(15, 8, 4, 0.75);
   --piece-shadow-contact: rgba(0, 0, 0, 0.45);
   --card-3d-glow: rgba(200, 155, 60, 0.12);
-}
-
-[data-theme="dark"] {
-  // Dark Mode Palette (Ebony & Antique Gold)
-  --bg-primary: #0F0D0C;         // Charcoal Ebony Black
-  --bg-secondary: #171513;       // Dark Walnut
-  --bg-card: #1C1A18;
-  --text-primary: #FAF8F3;       // Warm Ivory text
-  --text-secondary: #A39B95;     // Muted Warm Gray
-  --text-muted: #6B635D;
-  
-  --primary: #FAF8F3;
-  --primary-rgb: 250, 248, 245;
-  --accent: #D4AF37;             // Metallic Antique Gold
-  --accent-rgb: 212, 175, 55;
-  --accent-light: #201D1A;
-  --accent-gradient: linear-gradient(135deg, #FFE79A 0%, #D4AF37 50%, #A37E1C 100%);
-  
-  --border-color: rgba(250, 248, 243, 0.06);
-  --border-gold: rgba(212, 175, 55, 0.2);
-  --border-strong: rgba(250, 248, 243, 0.15);
-  
-  --glass-bg: rgba(15, 13, 12, 0.85);
-  --glass-border: rgba(212, 175, 55, 0.06);
-  
-  --cosmic-bg: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.04) 0%, rgba(15, 13, 12, 0) 70%), #0F0D0C;
-  
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.1);
-
-  // 3D Tabletop Design Tokens (Dark Theme Inset)
-  --board-wood-dark: #120A05;
-  --board-wood-light: #3D2413;
-  --board-surface: #24140A;
-  --board-bevel-highlight: rgba(255, 230, 160, 0.25);
-  --board-bevel-shadow: rgba(0, 0, 0, 0.9);
-  --piece-shadow-contact: rgba(0, 0, 0, 0.7);
-  --card-3d-glow: rgba(212, 175, 55, 0.2);
 }

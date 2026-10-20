@@ -1,0 +1,130 @@
+{% assign game = include.game %}
+{% if game %}
+<div class="game-tabs-wrapper">
+  <!-- Tab Navigation Bar -->
+  <div class="game-tabs-nav" role="tablist" aria-label="Game information sections">
+    <button class="game-tab-btn active" data-tab="overview" role="tab" aria-selected="true" aria-controls="tab-overview">Overview</button>
+    <button class="game-tab-btn" data-tab="how-to-play" role="tab" aria-selected="false" aria-controls="tab-how-to-play">How to Play</button>
+    <button class="game-tab-btn" data-tab="rules" role="tab" aria-selected="false" aria-controls="tab-rules">Rules</button>
+    <button class="game-tab-btn" data-tab="history" role="tab" aria-selected="false" aria-controls="tab-history">History</button>
+    <button class="game-tab-btn" data-tab="strategies" role="tab" aria-selected="false" aria-controls="tab-strategies">Strategies</button>
+    <button class="game-tab-btn" data-tab="related" role="tab" aria-selected="false" aria-controls="tab-related">Related Games</button>
+  </div>
+
+  <!-- Tab Content Panes -->
+  <div class="game-tabs-content">
+    <!-- 1. Overview Tab -->
+    <div class="game-tab-pane active" id="tab-overview" role="tabpanel">
+      <h3 class="tab-pane-heading">About {{ game.name }}</h3>
+      <p class="tab-lead-text">{{ game.full_description | default: game.description }}</p>
+      
+      <!-- Key Information Summary Card -->
+      <div class="key-info-card">
+        <h4 class="key-info-title">Key Information</h4>
+        <div class="key-info-grid">
+          <div class="key-info-item">
+            <span class="info-label">Players</span>
+            <span class="info-val">{{ game.players }}</span>
+          </div>
+          <div class="key-info-item">
+            <span class="info-label">Playing Time</span>
+            <span class="info-val">{{ game.duration }}</span>
+          </div>
+          <div class="key-info-item">
+            <span class="info-label">Difficulty</span>
+            <span class="info-val">{{ game.difficulty }}</span>
+          </div>
+          <div class="key-info-item">
+            <span class="info-label">Category</span>
+            <span class="info-val">{{ game.category }}</span>
+          </div>
+          <div class="key-info-item">
+            <span class="info-label">Mechanics</span>
+            <span class="info-val">{{ game.mechanics }}</span>
+          </div>
+          {% if game.board_geometry %}
+          <div class="key-info-item">
+            <span class="info-label">Board Geometry</span>
+            <span class="info-val">{{ game.board_geometry }}</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. How to Play Tab -->
+    <div class="game-tab-pane" id="tab-how-to-play" role="tabpanel">
+      <h3 class="tab-pane-heading">How to Play</h3>
+      {% if game.how_to_play %}
+        <div class="how-to-play-steps">
+          {% for step in game.how_to_play %}
+            <div class="play-step-card">
+              <span class="step-badge">Step {{ forloop.index }}</span>
+              <h4 class="step-title">{{ step.phase }}</h4>
+              <p class="step-text">{{ step.text }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="tab-lead-text">{{ game.rules_summary }}</p>
+      {% endif %}
+    </div>
+
+    <!-- 3. Rules Tab -->
+    <div class="game-tab-pane" id="tab-rules" role="tabpanel">
+      <h3 class="tab-pane-heading">Official Game Rules</h3>
+      <p class="tab-lead-text">{{ game.rules_summary }}</p>
+      {% if game.rules_detailed %}
+        <ul class="rules-detailed-list">
+          {% for rule in game.rules_detailed %}
+            <li>{{ rule }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <!-- 4. History Tab -->
+    <div class="game-tab-pane" id="tab-history" role="tabpanel">
+      <h3 class="tab-pane-heading">Cultural Heritage &amp; Origins</h3>
+      <p class="tab-lead-text">{{ game.history }}</p>
+      {% if game.regional_names %}
+        <div class="regional-names-callout">
+          <strong>Historical Regional Names:</strong> {{ game.regional_names }}
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- 5. Strategies Tab -->
+    <div class="game-tab-pane" id="tab-strategies" role="tabpanel">
+      <h3 class="tab-pane-heading">Tactical Strategy Guide</h3>
+      {% if game.strategy_tips %}
+        <ul class="strategy-tips-list">
+          {% for tip in game.strategy_tips %}
+            <li>{{ tip }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="tab-lead-text">Control the board center, anticipate opponent mobility, and maintain structured defenses.</p>
+      {% endif %}
+    </div>
+
+    <!-- 6. Related Games Tab -->
+    <div class="game-tab-pane" id="tab-related" role="tabpanel">
+      <h3 class="tab-pane-heading">Related Games to Explore</h3>
+      <div class="related-games-grid">
+        {% for rel_id in game.related_game_ids %}
+          {% assign rel_game = site.data.games | where: "slug", rel_id | first %}
+          {% if rel_game %}
+            <div class="related-game-mini-card">
+              <a href="{{ rel_game.play_url | relative_url }}">
+                <span class="mini-card-name">{{ rel_game.name }}</span>
+                <span class="mini-card-category">{{ rel_game.category }}</span>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
