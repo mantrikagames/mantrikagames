@@ -64,7 +64,17 @@
             if (overlay) overlay.style.display = 'none';
             if (hud) hud.style.display = 'flex';
             this.initThree();
-            this.initDOMControls();
+            this.onWindowResize() {
+      if (!this.container || !this.renderer || !this.camera) return;
+      const width = this.container.clientWidth;
+      const height = this.container.clientHeight;
+      if (width === 0 || height === 0) return;
+      this.camera.aspect = width / height;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(width, height);
+    }
+
+    initDOMControls();
           }, 300);
         }
       }, 50);
@@ -84,6 +94,7 @@
       this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
       this.renderer.setSize(width, height);
       this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      window.addEventListener('resize', () => this.onWindowResize());
       this.renderer.shadowMap.enabled = true;
       this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
