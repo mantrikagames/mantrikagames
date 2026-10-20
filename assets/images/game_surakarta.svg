@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660" width="660" height="660">
+  <defs>
+    <radialGradient id="plinthGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#221A16"/>
+      <stop offset="100%" stop-color="#110D0B"/>
+    </radialGradient>
+  </defs>
+  <rect width="660" height="660" rx="24" fill="url(#plinthGrad)" stroke="#D4AF37" stroke-width="4"/>
+  <svg class="board-grid" viewBox="0 0 660 660">
+<defs>
+  <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#FFF0D0"/>
+    <stop offset="50%" stop-color="#D6AD69"/>
+    <stop offset="100%" stop-color="#8C6D3B"/>
+  </linearGradient>
+  <radialGradient id="pieceGold" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#FFF7E6"/>
+    <stop offset="40%" stop-color="#E5C178"/>
+    <stop offset="80%" stop-color="#996E2E"/>
+    <stop offset="100%" stop-color="#4E330D"/>
+  </radialGradient>
+  <radialGradient id="pieceIvory" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="45%" stop-color="#F4EADB"/>
+    <stop offset="80%" stop-color="#D4C4AE"/>
+    <stop offset="100%" stop-color="#A8947C"/>
+  </radialGradient>
+  <radialGradient id="pieceObsidian" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#707A84"/>
+    <stop offset="45%" stop-color="#24282D"/>
+    <stop offset="80%" stop-color="#111316"/>
+    <stop offset="100%" stop-color="#020304"/>
+  </radialGradient>
+  <radialGradient id="pieceRuby" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#FFA8B6"/>
+    <stop offset="40%" stop-color="#D63350"/>
+    <stop offset="80%" stop-color="#8A152A"/>
+    <stop offset="100%" stop-color="#3D000C"/>
+  </radialGradient>
+  <radialGradient id="pieceSapphire" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#A8D8FF"/>
+    <stop offset="40%" stop-color="#2B7DE9"/>
+    <stop offset="80%" stop-color="#11458A"/>
+    <stop offset="100%" stop-color="#00183D"/>
+  </radialGradient>
+  <radialGradient id="pieceJade" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#C2F5D6"/>
+    <stop offset="40%" stop-color="#38A169"/>
+    <stop offset="80%" stop-color="#1C5E3B"/>
+    <stop offset="100%" stop-color="#0B2B19"/>
+  </radialGradient>
+  <filter id="pieceShadow" x="-35%" y="-35%" width="170%" height="170%">
+    <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.85"/>
+  </filter>
+  <filter id="glowFilter" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="8" result="blur"/>
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
+</defs>
+
+          <!-- 6x6 Grid Lines -->
+          <line x1="150" y1="150" x2="150" y2="510" stroke="url(#goldLine)" stroke-width="3"/><line x1="222" y1="150" x2="222" y2="510" stroke="url(#goldLine)" stroke-width="3"/><line x1="294" y1="150" x2="294" y2="510" stroke="url(#goldLine)" stroke-width="3"/><line x1="366" y1="150" x2="366" y2="510" stroke="url(#goldLine)" stroke-width="3"/><line x1="438" y1="150" x2="438" y2="510" stroke="url(#goldLine)" stroke-width="3"/><line x1="510" y1="150" x2="510" y2="510" stroke="url(#goldLine)" stroke-width="3"/>
+          <line x1="150" y1="150" x2="510" y2="150" stroke="url(#goldLine)" stroke-width="3"/><line x1="150" y1="222" x2="510" y2="222" stroke="url(#goldLine)" stroke-width="3"/><line x1="150" y1="294" x2="510" y2="294" stroke="url(#goldLine)" stroke-width="3"/><line x1="150" y1="366" x2="510" y2="366" stroke="url(#goldLine)" stroke-width="3"/><line x1="150" y1="438" x2="510" y2="438" stroke="url(#goldLine)" stroke-width="3"/><line x1="150" y1="510" x2="510" y2="510" stroke="url(#goldLine)" stroke-width="3"/>
+          <!-- 8 Concentric Corner Loops -->
+          <!-- Top Left Loops -->
+          <path d="M 222 150 A 72 72 0 1 0 150 222" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <path d="M 294 150 A 144 144 0 1 0 150 294" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <!-- Top Right Loops -->
+          <path d="M 510 222 A 72 72 0 1 0 438 150" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <path d="M 510 294 A 144 144 0 1 0 366 150" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <!-- Bottom Left Loops -->
+          <path d="M 150 438 A 72 72 0 1 0 222 510" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <path d="M 150 366 A 144 144 0 1 0 294 510" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <!-- Bottom Right Loops -->
+          <path d="M 438 510 A 72 72 0 1 0 510 438" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <path d="M 366 510 A 144 144 0 1 0 510 366" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+          <!-- Slider pieces and glide arc -->
+          <circle cx="150" cy="150" r="16" fill="url(#pieceGold)" filter="url(#pieceShadow)"/>
+          <circle cx="222" cy="150" r="16" fill="url(#pieceGold)" filter="url(#pieceShadow)"/>
+          <circle cx="294" cy="150" r="16" fill="url(#pieceGold)" filter="url(#pieceShadow)"/>
+          <circle cx="510" cy="510" r="16" fill="url(#pieceObsidian)" filter="url(#pieceShadow)"/>
+          <circle cx="438" cy="510" r="16" fill="url(#pieceObsidian)" filter="url(#pieceShadow)"/>
+          <!-- Gliding capture swoosh -->
+          <path d="M 294 150 A 144 144 0 1 0 150 294 L 150 438" fill="none" stroke="#FFF0D0" stroke-width="4" stroke-dasharray="6,6" filter="url(#glowFilter)"/>
+          <circle cx="150" cy="438" r="18" fill="url(#pieceGold)" filter="url(#glowFilter)"/>
+        </svg>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660" width="660" height="660">
+  <defs>
+    <radialGradient id="plinthGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#221A16"/>
+      <stop offset="100%" stop-color="#110D0B"/>
+    </radialGradient>
+  </defs>
+  <rect width="660" height="660" rx="24" fill="url(#plinthGrad)" stroke="#D4AF37" stroke-width="4"/>
+  <svg class="board-grid" viewBox="0 0 660 660">
+<defs>
+  <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#FFF0D0"/>
+    <stop offset="50%" stop-color="#D6AD69"/>
+    <stop offset="100%" stop-color="#8C6D3B"/>
+  </linearGradient>
+  <radialGradient id="pieceGold" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#FFF7E6"/>
+    <stop offset="40%" stop-color="#E5C178"/>
+    <stop offset="80%" stop-color="#996E2E"/>
+    <stop offset="100%" stop-color="#4E330D"/>
+  </radialGradient>
+  <radialGradient id="pieceIvory" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="45%" stop-color="#F4EADB"/>
+    <stop offset="80%" stop-color="#D4C4AE"/>
+    <stop offset="100%" stop-color="#A8947C"/>
+  </radialGradient>
+  <radialGradient id="pieceObsidian" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#707A84"/>
+    <stop offset="45%" stop-color="#24282D"/>
+    <stop offset="80%" stop-color="#111316"/>
+    <stop offset="100%" stop-color="#020304"/>
+  </radialGradient>
+  <radialGradient id="pieceRuby" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#FFA8B6"/>
+    <stop offset="40%" stop-color="#D63350"/>
+    <stop offset="80%" stop-color="#8A152A"/>
+    <stop offset="100%" stop-color="#3D000C"/>
+  </radialGradient>
+  <radialGradient id="pieceSapphire" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#A8D8FF"/>
+    <stop offset="40%" stop-color="#2B7DE9"/>
+    <stop offset="80%" stop-color="#11458A"/>
+    <stop offset="100%" stop-color="#00183D"/>
+  </radialGradient>
+  <radialGradient id="pieceJade" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#C2F5D6"/>
+    <stop offset="40%" stop-color="#38A169"/>
+    <stop offset="80%" stop-color="#1C5E3B"/>
+    <stop offset="100%" stop-color="#0B2B19"/>
+  </radialGradient>
+  <filter id="pieceShadow" x="-35%" y="-35%" width="170%" height="170%">
+    <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.85"/>
+  </filter>
+  <filter id="glowFilter" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="8" result="blur"/>
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
+</defs>
+
+          <!-- 9x9 Grid with deep grooves -->
+          <rect x="50" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="50" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="112" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="174" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="236" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="298" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="360" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="422" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="484" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="50" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="112" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="174" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="236" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="298" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="360" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="422" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="484" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/><rect x="546" y="546" width="54" height="54" rx="4" fill="#2d1910" stroke="#4a2c1d" stroke-width="2"/>
+          <!-- Vertical Beechwood Wall Barriers in Grooves -->
+          <rect x="168" y="112" width="12" height="116" rx="3" fill="#D6AD69" stroke="#8C6D3B" stroke-width="2" filter="url(#pieceShadow)"/>
+          <rect x="292" y="236" width="12" height="116" rx="3" fill="#D6AD69" stroke="#8C6D3B" stroke-width="2" filter="url(#pieceShadow)"/>
+          <rect x="416" y="360" width="12" height="116" rx="3" fill="#D6AD69" stroke="#8C6D3B" stroke-width="2" filter="url(#pieceShadow)"/>
+          <!-- Horizontal Wall Barriers -->
+          <rect x="236" y="292" width="116" height="12" rx="3" fill="#D6AD69" stroke="#8C6D3B" stroke-width="2" filter="url(#pieceShadow)"/>
+          <rect x="360" y="416" width="116" height="12" rx="3" fill="#D6AD69" stroke="#8C6D3B" stroke-width="2" filter="url(#pieceShadow)"/>
+          <!-- Player Pawns -->
+          <circle cx="327" cy="139" r="18" fill="url(#pieceGold)" filter="url(#pieceShadow)"/>
+          <circle cx="327" cy="511" r="18" fill="url(#pieceRuby)" filter="url(#pieceShadow)"/>
+        </svg>
+</svg>
