@@ -54,17 +54,7 @@
             if (overlay) overlay.style.display = 'none';
             if (hud) hud.style.display = 'flex';
             this.initThree();
-            this.onWindowResize() {
-      if (!this.container || !this.renderer || !this.camera) return;
-      const width = this.container.clientWidth;
-      const height = this.container.clientHeight;
-      if (width === 0 || height === 0) return;
-      this.camera.aspect = width / height;
-      this.camera.updateProjectionMatrix();
-      this.renderer.setSize(width, height);
-    }
-
-    initDOMControls();
+            this.initDOMControls();
           }, 300);
         }
       }, 60);
@@ -285,6 +275,16 @@
       });
     }
 
+onWindowResize() {
+      if (!this.container || !this.renderer || !this.camera) return;
+      const width = this.container.clientWidth;
+      const height = this.container.clientHeight;
+      if (width === 0 || height === 0) return;
+      this.camera.aspect = width / height;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(width, height);
+    }
+
     initDOMControls() {
       const rollBtn = document.getElementById('roll-dice-btn');
       if (rollBtn) rollBtn.addEventListener('click', () => this.triggerRoll());
@@ -438,10 +438,6 @@
         if (this.isAITurn()) setTimeout(() => this.triggerRoll(), 1000);
       } else {
         setTimeout(() => this.passTurn(), capturedOpponent ? 900 : 600);
-      }
-    }
-      } else {
-        setTimeout(() => this.passTurn(), 600);
       }
     }
 

@@ -40,17 +40,7 @@
             if (overlay) overlay.style.display = 'none';
             if (hud) hud.style.display = 'flex';
             this.initThree();
-            this.onWindowResize() {
-      if (!this.container || !this.renderer || !this.camera) return;
-      const width = this.container.clientWidth;
-      const height = this.container.clientHeight;
-      if (width === 0 || height === 0) return;
-      this.camera.aspect = width / height;
-      this.camera.updateProjectionMatrix();
-      this.renderer.setSize(width, height);
-    }
-
-    initDOMControls();
+            this.initDOMControls();
           }, 300);
         }
       }, 50);
@@ -288,6 +278,16 @@
       } else {
         this.setMessage(`Player 1's turn: Click one of your 7 bottom pits to sow seeds.`);
       }
+    }
+
+onWindowResize() {
+      if (!this.container || !this.renderer || !this.camera) return;
+      const width = this.container.clientWidth;
+      const height = this.container.clientHeight;
+      if (width === 0 || height === 0) return;
+      this.camera.aspect = width / height;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(width, height);
     }
 
     initDOMControls() {

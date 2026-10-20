@@ -48,17 +48,7 @@
             if (overlay) overlay.style.display = 'none';
             if (hud) hud.style.display = 'flex';
             this.initThree();
-            this.onWindowResize() {
-      if (!this.container || !this.renderer || !this.camera) return;
-      const width = this.container.clientWidth;
-      const height = this.container.clientHeight;
-      if (width === 0 || height === 0) return;
-      this.camera.aspect = width / height;
-      this.camera.updateProjectionMatrix();
-      this.renderer.setSize(width, height);
-    }
-
-    initDOMControls();
+            this.initDOMControls();
           }, 300);
         }
       }, 50);
@@ -360,6 +350,16 @@
           }
         }
       }
+    }
+
+onWindowResize() {
+      if (!this.container || !this.renderer || !this.camera) return;
+      const width = this.container.clientWidth;
+      const height = this.container.clientHeight;
+      if (width === 0 || height === 0) return;
+      this.camera.aspect = width / height;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(width, height);
     }
 
     initDOMControls() {
